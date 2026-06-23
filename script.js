@@ -1,51 +1,51 @@
-/* ============================================================
-   Shreya Sutar — Portfolio
-   Nav scroll state + fade-in on scroll
-   ============================================================ */
+// Nav scroll shadow
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 10);
+}, { passive: true });
 
-(function () {
-  "use strict";
+// Active nav link on scroll
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('#navbar ul a');
 
-  // --- Nav: add a hairline border once the page has scrolled ---
-  var nav = document.getElementById("nav");
-  function onScroll() {
-    if (window.scrollY > 12) {
-      nav.classList.add("is-scrolled");
-    } else {
-      nav.classList.remove("is-scrolled");
-    }
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-
-  // --- Reveal elements as they enter the viewport ---
-  var reveals = document.querySelectorAll(".reveal");
-
-  var prefersReduced =
-    window.matchMedia &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if (prefersReduced || !("IntersectionObserver" in window)) {
-    // Show everything immediately — no motion.
-    reveals.forEach(function (el) {
-      el.classList.add("is-visible");
-    });
-    return;
-  }
-
-  var observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
       });
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
-  );
-
-  reveals.forEach(function (el) {
-    observer.observe(el);
+    }
   });
-})();
+}, { threshold: 0.4 });
+
+sections.forEach(s => sectionObserver.observe(s));
+
+// Fade-up on scroll
+const fadeObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      fadeObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll(
+  '.hero-inner, .about-text, .project-card, .detail-block, .award, .skill-group, .detail-hero-img, .detail-header'
+).forEach((el, i) => {
+  el.classList.add('fade-up');
+  el.style.transitionDelay = `${i * 0.04}s`;
+  fadeObserver.observe(el);
+});
+
+// Smooth scroll for all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    const offset = document.getElementById('navbar').offsetHeight;
+    window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+  });
+});
