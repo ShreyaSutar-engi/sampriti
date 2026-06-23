@@ -3,58 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name — Hardware Engineer</title>
+  <title>Shreya Sutar — Hardware Engineer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- NAV -->
-  <nav>
-    <span class="nav-logo">YN</span>
+  <nav id="navbar">
+    <span class="nav-logo">SS</span>
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#skills">Skills</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-content">
-      <p class="hero-eyebrow">Hardware Engineer</p>
-      <h1>Your Name</h1>
-      <p class="hero-sub">
-        I design circuits, embedded systems, and hardware solutions —
-        from napkin sketch to working prototype.
-      </p>
-      <div class="hero-cta">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#contact" class="btn-secondary">Get in Touch</a>
-      </div>
-    </div>
-    <div class="hero-graphic" aria-hidden="true">
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- PCB trace decoration -->
-        <rect x="20" y="20" width="160" height="160" rx="4" stroke="#e2e8f0" stroke-width="1.5"/>
-        <circle cx="100" cy="100" r="30" stroke="#64748b" stroke-width="1.5"/>
-        <circle cx="100" cy="100" r="8" fill="#64748b"/>
-        <!-- Traces -->
-        <polyline points="100,70 100,40 140,40" stroke="#64748b" stroke-width="1.5" fill="none"/>
-        <polyline points="130,100 160,100 160,60" stroke="#64748b" stroke-width="1.5" fill="none"/>
-        <polyline points="100,130 100,160 60,160" stroke="#64748b" stroke-width="1.5" fill="none"/>
-        <polyline points="70,100 40,100 40,140" stroke="#64748b" stroke-width="1.5" fill="none"/>
-        <!-- Via pads -->
-        <circle cx="140" cy="40" r="5" fill="#94a3b8"/>
-        <circle cx="160" cy="60" r="5" fill="#94a3b8"/>
-        <circle cx="60" cy="160" r="5" fill="#94a3b8"/>
-        <circle cx="40" cy="140" r="5" fill="#94a3b8"/>
-        <!-- Components -->
-        <rect x="128" y="34" width="24" height="12" rx="2" fill="#cbd5e1"/>
-        <rect x="154" y="54" width="12" height="24" rx="2" fill="#cbd5e1"/>
-        <rect x="48" y="154" width="24" height="12" rx="2" fill="#cbd5e1"/>
-        <rect x="34" y="128" width="12" height="24" rx="2" fill="#cbd5e1"/>
-      </svg>
+    <div class="hero-inner">
+      <p class="eyebrow">Hardware Engineer</p>
+      <h1>Shreya Sutar</h1>
+      <p class="hero-bio">Rising junior at California Academy of Mathematics and Science, hardware engineer, prosthetics researcher.</p>
+      <a href="#projects" class="btn-cta">View Projects</a>
     </div>
   </section>
 
@@ -62,73 +32,9 @@
   <section id="about">
     <div class="container">
       <h2>About</h2>
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            Hi! I'm a hardware engineer passionate about bridging the gap between
-            software and the physical world. I specialize in PCB design, embedded
-            firmware, and bringing hardware products from concept to production.
-          </p>
-          <p>
-            Currently studying / working at <strong>[Your University / Company]</strong>.
-            I love solving low-level problems and making things that actually exist in the real world.
-          </p>
-        </div>
-        <div class="about-meta">
-          <div class="meta-item">
-            <span class="meta-label">Location</span>
-            <span>Your City, Country</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Education</span>
-            <span>B.E. Electronics / ECE</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Open to</span>
-            <span>Internships & Full-time</span>
-          </div>
-          <a href="resume.pdf" class="btn-outline" target="_blank">Download Resume ↓</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="container">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <h3>Hardware Design</h3>
-          <ul>
-            <li>PCB Design (KiCad, Altium)</li>
-            <li>Schematic Capture</li>
-            <li>Signal Integrity</li>
-            <li>Power Electronics</li>
-            <li>FPGA / VHDL / Verilog</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3>Embedded Systems</h3>
-          <ul>
-            <li>C / C++ Firmware</li>
-            <li>STM32, ESP32, AVR</li>
-            <li>RTOS (FreeRTOS)</li>
-            <li>SPI, I2C, UART, CAN</li>
-            <li>ARM Cortex-M</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h3>Tools & Lab</h3>
-          <ul>
-            <li>Oscilloscope / Logic Analyzer</li>
-            <li>SPICE Simulation</li>
-            <li>3D Printing / Enclosures</li>
-            <li>Git & Version Control</li>
-            <li>Python for scripting</li>
-          </ul>
-        </div>
-      </div>
+      <p class="about-text">
+        I'm a high school engineer focused on building hardware at the intersection of biomedical engineering and embedded systems. My work centers on prosthetics and assistive technology — specifically building devices that restore function to people who have lost it.
+      </p>
     </div>
   </section>
 
@@ -138,77 +44,173 @@
       <h2>Projects</h2>
       <div class="projects-grid">
 
-        <article class="project-card">
-          <div class="project-tag">PCB Design</div>
-          <h3>Custom STM32 Dev Board</h3>
-          <p>
-            Designed a minimal STM32F4-based development board with USB, JTAG,
-            and breakout headers. 4-layer PCB manufactured via JLCPCB.
-          </p>
-          <div class="project-links">
-            <a href="#" class="link-arrow">GitHub →</a>
-            <a href="#" class="link-arrow">Schematic →</a>
+        <div class="project-card">
+          <div class="img-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
           </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-tag">Embedded</div>
-          <h3>Battery BMS Firmware</h3>
-          <p>
-            Firmware for a Li-ion battery management system with cell balancing,
-            SOC estimation, and CAN bus reporting on an STM32G4.
-          </p>
-          <div class="project-links">
-            <a href="#" class="link-arrow">GitHub →</a>
+          <div class="project-card-body">
+            <div class="project-tag">Biomedical · Embedded</div>
+            <h3>PandaWare</h3>
+            <p>EMG-controlled myoelectric prosthetic hand, built from scratch.</p>
+            <a href="#pandaware" class="btn-outline-sm">View Project →</a>
           </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-tag">FPGA</div>
-          <h3>UART Core in VHDL</h3>
-          <p>
-            Synthesizable UART transceiver written in VHDL, tested on a
-            Xilinx Basys 3 board with configurable baud rate and parity.
-          </p>
-          <div class="project-links">
-            <a href="#" class="link-arrow">GitHub →</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-tag">IoT</div>
-          <h3>ESP32 Environmental Monitor</h3>
-          <p>
-            Wireless sensor node measuring temperature, humidity, and air quality.
-            Publishes data via MQTT to a Grafana dashboard.
-          </p>
-          <div class="project-links">
-            <a href="#" class="link-arrow">GitHub →</a>
-            <a href="#" class="link-arrow">Demo →</a>
-          </div>
-        </article>
+        </div>
 
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container contact-inner">
-      <h2>Get in Touch</h2>
-      <p class="contact-sub">
-        Open to internships, collaborations, and interesting hardware problems.
-      </p>
-      <a href="mailto:your@email.com" class="btn-primary">your@email.com</a>
-      <div class="social-links">
-        <a href="https://github.com/yourhandle" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/yourhandle" target="_blank">LinkedIn</a>
+  <!-- PANDAWARE DETAIL -->
+  <section id="pandaware">
+    <div class="container">
+
+      <div class="detail-hero-img img-placeholder large">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>
+      </div>
+
+      <div class="detail-header">
+        <div>
+          <h2>PandaWare</h2>
+          <p class="detail-tagline">EMG-controlled myoelectric prosthetic hand, built from scratch.</p>
+        </div>
+        <a href="#" class="btn-primary">Read the Paper ↗</a>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="detail-block">
+        <h4>Tech Stack</h4>
+        <div class="chip-row">
+          <span class="chip">RP2040</span>
+          <span class="chip">MicroPython</span>
+          <span class="chip">MyoWare 2.0</span>
+          <span class="chip">PCA9685</span>
+          <span class="chip">INA219</span>
+          <span class="chip">MG996R Servos</span>
+          <span class="chip">Tendon-Driven Actuation</span>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="detail-block">
+        <h4>Overview</h4>
+        <ul class="detail-list">
+          <li>Full mechanical design and fabrication across multiple 3D-printed iterations, refining geometry for fit, range of motion, and durability.</li>
+          <li>Custom circuit design and assembly — integrating servo control, EMG acquisition, and power sensing on a single system.</li>
+          <li>Custom EMG signal pipeline with adaptive normalization, enabling reliable grip detection across varying muscle fatigue and electrode placement.</li>
+          <li>Closed-loop current sensing via INA219 for grip force limiting, preventing damage to objects and improving safety.</li>
+        </ul>
+      </div>
+
+      <!-- Awards -->
+      <div class="detail-block">
+        <h4>Awards</h4>
+        <div class="awards-row">
+          <div class="award">
+            <span class="award-icon">🏅</span>
+            <span>ISEF 2026 Nominee</span>
+          </div>
+          <div class="award">
+            <span class="award-icon">🥉</span>
+            <span>CSEF — 5th Place</span>
+          </div>
+          <div class="award">
+            <span class="award-icon">🥈</span>
+            <span>LACSEF — 2nd Place</span>
+          </div>
+          <div class="award">
+            <span class="award-icon">🏆</span>
+            <span>Invention Convention Winner</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div class="detail-block">
+        <h4>Gallery</h4>
+        <div class="gallery">
+          <div class="img-placeholder gallery-img">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+          <div class="img-placeholder gallery-img">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+          <div class="img-placeholder gallery-img">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <div class="skill-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3>Mechanical</h3>
+          <ul>
+            <li>CAD & mechanical design</li>
+            <li>3D printing & fabrication</li>
+            <li>Tendon-driven mechanism design</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3>Electrical</h3>
+          <ul>
+            <li>Circuit design & assembly</li>
+            <li>Soldering</li>
+            <li>Servo & actuator control</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <h3>Software</h3>
+          <ul>
+            <li>Embedded systems — RP2040, MicroPython</li>
+            <li>EMG signal processing</li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </section>
 
   <footer>
-    <p>Built by Your Name · 2026</p>
+    <p>Shreya Sutar · 2026</p>
   </footer>
 
   <script src="script.js"></script>
