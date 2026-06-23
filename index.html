@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreya Sutar — Hardware Engineer</title>
+  <meta name="description" content="Shreya Sutar — hardware engineer and prosthetics researcher. Building assistive devices at the intersection of biomedical engineering and embedded systems." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#top" class="nav__brand">Shreya&nbsp;Sutar</a>
+      <ul class="nav__links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="top">
+    <div class="hero__inner reveal">
+      <p class="eyebrow">Hardware Engineer · Prosthetics Researcher</p>
+      <h1 class="hero__name">Shreya Sutar</h1>
+      <p class="hero__bio">
+        Rising junior at the California Academy of Mathematics and Science.
+        I build hardware where biomedical engineering meets embedded systems.
+      </p>
+      <a href="#projects" class="btn btn--primary hero__cta">
+        View projects
+        <span class="btn__arrow" aria-hidden="true">↓</span>
+      </a>
+    </div>
+    <!-- Signature: a faint EMG-style signal trace -->
+    <svg class="hero__signal" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,40 L240,40 L260,40 L268,18 L276,62 L284,30 L292,50 L300,40 L520,40 L536,40 L544,8 L552,72 L560,24 L568,56 L576,40 L800,40 L818,40 L826,22 L834,58 L842,34 L850,46 L858,40 L1200,40" />
+    </svg>
+  </header>
+
+  <main>
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="section__head reveal">
+        <p class="eyebrow">About</p>
+      </div>
+      <div class="about__body reveal">
+        <p>
+          I'm a high school engineer focused on building hardware at the
+          intersection of biomedical engineering and embedded systems. My work
+          centers on prosthetics and assistive technology — specifically
+          building devices that restore function to people who have lost it.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="section__head reveal">
+        <p class="eyebrow">Projects</p>
+        <h2 class="section__title">Selected work</h2>
+      </div>
+
+      <article class="card reveal">
+        <div class="card__media">
+          <div class="placeholder placeholder--card">
+            <svg class="placeholder__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <circle cx="8.5" cy="10" r="1.6" />
+              <path d="M21 17l-5-5L7 19" />
+            </svg>
+            <span class="placeholder__label">Image</span>
+          </div>
+        </div>
+        <div class="card__body">
+          <p class="eyebrow eyebrow--accent">EMG · Myoelectric</p>
+          <h3 class="card__title">PandaWare</h3>
+          <p class="card__desc">
+            An EMG-controlled myoelectric prosthetic hand, built from scratch —
+            mechanics, circuitry, and signal processing.
+          </p>
+          <a href="#pandaware" class="btn btn--ghost">
+            View project
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <!-- PandaWare detail -->
+    <section class="section detail" id="pandaware">
+      <div class="detail__hero placeholder placeholder--wide reveal">
+        <svg class="placeholder__icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="14" rx="2" />
+          <circle cx="8.5" cy="10" r="1.6" />
+          <path d="M21 17l-5-5L7 19" />
+        </svg>
+        <span class="placeholder__label">Image</span>
+      </div>
+
+      <div class="detail__head reveal">
+        <p class="eyebrow eyebrow--accent">PandaWare</p>
+        <h2 class="section__title">EMG-controlled myoelectric prosthetic hand, built from scratch</h2>
+      </div>
+
+      <div class="detail__specs reveal">
+        <p class="specs__label">Tech stack</p>
+        <ul class="chips">
+          <li>RP2040</li>
+          <li>MicroPython</li>
+          <li>MyoWare 2.0</li>
+          <li>PCA9685</li>
+          <li>INA219</li>
+          <li>MG996R servos</li>
+          <li>Tendon-driven actuation</li>
+        </ul>
+      </div>
+
+      <div class="detail__body reveal">
+        <p>
+          PandaWare is a fully self-built myoelectric hand. I handled the entire
+          mechanical design and fabrication, working through multiple 3D-printed
+          iterations to refine the tendon-driven actuation and the fit of each
+          finger before settling on the final geometry.
+        </p>
+        <p>
+          On the electronics side, I designed and assembled the circuit from the
+          ground up and wrote a custom EMG signal pipeline with adaptive
+          normalization, so the hand stays responsive as muscle signals drift
+          during use. A closed-loop current-sensing layer reads motor draw in
+          real time to limit grip force — letting the hand hold delicate objects
+          without crushing them.
+        </p>
+      </div>
+
+      <div class="detail__awards reveal">
+        <p class="awards__label">Recognition</p>
+        <ul class="awards">
+          <li>
+            <span class="awards__place">ISEF 2026</span>
+            <span class="awards__detail">Nominee</span>
+          </li>
+          <li>
+            <span class="awards__place">CSEF</span>
+            <span class="awards__detail">5th Place</span>
+          </li>
+          <li>
+            <span class="awards__place">LACSEF</span>
+            <span class="awards__detail">2nd Place</span>
+          </li>
+          <li>
+            <span class="awards__place">Invention Convention</span>
+            <span class="awards__detail">Winner</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="detail__action reveal">
+        <a href="#" class="btn btn--primary">Read the paper</a>
+      </div>
+
+      <div class="gallery reveal">
+        <div class="placeholder">
+          <svg class="placeholder__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <circle cx="8.5" cy="10" r="1.6" />
+            <path d="M21 17l-5-5L7 19" />
+          </svg>
+          <span class="placeholder__label">Image</span>
+        </div>
+        <div class="placeholder">
+          <svg class="placeholder__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <circle cx="8.5" cy="10" r="1.6" />
+            <path d="M21 17l-5-5L7 19" />
+          </svg>
+          <span class="placeholder__label">Image</span>
+        </div>
+        <div class="placeholder">
+          <svg class="placeholder__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <circle cx="8.5" cy="10" r="1.6" />
+            <path d="M21 17l-5-5L7 19" />
+          </svg>
+          <span class="placeholder__label">Image</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="section__head reveal">
+        <p class="eyebrow">Skills</p>
+        <h2 class="section__title">What I work with</h2>
+      </div>
+      <div class="skills">
+        <div class="skills__group reveal">
+          <h3 class="skills__cat">Mechanical</h3>
+          <ul class="chips chips--soft">
+            <li>CAD / mechanical design</li>
+            <li>3D printing &amp; fabrication</li>
+            <li>Tendon-driven mechanism design</li>
+          </ul>
+        </div>
+        <div class="skills__group reveal">
+          <h3 class="skills__cat">Electrical</h3>
+          <ul class="chips chips--soft">
+            <li>Circuit design &amp; assembly</li>
+            <li>Soldering</li>
+            <li>Servo &amp; actuator control</li>
+          </ul>
+        </div>
+        <div class="skills__group reveal">
+          <h3 class="skills__cat">Software</h3>
+          <ul class="chips chips--soft">
+            <li>Embedded systems — RP2040, MicroPython</li>
+            <li>EMG signal processing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__name">Shreya Sutar</p>
+    <p class="footer__note">Hardware engineer · Prosthetics researcher</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
