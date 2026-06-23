@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Hardware Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-logo">YN</span>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Hardware Engineer</p>
+      <h1>Your Name</h1>
+      <p class="hero-sub">
+        I design circuits, embedded systems, and hardware solutions —
+        from napkin sketch to working prototype.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-secondary">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-graphic" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- PCB trace decoration -->
+        <rect x="20" y="20" width="160" height="160" rx="4" stroke="#e2e8f0" stroke-width="1.5"/>
+        <circle cx="100" cy="100" r="30" stroke="#64748b" stroke-width="1.5"/>
+        <circle cx="100" cy="100" r="8" fill="#64748b"/>
+        <!-- Traces -->
+        <polyline points="100,70 100,40 140,40" stroke="#64748b" stroke-width="1.5" fill="none"/>
+        <polyline points="130,100 160,100 160,60" stroke="#64748b" stroke-width="1.5" fill="none"/>
+        <polyline points="100,130 100,160 60,160" stroke="#64748b" stroke-width="1.5" fill="none"/>
+        <polyline points="70,100 40,100 40,140" stroke="#64748b" stroke-width="1.5" fill="none"/>
+        <!-- Via pads -->
+        <circle cx="140" cy="40" r="5" fill="#94a3b8"/>
+        <circle cx="160" cy="60" r="5" fill="#94a3b8"/>
+        <circle cx="60" cy="160" r="5" fill="#94a3b8"/>
+        <circle cx="40" cy="140" r="5" fill="#94a3b8"/>
+        <!-- Components -->
+        <rect x="128" y="34" width="24" height="12" rx="2" fill="#cbd5e1"/>
+        <rect x="154" y="54" width="12" height="24" rx="2" fill="#cbd5e1"/>
+        <rect x="48" y="154" width="24" height="12" rx="2" fill="#cbd5e1"/>
+        <rect x="34" y="128" width="12" height="24" rx="2" fill="#cbd5e1"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Hi! I'm a hardware engineer passionate about bridging the gap between
+            software and the physical world. I specialize in PCB design, embedded
+            firmware, and bringing hardware products from concept to production.
+          </p>
+          <p>
+            Currently studying / working at <strong>[Your University / Company]</strong>.
+            I love solving low-level problems and making things that actually exist in the real world.
+          </p>
+        </div>
+        <div class="about-meta">
+          <div class="meta-item">
+            <span class="meta-label">Location</span>
+            <span>Your City, Country</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Education</span>
+            <span>B.E. Electronics / ECE</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Open to</span>
+            <span>Internships & Full-time</span>
+          </div>
+          <a href="resume.pdf" class="btn-outline" target="_blank">Download Resume ↓</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Hardware Design</h3>
+          <ul>
+            <li>PCB Design (KiCad, Altium)</li>
+            <li>Schematic Capture</li>
+            <li>Signal Integrity</li>
+            <li>Power Electronics</li>
+            <li>FPGA / VHDL / Verilog</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Embedded Systems</h3>
+          <ul>
+            <li>C / C++ Firmware</li>
+            <li>STM32, ESP32, AVR</li>
+            <li>RTOS (FreeRTOS)</li>
+            <li>SPI, I2C, UART, CAN</li>
+            <li>ARM Cortex-M</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Tools & Lab</h3>
+          <ul>
+            <li>Oscilloscope / Logic Analyzer</li>
+            <li>SPICE Simulation</li>
+            <li>3D Printing / Enclosures</li>
+            <li>Git & Version Control</li>
+            <li>Python for scripting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-tag">PCB Design</div>
+          <h3>Custom STM32 Dev Board</h3>
+          <p>
+            Designed a minimal STM32F4-based development board with USB, JTAG,
+            and breakout headers. 4-layer PCB manufactured via JLCPCB.
+          </p>
+          <div class="project-links">
+            <a href="#" class="link-arrow">GitHub →</a>
+            <a href="#" class="link-arrow">Schematic →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-tag">Embedded</div>
+          <h3>Battery BMS Firmware</h3>
+          <p>
+            Firmware for a Li-ion battery management system with cell balancing,
+            SOC estimation, and CAN bus reporting on an STM32G4.
+          </p>
+          <div class="project-links">
+            <a href="#" class="link-arrow">GitHub →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-tag">FPGA</div>
+          <h3>UART Core in VHDL</h3>
+          <p>
+            Synthesizable UART transceiver written in VHDL, tested on a
+            Xilinx Basys 3 board with configurable baud rate and parity.
+          </p>
+          <div class="project-links">
+            <a href="#" class="link-arrow">GitHub →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-tag">IoT</div>
+          <h3>ESP32 Environmental Monitor</h3>
+          <p>
+            Wireless sensor node measuring temperature, humidity, and air quality.
+            Publishes data via MQTT to a Grafana dashboard.
+          </p>
+          <div class="project-links">
+            <a href="#" class="link-arrow">GitHub →</a>
+            <a href="#" class="link-arrow">Demo →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container contact-inner">
+      <h2>Get in Touch</h2>
+      <p class="contact-sub">
+        Open to internships, collaborations, and interesting hardware problems.
+      </p>
+      <a href="mailto:your@email.com" class="btn-primary">your@email.com</a>
+      <div class="social-links">
+        <a href="https://github.com/yourhandle" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yourhandle" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Built by Your Name · 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
