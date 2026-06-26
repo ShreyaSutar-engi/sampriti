@@ -1,20 +1,20 @@
 'use strict';
 
 /*
-  Animation layer — all GSAP skills applied:
+  Animation layer — GSAP skills applied:
   ─────────────────────────────────────────────────────
   gsap-core:          gsap.from(), gsap.fromTo(), stagger, ease, defaults
   gsap-timeline:      gsap.timeline() with position parameter for hero entrance
   gsap-scrolltrigger: ScrollTrigger.create(), scroll-linked reveals, once: true
   gsap-plugins:       gsap.registerPlugin(ScrollTrigger)
-  gsap-performance:   transform + opacity only; will-change on .char; no layout reads
+  gsap-performance:   transform + opacity only; will-change on .char
   gsap-utils:         gsap.utils.toArray() for batching scroll reveals
   gsap-core:          gsap.matchMedia() for reduced-motion gate
 */
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* ── Reduced-motion gate (gsap-core: gsap.matchMedia) ─ */
+/* ── Reduced-motion gate ─────────────────────────────── */
 const mm = gsap.matchMedia();
 
 mm.add('(prefers-reduced-motion: no-preference)', () => {
@@ -23,23 +23,20 @@ mm.add('(prefers-reduced-motion: no-preference)', () => {
 });
 
 mm.add('(prefers-reduced-motion: reduce)', () => {
-  /* Show everything immediately — no animation overhead */
   gsap.set(
-    '.hero-eyebrow, .hero-sub, .hero-cta, [data-reveal]',
+    '.hero-eyebrow, .hero-sub, .hero-actions, [data-reveal]',
     { opacity: 1, y: 0, clearProps: 'transform' }
   );
 });
 
 /* ═══════════════════════════════════════════════════════
    HERO ENTRANCE — gsap.timeline()
-   Position parameter sequences elements with overlap.
-   Chars clip-reveal from below (overflow:hidden on .name-line).
    ═══════════════════════════════════════════════════════ */
 function initHero() {
   /* Set initial hidden state at runtime so elements show if GSAP CDN fails */
-  gsap.set('.hero-eyebrow, .hero-sub, .hero-cta', { opacity: 0 });
+  gsap.set('.hero-eyebrow, .hero-sub, .hero-actions', { opacity: 0 });
 
-  /* Split name into individual char spans (SplitText-style, no plugin needed) */
+  /* Split name into individual char spans */
   document.querySelectorAll('.name-line').forEach(line => {
     line.innerHTML = [...line.textContent]
       .map(ch => `<span class="char">${ch === ' ' ? '&nbsp;' : ch}</span>`)
@@ -48,48 +45,43 @@ function initHero() {
 
   const tl = gsap.timeline({
     defaults: { ease: 'power3.out' },
-    delay: 0.15,
+    delay: 0.1,
   });
 
-  /* Eyebrow fades in */
   tl.fromTo('.hero-eyebrow',
     { opacity: 0, y: 10 },
-    { opacity: 1, y: 0, duration: 0.6 }
+    { opacity: 1, y: 0, duration: 0.55 }
   )
-  /* Name chars rise from below the line (clipped by overflow:hidden) */
   .fromTo('.hero-name .char',
     { opacity: 0, y: '100%' },
-    { opacity: 1, y: '0%', stagger: 0.028, duration: 0.7 },
-    '-=0.3'
+    { opacity: 1, y: '0%', stagger: 0.026, duration: 0.7 },
+    '-=0.25'
   )
-  /* Bio and CTA fade in after name completes */
   .fromTo('.hero-sub',
     { opacity: 0, y: 12 },
-    { opacity: 1, y: 0, duration: 0.55 },
+    { opacity: 1, y: 0, duration: 0.5 },
     '-=0.2'
   )
-  .fromTo('.hero-cta',
+  .fromTo('.hero-actions',
     { opacity: 0, y: 10 },
     { opacity: 1, y: 0, duration: 0.45 },
-    '-=0.3'
+    '-=0.25'
   );
 }
 
 /* ═══════════════════════════════════════════════════════
    SCROLL REVEALS — ScrollTrigger
-   gsap.utils.toArray() batches all [data-reveal] elements.
-   Siblings in groups of 3 get a stagger delay.
    ═══════════════════════════════════════════════════════ */
 function initScrollReveals() {
   gsap.utils.toArray('[data-reveal]').forEach((el, i) => {
     gsap.fromTo(el,
-      { opacity: 0, y: 22 },
+      { opacity: 0, y: 24 },
       {
         opacity: 1,
         y: 0,
         duration: 0.65,
         ease: 'power2.out',
-        delay: (i % 3) * 0.09,
+        delay: (i % 3) * 0.08,
         scrollTrigger: {
           trigger: el,
           start: 'top 88%',
@@ -106,15 +98,13 @@ function initScrollReveals() {
 (function initNav() {
   const nav = document.getElementById('nav');
 
-  /* Shadow on scroll */
   ScrollTrigger.create({
     start: 'top -1',
-    onEnter: ()      => nav.classList.add('scrolled'),
-    onLeaveBack: ()  => nav.classList.remove('scrolled'),
+    onEnter:     () => nav.classList.add('scrolled'),
+    onLeaveBack: () => nav.classList.remove('scrolled'),
   });
 
-  /* Active link per section */
-  const links = document.querySelectorAll('.nav-links a');
+  const links = document.querySelectorAll('.nav-links a:not(.nav-cta)');
 
   function setActive(id) {
     links.forEach(a =>

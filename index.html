@@ -18,44 +18,81 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#stack">Stack</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- ── Hero ─────────────────────────────────────── -->
   <section id="hero">
-    <!-- PCB circuit trace pattern — specific to hardware engineering -->
     <div class="pcb-grid" aria-hidden="true"></div>
     <div class="pcb-fade" aria-hidden="true"></div>
 
-    <div class="site-wrap">
+    <div class="site-wrap hero-inner">
       <p class="hero-eyebrow">Hardware Engineer · Prosthetics Researcher</p>
       <h1 class="hero-name">
         <span class="name-line">Shreya</span>
         <span class="name-line">Sutar</span>
       </h1>
       <p class="hero-sub">Rising junior at California Academy of Mathematics and Science, hardware engineer, prosthetics researcher.</p>
-      <a href="#projects" class="btn-primary hero-cta">View Projects</a>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary hero-cta">View Projects</a>
+        <a href="#contact" class="btn-ghost hero-cta">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-n">4</span><span class="hstat-l">Competition Awards</span></div>
+      <div class="hstat-div" aria-hidden="true"></div>
+      <div class="hstat"><span class="hstat-n">ISEF</span><span class="hstat-l">2026 Nominee</span></div>
+      <div class="hstat-div" aria-hidden="true"></div>
+      <div class="hstat"><span class="hstat-n">1</span><span class="hstat-l">Research Paper</span></div>
     </div>
   </section>
 
   <!-- ── About ─────────────────────────────────────── -->
   <section id="about">
     <div class="site-wrap">
-      <h2 class="sec-label" data-reveal>About</h2>
-      <p class="about-text" data-reveal>
-        Shreya Sutar is a high school engineer focused on building hardware at the intersection of biomedical engineering and embedded systems. My work centers on prosthetics and assistive technology—specifically building devices that restore function to people who have lost it.
-      </p>
+      <div class="about-layout">
+        <div class="about-left">
+          <h2 class="sec-label" data-reveal>[ About ]</h2>
+          <p class="about-text" data-reveal>
+            Shreya Sutar is a high school engineer focused on building hardware at the intersection of biomedical engineering and embedded systems. My work centers on prosthetics and assistive technology—specifically building devices that restore function to people who have lost it.
+          </p>
+        </div>
+        <div class="about-right" data-reveal>
+          <div class="about-card">
+            <div class="about-card-row">
+              <span class="about-card-label">School</span>
+              <span class="about-card-val">California Academy of Mathematics and Science</span>
+            </div>
+            <div class="about-card-row">
+              <span class="about-card-label">Focus</span>
+              <span class="about-card-val">Biomedical · Embedded Systems</span>
+            </div>
+            <div class="about-card-row">
+              <span class="about-card-label">Year</span>
+              <span class="about-card-val">Rising Junior · Class of 2028</span>
+            </div>
+            <div class="about-card-row">
+              <span class="about-card-label">Location</span>
+              <span class="about-card-val">Los Angeles, CA</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ── Projects ──────────────────────────────────── -->
   <section id="projects">
     <div class="site-wrap">
-      <h2 class="sec-label" data-reveal>Projects</h2>
+      <h2 class="sec-label" data-reveal>[ Projects ]</h2>
       <div class="project-grid">
         <article class="project-card" data-reveal>
+          <div class="project-num">[ 01 ]</div>
           <div class="placeholder card-thumb">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
@@ -92,7 +129,7 @@
         <div class="detail-actions">
           <a href="Shreya_Sutar_Official_Paper.pdf" class="btn-primary" target="_blank" rel="noopener">Read the Paper ↗</a>
           <a href="Shreya_Sutar_Official_Poster.pdf" class="btn-secondary" target="_blank" rel="noopener">Read the Poster ↗</a>
-          <a href="https://drive.google.com/file/d/1aEplw--r2NXagsUH0YUOPjhpAVwstKOR/view?usp=sharing" class="btn-secondary" target="_blank" rel="noopener">Read the Documentation Log ↗</a>
+          <a href="https://drive.google.com/file/d/1aEplw--r2NXagsUH0YUOPjhpAVwstKOR/view?usp=sharing" class="btn-secondary" target="_blank" rel="noopener">Documentation Log ↗</a>
         </div>
       </div>
 
@@ -133,19 +170,19 @@
         <h3 class="block-label">Gallery</h3>
         <div class="gallery">
           <div class="placeholder gal-slot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Gallery image — swap with real photo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Gallery image">
               <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
               <circle cx="12" cy="13" r="4"/>
             </svg>
           </div>
           <div class="placeholder gal-slot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Gallery image — swap with real photo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Gallery image">
               <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
               <circle cx="12" cy="13" r="4"/>
             </svg>
           </div>
           <div class="placeholder gal-slot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Gallery image — swap with real photo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Gallery image">
               <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
               <circle cx="12" cy="13" r="4"/>
             </svg>
@@ -156,10 +193,142 @@
     </div>
   </section>
 
+  <!-- ── Tech Stack ─────────────────────────────────── -->
+  <section id="stack">
+    <div class="site-wrap">
+      <h2 class="sec-label" data-reveal>[ Tech Stack ]</h2>
+      <p class="stack-intro" data-reveal>Every component chosen for a reason. Here's what powers PandaWare.</p>
+
+      <div class="stack-grid">
+
+        <div class="stack-item" data-reveal>
+          <div class="stack-item-top">
+            <span class="stack-num">[ 01 ]</span>
+            <span class="stack-cat">Microcontroller</span>
+          </div>
+          <div class="stack-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="7" y="7" width="10" height="10" rx="1"/>
+              <path d="M7 9H5M7 12H4M7 15H5M17 9h2M17 12h3M17 15h2M9 7V5M12 7V4M15 7V5M9 17v2M12 17v3M15 17v2"/>
+            </svg>
+          </div>
+          <h3 class="stack-name">RP2040</h3>
+          <p class="stack-desc">Dual-core ARM Cortex-M0+ at 133 MHz. Main compute unit controlling servo PWM output, I²C sensor bus, and real-time EMG acquisition loop.</p>
+        </div>
+
+        <div class="stack-item" data-reveal>
+          <div class="stack-item-top">
+            <span class="stack-num">[ 02 ]</span>
+            <span class="stack-cat">Firmware</span>
+          </div>
+          <div class="stack-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <h3 class="stack-name">MicroPython</h3>
+          <p class="stack-desc">Python-based firmware running on the RP2040. Handles the full signal processing pipeline, servo control loop, and I²C bus coordination.</p>
+        </div>
+
+        <div class="stack-item" data-reveal>
+          <div class="stack-item-top">
+            <span class="stack-num">[ 03 ]</span>
+            <span class="stack-cat">EMG Sensor</span>
+          </div>
+          <div class="stack-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="2 12 5 12 7 4 9 20 11 10 13 14 15 12 22 12"/>
+            </svg>
+          </div>
+          <h3 class="stack-name">MyoWare 2.0</h3>
+          <p class="stack-desc">Surface electromyography sensor capturing forearm muscle activation. Outputs an analog voltage representing muscle contraction intensity for grip detection.</p>
+        </div>
+
+        <div class="stack-item" data-reveal>
+          <div class="stack-item-top">
+            <span class="stack-num">[ 04 ]</span>
+            <span class="stack-cat">PWM Driver</span>
+          </div>
+          <div class="stack-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
+              <path d="M6 8h2v4H6zM11 7h2v5h-2zM16 9h2v3h-2z"/>
+            </svg>
+          </div>
+          <h3 class="stack-name">PCA9685</h3>
+          <p class="stack-desc">16-channel PWM/servo driver over I²C. Generates precise servo signals for all 5 finger motors, offloading timing-critical work from the main CPU.</p>
+        </div>
+
+        <div class="stack-item" data-reveal>
+          <div class="stack-item-top">
+            <span class="stack-num">[ 05 ]</span>
+            <span class="stack-cat">Current Sensor</span>
+          </div>
+          <div class="stack-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 20V10M12 20V4M6 20v-6"/>
+            </svg>
+          </div>
+          <h3 class="stack-name">INA219</h3>
+          <p class="stack-desc">High-side DC current and power sensor over I²C. Monitors servo current draw in real time for closed-loop grip force limiting and object safety.</p>
+        </div>
+
+        <div class="stack-item" data-reveal>
+          <div class="stack-item-top">
+            <span class="stack-num">[ 06 ]</span>
+            <span class="stack-cat">Actuators</span>
+          </div>
+          <div class="stack-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+            </svg>
+          </div>
+          <h3 class="stack-name">MG996R Servos</h3>
+          <p class="stack-desc">High-torque metal gear servos, one per finger. Drive tendon cables through 3D-printed finger channels for independent, human-like digit actuation.</p>
+        </div>
+
+        <div class="stack-item" data-reveal>
+          <div class="stack-item-top">
+            <span class="stack-num">[ 07 ]</span>
+            <span class="stack-cat">Fabrication</span>
+          </div>
+          <div class="stack-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+          <h3 class="stack-name">FDM 3D Printing</h3>
+          <p class="stack-desc">Fused deposition modeling in PLA+. Multiple design iterations per finger joint to refine range of motion, tendon routing, and structural durability.</p>
+        </div>
+
+        <div class="stack-item" data-reveal>
+          <div class="stack-item-top">
+            <span class="stack-num">[ 08 ]</span>
+            <span class="stack-cat">Mechanism</span>
+          </div>
+          <div class="stack-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3 class="stack-name">Tendon Actuation</h3>
+          <p class="stack-desc">Stainless steel cables routed through finger channels, anchored at fingertip and servo horn. Lightweight, human-analogous flexion with minimal moving parts.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ── Skills ─────────────────────────────────────── -->
   <section id="skills">
     <div class="site-wrap">
-      <h2 class="sec-label" data-reveal>Skills</h2>
+      <h2 class="sec-label" data-reveal>[ Skills ]</h2>
       <div class="skills-grid">
 
         <div class="skill-card" data-reveal>
@@ -172,7 +341,7 @@
           </div>
           <h3>Mechanical</h3>
           <ul>
-            <li>CAD/mechanical design</li>
+            <li>CAD / mechanical design</li>
             <li>3D printing and fabrication</li>
             <li>Tendon-driven mechanism design</li>
           </ul>
@@ -201,7 +370,7 @@
           </div>
           <h3>Software</h3>
           <ul>
-            <li>Embedded systems—RP2040, MicroPython</li>
+            <li>Embedded systems — RP2040, MicroPython</li>
             <li>EMG signal processing</li>
           </ul>
         </div>
@@ -210,9 +379,56 @@
     </div>
   </section>
 
-  <footer>
-    <div class="site-wrap">
-      <p>Shreya Sutar · 2026</p>
+  <!-- ── Contact CTA ───────────────────────────────── -->
+  <section id="contact">
+    <div class="contact-bg" aria-hidden="true"></div>
+    <div class="site-wrap contact-inner">
+      <p class="contact-eyebrow" data-reveal>[ Let's Connect ]</p>
+      <h2 class="contact-heading" data-reveal>Building something<br>that matters.</h2>
+      <p class="contact-sub" data-reveal>Whether you're a researcher, engineer, or just curious — I'd love to talk about hardware, prosthetics, and building things that change lives.</p>
+      <a href="mailto:shreyashreya65417@gmail.com" class="btn-primary contact-btn" data-reveal>Send a Message ↗</a>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────── -->
+  <footer id="footer">
+    <div class="site-wrap footer-inner">
+      <div class="footer-brand-col">
+        <span class="footer-brand">Shreya Sutar</span>
+        <p class="footer-tagline">Hardware Engineer<br>Prosthetics Researcher</p>
+        <p class="footer-school">California Academy of Mathematics and Science</p>
+      </div>
+
+      <div class="footer-nav-col">
+        <span class="footer-col-label">Navigate</span>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#stack">Tech Stack</a></li>
+          <li><a href="#skills">Skills</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-col">
+        <span class="footer-col-label">Project</span>
+        <ul>
+          <li><a href="Shreya_Sutar_Official_Paper.pdf" target="_blank" rel="noopener">Research Paper ↗</a></li>
+          <li><a href="Shreya_Sutar_Official_Poster.pdf" target="_blank" rel="noopener">Poster ↗</a></li>
+          <li><a href="https://drive.google.com/file/d/1aEplw--r2NXagsUH0YUOPjhpAVwstKOR/view?usp=sharing" target="_blank" rel="noopener">Documentation Log ↗</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-col">
+        <span class="footer-col-label">Contact</span>
+        <ul>
+          <li><a href="mailto:shreyashreya65417@gmail.com">Email ↗</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-wrap footer-bottom">
+      <p>© 2026 Shreya Sutar</p>
+      <p class="footer-award">ISEF 2026 Nominee</p>
     </div>
   </footer>
 
