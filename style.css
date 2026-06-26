@@ -67,9 +67,9 @@ svg { display: block; }
 
 /* ── Max-width wrapper ─────────────────────────────── */
 .site-wrap {
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 clamp(2rem, 6vw, 6rem);
+  padding: 0 clamp(1.25rem, 3.5vw, 3.5rem);
 }
 
 /* ── Sections ──────────────────────────────────────── */
@@ -117,9 +117,9 @@ section { padding: var(--s12) 0; }
 
 .nav-wrap {
   height: 100%;
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 clamp(2rem, 6vw, 6rem);
+  padding: 0 clamp(1.25rem, 3.5vw, 3.5rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -285,7 +285,7 @@ section { padding: var(--s12) 0; }
 
 .hero-name {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(4.5rem, 12vw, 10rem);
+  font-size: clamp(4.5rem, 13vw, 12rem);
   font-weight: 700;
   letter-spacing: -0.05em;
   line-height: 0.87;
@@ -326,8 +326,8 @@ section { padding: var(--s12) 0; }
   border-top: 1px solid var(--border);
   display: flex;
   align-items: center;
-  padding: var(--s4) clamp(2rem, 6vw, 6rem);
-  max-width: 1440px;
+  padding: var(--s4) clamp(1.25rem, 3.5vw, 3.5rem);
+  max-width: 1600px;
   margin: 0 auto;
   width: 100%;
   gap: 0;
