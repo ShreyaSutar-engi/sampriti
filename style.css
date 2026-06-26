@@ -559,8 +559,8 @@ section { padding: var(--s12) 0; }
   margin-top: var(--s1);
 }
 .card-body p {
-  font-size: 0.875rem;
-  color: var(--muted);
+  font-size: 1rem;
+  color: var(--muted-hi);
   line-height: 1.65;
 }
 
@@ -667,7 +667,7 @@ section { padding: var(--s12) 0; }
 /* ── Overview grid (Emma Rose numbered panels) ─────── */
 .overview-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--s4);
 }
 
@@ -902,14 +902,14 @@ section { padding: var(--s12) 0; }
 
 .skill-card h3 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text);
   margin-bottom: var(--s2);
   letter-spacing: -0.01em;
 }
 .skill-card li {
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--muted-hi);
   line-height: 1.65;
   padding-left: var(--s3);
@@ -975,6 +975,11 @@ section { padding: var(--s12) 0; }
   margin-bottom: var(--s8);
 }
 
+.contact-btns {
+  display: flex;
+  gap: var(--s2);
+  flex-wrap: wrap;
+}
 .contact-btn {
   font-size: 0.95rem;
   padding: 0.85rem 2rem;
@@ -1075,6 +1080,7 @@ section { padding: var(--s12) 0; }
 }
 
 @media (max-width: 780px) {
+  .overview-grid { grid-template-columns: 1fr; }
   .overview-card { flex-direction: column; }
   .overview-card-img { width: 100%; min-height: 160px; }
   .about-layout { grid-template-columns: 1fr; gap: var(--s6); }
