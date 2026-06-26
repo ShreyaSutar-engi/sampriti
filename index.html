@@ -6,93 +6,98 @@
   <title>Shreya Sutar — Hardware Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav id="navbar">
-    <span class="nav-logo">SS</span>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-    </ul>
+  <!-- ── Nav ──────────────────────────────────────── -->
+  <nav id="nav">
+    <div class="nav-wrap">
+      <a href="#hero" class="nav-logo">SS</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- ── Hero ─────────────────────────────────────── -->
   <section id="hero">
-    <div class="container">
-      <div class="hero-inner">
-        <p class="hero-eyebrow">Hardware Engineer &amp; Prosthetics Researcher</p>
-        <h1>Shreya<br>Sutar</h1>
-        <p class="hero-bio">Rising junior at California Academy of Mathematics and Science, hardware engineer, prosthetics researcher.</p>
-        <a href="#projects" class="btn-cta">View Projects</a>
-      </div>
+    <!-- PCB circuit trace pattern — specific to hardware engineering -->
+    <div class="pcb-grid" aria-hidden="true"></div>
+    <div class="pcb-fade" aria-hidden="true"></div>
+
+    <div class="site-wrap">
+      <p class="hero-eyebrow">Hardware Engineer · Prosthetics Researcher</p>
+      <h1 class="hero-name">
+        <span class="name-line">Shreya</span>
+        <span class="name-line">Sutar</span>
+      </h1>
+      <p class="hero-sub">Rising junior at California Academy of Mathematics and Science, hardware engineer, prosthetics researcher.</p>
+      <a href="#projects" class="btn-primary hero-cta">View Projects</a>
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ── About ─────────────────────────────────────── -->
   <section id="about">
-    <div class="container">
-      <h2>About</h2>
-      <p class="about-text">
+    <div class="site-wrap">
+      <h2 class="sec-label" data-reveal>About</h2>
+      <p class="about-text" data-reveal>
         Shreya Sutar is a high school engineer focused on building hardware at the intersection of biomedical engineering and embedded systems. My work centers on prosthetics and assistive technology—specifically building devices that restore function to people who have lost it.
       </p>
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- ── Projects ──────────────────────────────────── -->
   <section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-
-        <div class="project-card">
-          <div class="img-placeholder card-img">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+    <div class="site-wrap">
+      <h2 class="sec-label" data-reveal>Projects</h2>
+      <div class="project-grid">
+        <article class="project-card" data-reveal>
+          <div class="placeholder card-thumb">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
               <circle cx="12" cy="13" r="4"/>
             </svg>
           </div>
-          <div class="project-card-body">
-            <span class="project-tag">Biomedical · Embedded</span>
+          <div class="card-body">
+            <span class="badge">Biomedical · Embedded Systems</span>
             <h3>PandaWare</h3>
             <p>EMG-controlled myoelectric prosthetic hand, built from scratch.</p>
-            <a href="#pandaware" class="btn-outline-sm">View Project →</a>
+            <a href="#pandaware" class="arrow-link">View Project <span aria-hidden="true">→</span></a>
           </div>
-        </div>
-
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- PANDAWARE DETAIL -->
+  <!-- ── PandaWare Detail ───────────────────────────── -->
   <section id="pandaware">
-    <div class="container">
+    <div class="site-wrap">
 
-      <div class="detail-hero-img img-placeholder large">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+      <div class="placeholder detail-img" data-reveal>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-label="PandaWare project image — swap with real photo">
           <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
           <circle cx="12" cy="13" r="4"/>
         </svg>
       </div>
 
-      <div class="detail-header">
-        <div>
-          <h2 class="no-rule">PandaWare</h2>
-          <p class="detail-tagline">EMG-controlled myoelectric prosthetic hand, built from scratch.</p>
+      <div class="detail-hd" data-reveal>
+        <div class="detail-title-block">
+          <h2 class="detail-title">PandaWare</h2>
+          <p class="detail-sub">EMG-controlled myoelectric prosthetic hand, built from scratch.</p>
         </div>
-        <div class="detail-btns">
-          <a href="Shreya_Sutar_Official_Paper.pdf" class="btn-cta" target="_blank">Read the Paper ↗</a>
-          <a href="Shreya_Sutar_Official_Poster.pdf" class="btn-ghost" target="_blank">Read the Poster ↗</a>
-          <a href="https://drive.google.com/file/d/1aEplw--r2NXagsUH0YUOPjhpAVwstKOR/view?usp=sharing" class="btn-ghost" target="_blank">Read the Documentation Log ↗</a>
+        <div class="detail-actions">
+          <a href="Shreya_Sutar_Official_Paper.pdf" class="btn-primary" target="_blank" rel="noopener">Read the Paper ↗</a>
+          <a href="Shreya_Sutar_Official_Poster.pdf" class="btn-secondary" target="_blank" rel="noopener">Read the Poster ↗</a>
+          <a href="https://drive.google.com/file/d/1aEplw--r2NXagsUH0YUOPjhpAVwstKOR/view?usp=sharing" class="btn-secondary" target="_blank" rel="noopener">Read the Documentation Log ↗</a>
         </div>
       </div>
 
-      <div class="detail-block">
-        <h4>Tech Stack</h4>
+      <div class="detail-block" data-reveal>
+        <h3 class="block-label">Tech Stack</h3>
         <div class="chip-row">
           <span class="chip">RP2040</span>
           <span class="chip">MicroPython</span>
@@ -104,8 +109,8 @@
         </div>
       </div>
 
-      <div class="detail-block">
-        <h4>Overview</h4>
+      <div class="detail-block" data-reveal>
+        <h3 class="block-label">Overview</h3>
         <ul class="detail-list">
           <li>Full mechanical design and fabrication across multiple 3D-printed iterations, refining geometry for fit, range of motion, and durability.</li>
           <li>Custom circuit design and assembly—integrating servo control, EMG acquisition, and power sensing on a single system.</li>
@@ -114,33 +119,33 @@
         </ul>
       </div>
 
-      <div class="detail-block">
-        <h4>Awards</h4>
+      <div class="detail-block" data-reveal>
+        <h3 class="block-label">Awards</h3>
         <div class="awards-row">
-          <div class="award">ISEF 2026 Nominee</div>
+          <div class="award highlight">ISEF 2026 Nominee</div>
           <div class="award">CSEF 5th Place</div>
           <div class="award">LACSEF 2nd Place</div>
           <div class="award">Invention Convention Winner</div>
         </div>
       </div>
 
-      <div class="detail-block">
-        <h4>Gallery</h4>
+      <div class="detail-block" data-reveal>
+        <h3 class="block-label">Gallery</h3>
         <div class="gallery">
-          <div class="img-placeholder gallery-img">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <div class="placeholder gal-slot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Gallery image — swap with real photo">
               <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
               <circle cx="12" cy="13" r="4"/>
             </svg>
           </div>
-          <div class="img-placeholder gallery-img">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <div class="placeholder gal-slot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Gallery image — swap with real photo">
               <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
               <circle cx="12" cy="13" r="4"/>
             </svg>
           </div>
-          <div class="img-placeholder gallery-img">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <div class="placeholder gal-slot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Gallery image — swap with real photo">
               <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
               <circle cx="12" cy="13" r="4"/>
             </svg>
@@ -151,18 +156,18 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- ── Skills ─────────────────────────────────────── -->
   <section id="skills">
-    <div class="container">
-      <h2>Skills</h2>
+    <div class="site-wrap">
+      <h2 class="sec-label" data-reveal>Skills</h2>
       <div class="skills-grid">
 
-        <div class="skill-group">
-          <div class="skill-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-              <path d="M2 17l10 5 10-5"/>
-              <path d="M2 12l10 5 10-5"/>
+        <div class="skill-card" data-reveal>
+          <div class="skill-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
             </svg>
           </div>
           <h3>Mechanical</h3>
@@ -173,9 +178,9 @@
           </ul>
         </div>
 
-        <div class="skill-group">
-          <div class="skill-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <div class="skill-card" data-reveal>
+          <div class="skill-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
             </svg>
           </div>
@@ -187,9 +192,9 @@
           </ul>
         </div>
 
-        <div class="skill-group">
-          <div class="skill-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <div class="skill-card" data-reveal>
+          <div class="skill-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="16 18 22 12 16 6"/>
               <polyline points="8 6 2 12 8 18"/>
             </svg>
@@ -206,11 +211,14 @@
   </section>
 
   <footer>
-    <div class="container">
+    <div class="site-wrap">
       <p>Shreya Sutar · 2026</p>
     </div>
   </footer>
 
+  <!-- GSAP 3.12 — timeline, ScrollTrigger, utils -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
