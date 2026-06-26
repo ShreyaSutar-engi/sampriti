@@ -6,7 +6,7 @@
   <title>Shreya Sutar — Hardware Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,15 +31,26 @@
     <div class="pcb-fade" aria-hidden="true"></div>
 
     <div class="site-wrap hero-inner">
-      <p class="hero-eyebrow">Hardware Engineer · Prosthetics Researcher</p>
-      <h1 class="hero-name">
-        <span class="name-line">Shreya</span>
-        <span class="name-line">Sutar</span>
-      </h1>
-      <p class="hero-sub">Rising junior at California Academy of Mathematics and Science, hardware engineer, prosthetics researcher.</p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn-primary hero-cta">View Projects</a>
-        <a href="#contact" class="btn-ghost hero-cta">Get in Touch</a>
+      <div class="hero-text">
+        <p class="hero-eyebrow">Hardware Engineer · Prosthetics Researcher</p>
+        <h1 class="hero-name">
+          <span class="name-line">Shreya</span>
+          <span class="name-line">Sutar</span>
+        </h1>
+        <p class="hero-sub">Rising junior at California Academy of Mathematics and Science, hardware engineer, prosthetics researcher.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary hero-cta">View Projects</a>
+          <a href="#contact" class="btn-ghost hero-cta">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap" aria-hidden="true">
+        <div class="hero-photo placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-label="Portrait photo — replace with your own image">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span class="hero-photo-label">[ portrait ]</span>
+        </div>
       </div>
     </div>
 
@@ -148,12 +159,32 @@
 
       <div class="detail-block" data-reveal>
         <h3 class="block-label">Overview</h3>
-        <ul class="detail-list">
-          <li>Full mechanical design and fabrication across multiple 3D-printed iterations, refining geometry for fit, range of motion, and durability.</li>
-          <li>Custom circuit design and assembly—integrating servo control, EMG acquisition, and power sensing on a single system.</li>
-          <li>Custom EMG signal pipeline with adaptive normalization, enabling reliable grip detection across varying muscle fatigue and electrode placement.</li>
-          <li>Closed-loop current sensing via INA219 for grip force limiting, preventing damage to objects and improving safety.</li>
-        </ul>
+        <div class="overview-grid">
+          <div class="overview-card" data-reveal>
+            <span class="overview-num">[ 01 ]</span>
+            <div class="overview-rule"></div>
+            <h4 class="overview-title">Full Mechanical Design</h4>
+            <p class="overview-desc">Multiple 3D-printed iterations refining geometry for fit, range of motion, and durability across every finger joint.</p>
+          </div>
+          <div class="overview-card" data-reveal>
+            <span class="overview-num">[ 02 ]</span>
+            <div class="overview-rule"></div>
+            <h4 class="overview-title">Custom Circuit Design</h4>
+            <p class="overview-desc">Integrated servo control, EMG acquisition, and power sensing on a single hand-assembled system.</p>
+          </div>
+          <div class="overview-card" data-reveal>
+            <span class="overview-num">[ 03 ]</span>
+            <div class="overview-rule"></div>
+            <h4 class="overview-title">EMG Signal Pipeline</h4>
+            <p class="overview-desc">Adaptive normalization enabling reliable grip detection across varying muscle fatigue and electrode placement.</p>
+          </div>
+          <div class="overview-card" data-reveal>
+            <span class="overview-num">[ 04 ]</span>
+            <div class="overview-rule"></div>
+            <h4 class="overview-title">Closed-Loop Safety</h4>
+            <p class="overview-desc">Real-time current sensing via INA219 limits grip force automatically, preventing damage to objects.</p>
+          </div>
+        </div>
       </div>
 
       <div class="detail-block" data-reveal>

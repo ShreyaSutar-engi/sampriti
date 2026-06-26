@@ -4,7 +4,7 @@
   ───────────────────────────────────────────────────────
   Palette:    Near-black · Warm Amber (#E8922E) · Gold (#F5C842)
               References PCB gold pads, solder, LED indicators.
-  Type:       Syne 800/700/600 (display)
+  Type:       Space Grotesk 700/600/500 (display)
               Inter 500/400 (body)
               IBM Plex Mono 500/400 (tech chips, labels)
   Grid:       8pt baseline — --s1 (0.5rem) … --s16 (8rem)
@@ -67,9 +67,9 @@ svg { display: block; }
 
 /* ── Max-width wrapper ─────────────────────────────── */
 .site-wrap {
-  max-width: 1060px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 var(--s4);
+  padding: 0 clamp(2rem, 6vw, 6rem);
 }
 
 /* ── Sections ──────────────────────────────────────── */
@@ -117,17 +117,17 @@ section { padding: var(--s12) 0; }
 
 .nav-wrap {
   height: 100%;
-  max-width: 1060px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 var(--s4);
+  padding: 0 clamp(2rem, 6vw, 6rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .nav-logo {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
   font-size: 0.9rem;
   color: var(--accent);
   letter-spacing: 0.15em;
@@ -220,9 +220,58 @@ section { padding: var(--s12) 0; }
   padding-top: var(--s12);
   padding-bottom: var(--s8);
   flex: 1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--s10);
+  align-items: center;
+}
+
+.hero-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* Portrait placeholder on the right */
+.hero-photo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero-photo {
+  width: 300px;
+  height: 420px;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s3);
+  color: var(--muted);
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+}
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(232,146,46,0.06) 0%, transparent 60%);
+}
+.hero-photo svg {
+  width: 3rem;
+  height: 3rem;
+  opacity: 0.2;
+}
+.hero-photo-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem;
+  color: var(--muted);
+  opacity: 0.4;
+  letter-spacing: 0.1em;
 }
 
 .hero-eyebrow {
@@ -235,9 +284,9 @@ section { padding: var(--s12) 0; }
 }
 
 .hero-name {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(4.5rem, 12vw, 10rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.05em;
   line-height: 0.87;
   color: var(--text);
@@ -277,8 +326,8 @@ section { padding: var(--s12) 0; }
   border-top: 1px solid var(--border);
   display: flex;
   align-items: center;
-  padding: var(--s4) var(--s4);
-  max-width: 1060px;
+  padding: var(--s4) clamp(2rem, 6vw, 6rem);
+  max-width: 1440px;
   margin: 0 auto;
   width: 100%;
   gap: 0;
@@ -291,9 +340,9 @@ section { padding: var(--s12) 0; }
   padding: var(--s2) var(--s4);
 }
 .hstat-n {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--accent);
   letter-spacing: -0.02em;
   line-height: 1;
@@ -496,7 +545,7 @@ section { padding: var(--s12) 0; }
 }
 
 .card-body h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.025em;
@@ -544,9 +593,9 @@ section { padding: var(--s12) 0; }
 }
 
 .detail-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.0;
   color: var(--text);
@@ -609,27 +658,56 @@ section { padding: var(--s12) 0; }
   border-color: rgba(232, 146, 46, 0.4);
 }
 
-/* Detail list — high-contrast */
-.detail-list {
-  display: flex;
-  flex-direction: column;
+/* ── Overview grid (Emma Rose numbered panels) ─────── */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--s4);
 }
-.detail-list li {
-  font-size: 1rem;
-  color: var(--muted-hi);
-  line-height: 1.78;
-  padding-left: var(--s5);
-  position: relative;
+
+.overview-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--s5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  transition: border-color 0.22s, transform 0.2s, box-shadow 0.22s;
 }
-.detail-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.72em;
-  width: 1.5rem;
+.overview-card:hover {
+  border-color: var(--border-hi);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 56px rgba(0,0,0,0.55);
+}
+
+.overview-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+}
+
+.overview-rule {
+  width: 2.5rem;
   height: 1px;
   background: var(--accent);
+  opacity: 0.6;
+}
+
+.overview-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.overview-desc {
+  font-size: 0.875rem;
+  color: var(--muted-hi);
+  line-height: 1.75;
 }
 
 /* Awards */
@@ -737,7 +815,7 @@ section { padding: var(--s12) 0; }
 .stack-icon svg { width: 1.2rem; height: 1.2rem; }
 
 .stack-name {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1rem;
   font-weight: 700;
   color: var(--text);
@@ -788,7 +866,7 @@ section { padding: var(--s12) 0; }
 .skill-icon svg { width: 1.1rem; height: 1.1rem; }
 
 .skill-card h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--text);
@@ -845,9 +923,9 @@ section { padding: var(--s12) 0; }
 }
 
 .contact-heading {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 0.95;
   color: var(--text);
@@ -886,9 +964,9 @@ section { padding: var(--s12) 0; }
 
 .footer-brand {
   display: block;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.1rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text);
   letter-spacing: -0.02em;
   margin-bottom: var(--s2);
@@ -956,6 +1034,11 @@ section { padding: var(--s12) 0; }
   .stack-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-photo-wrap { display: none; }
+}
+
 @media (max-width: 780px) {
   .about-layout { grid-template-columns: 1fr; gap: var(--s6); }
   .skills-grid { grid-template-columns: 1fr; }
@@ -974,6 +1057,7 @@ section { padding: var(--s12) 0; }
   .hstat-div { width: 2.5rem; height: 1px; margin-left: var(--s4); }
   .hstat { padding: var(--s1) var(--s4); }
   .stack-grid { grid-template-columns: repeat(2, 1fr); }
+  .overview-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 520px) {
@@ -1000,4 +1084,7 @@ section { padding: var(--s12) 0; }
   .hero-actions,
   .char { opacity: 1 !important; transform: none !important; }
   [data-reveal] { opacity: 1 !important; transform: none !important; }
+  .overview-card,
+  .stack-item,
+  .skill-card { opacity: 1 !important; transform: none !important; }
 }

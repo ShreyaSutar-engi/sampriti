@@ -73,18 +73,43 @@ function initHero() {
    SCROLL REVEALS — ScrollTrigger
    ═══════════════════════════════════════════════════════ */
 function initScrollReveals() {
-  gsap.utils.toArray('[data-reveal]').forEach((el, i) => {
-    gsap.fromTo(el,
-      { opacity: 0, y: 24 },
+  /* Staggered group reveals for grids */
+  ['.overview-grid', '.stack-grid', '.skills-grid', '.awards-row'].forEach(selector => {
+    const parent = document.querySelector(selector);
+    if (!parent) return;
+    const children = [...parent.children];
+    children.forEach(child => child.removeAttribute('data-reveal'));
+
+    gsap.fromTo(children,
+      { opacity: 0, y: 50 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.65,
-        ease: 'power2.out',
-        delay: (i % 3) * 0.08,
+        duration: 0.7,
+        ease: 'power3.out',
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: parent,
+          start: 'top 85%',
+          once: true,
+        },
+      }
+    );
+  });
+
+  /* Generic individual reveals */
+  gsap.utils.toArray('[data-reveal]').forEach((el, i) => {
+    gsap.fromTo(el,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        delay: (i % 4) * 0.06,
         scrollTrigger: {
           trigger: el,
-          start: 'top 88%',
+          start: 'top 87%',
           once: true,
         },
       }
