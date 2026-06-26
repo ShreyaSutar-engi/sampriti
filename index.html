@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shreya Sutar — Hardware Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -20,25 +23,12 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-left">
-      <p class="eyebrow">Hello.</p>
-      <h1>I'm <span class="accent-name">Shreya Sutar</span></h1>
-      <p class="hero-role">Hardware Engineer &amp; Prosthetics Researcher</p>
-      <p class="hero-sub">Rising junior at California Academy of Mathematics and Science.</p>
-      <div class="hero-cta">
+    <div class="container">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Hardware Engineer &amp; Prosthetics Researcher</p>
+        <h1>Shreya<br>Sutar</h1>
+        <p class="hero-bio">Rising junior at California Academy of Mathematics and Science, hardware engineer, prosthetics researcher.</p>
         <a href="#projects" class="btn-cta">View Projects</a>
-        <a href="resume.pdf" class="btn-ghost" target="_blank">My Resume</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="photo-frame">
-        <div class="photo-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-        </div>
-        <div class="photo-ring"></div>
       </div>
     </div>
   </section>
@@ -60,14 +50,14 @@
       <div class="projects-grid">
 
         <div class="project-card">
-          <div class="img-placeholder">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
+          <div class="img-placeholder card-img">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
             </svg>
           </div>
           <div class="project-card-body">
-            <div class="project-tag">Biomedical · Embedded</div>
+            <span class="project-tag">Biomedical · Embedded</span>
             <h3>PandaWare</h3>
             <p>EMG-controlled myoelectric prosthetic hand, built from scratch.</p>
             <a href="#pandaware" class="btn-outline-sm">View Project →</a>
@@ -84,20 +74,20 @@
 
       <div class="detail-hero-img img-placeholder large">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-          <polyline points="21 15 16 10 5 21"/>
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+          <circle cx="12" cy="13" r="4"/>
         </svg>
       </div>
 
       <div class="detail-header">
         <div>
-          <h2>PandaWare</h2>
+          <h2 class="no-rule">PandaWare</h2>
           <p class="detail-tagline">EMG-controlled myoelectric prosthetic hand, built from scratch.</p>
         </div>
         <div class="detail-btns">
           <a href="Shreya_Sutar_Official_Paper.pdf" class="btn-cta" target="_blank">Read the Paper ↗</a>
           <a href="Shreya_Sutar_Official_Poster.pdf" class="btn-ghost" target="_blank">Read the Poster ↗</a>
-          <a href="https://drive.google.com/file/d/1aEplw--r2NXagsUH0YUOPjhpAVwstKOR/view?usp=sharing" class="btn-ghost" target="_blank">Engineering Notebook ↗</a>
+          <a href="https://drive.google.com/file/d/1aEplw--r2NXagsUH0YUOPjhpAVwstKOR/view?usp=sharing" class="btn-ghost" target="_blank">Read the Documentation Log ↗</a>
         </div>
       </div>
 
@@ -109,8 +99,8 @@
           <span class="chip">MyoWare 2.0</span>
           <span class="chip">PCA9685</span>
           <span class="chip">INA219</span>
-          <span class="chip">MG996R Servos</span>
-          <span class="chip">Tendon-Driven Actuation</span>
+          <span class="chip">MG996R servos</span>
+          <span class="chip">tendon-driven actuation</span>
         </div>
       </div>
 
@@ -127,19 +117,34 @@
       <div class="detail-block">
         <h4>Awards</h4>
         <div class="awards-row">
-          <div class="award"><span class="award-icon">🏅</span><span>ISEF 2026 Nominee</span></div>
-          <div class="award"><span class="award-icon">🥉</span><span>CSEF—5th Place</span></div>
-          <div class="award"><span class="award-icon">🥈</span><span>LACSEF—2nd Place</span></div>
-          <div class="award"><span class="award-icon">🏆</span><span>Invention Convention Winner</span></div>
+          <div class="award">ISEF 2026 Nominee</div>
+          <div class="award">CSEF 5th Place</div>
+          <div class="award">LACSEF 2nd Place</div>
+          <div class="award">Invention Convention Winner</div>
         </div>
       </div>
 
       <div class="detail-block">
         <h4>Gallery</h4>
         <div class="gallery">
-          <div class="img-placeholder gallery-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
-          <div class="img-placeholder gallery-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
-          <div class="img-placeholder gallery-img"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+          <div class="img-placeholder gallery-img">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+          </div>
+          <div class="img-placeholder gallery-img">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+          </div>
+          <div class="img-placeholder gallery-img">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+          </div>
         </div>
       </div>
 
@@ -155,13 +160,15 @@
         <div class="skill-group">
           <div class="skill-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
             </svg>
           </div>
           <h3>Mechanical</h3>
           <ul>
-            <li>CAD &amp; mechanical design</li>
-            <li>3D printing &amp; fabrication</li>
+            <li>CAD/mechanical design</li>
+            <li>3D printing and fabrication</li>
             <li>Tendon-driven mechanism design</li>
           </ul>
         </div>
@@ -174,16 +181,17 @@
           </div>
           <h3>Electrical</h3>
           <ul>
-            <li>Circuit design &amp; assembly</li>
+            <li>Circuit design and assembly</li>
             <li>Soldering</li>
-            <li>Servo &amp; actuator control</li>
+            <li>Servo and actuator control</li>
           </ul>
         </div>
 
         <div class="skill-group">
           <div class="skill-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
             </svg>
           </div>
           <h3>Software</h3>
@@ -198,7 +206,9 @@
   </section>
 
   <footer>
-    <p>Shreya Sutar · 2026</p>
+    <div class="container">
+      <p>Shreya Sutar · 2026</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
