@@ -311,10 +311,8 @@ svg { display: block; }
 .pcb-grid {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(232,146,46,0.09) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(232,146,46,0.09) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-image: radial-gradient(circle, rgba(232,146,46,0.45) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
 }
 
 .pcb-fade {
@@ -391,6 +389,8 @@ svg { display: block; }
 #projects {
   padding: var(--s12) 0;
   border-top: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
 }
 
 .project-grid {
@@ -476,9 +476,9 @@ svg { display: block; }
 .detail-img {
   width: 100%;
   height: 480px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
+  background: transparent;
+  border: none;
+  border-radius: 0;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -630,6 +630,8 @@ svg { display: block; }
 #stack {
   padding: var(--s12) 0;
   border-top: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
 }
 
 .stack-intro {
@@ -812,6 +814,7 @@ svg { display: block; }
   padding: var(--s16) 0;
   border-top: 1px solid var(--border);
   position: relative;
+  overflow: hidden;
 }
 
 .contact-bg {

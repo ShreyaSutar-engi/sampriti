@@ -81,16 +81,16 @@ function initScrollReveals() {
     children.forEach(child => child.removeAttribute('data-reveal'));
 
     gsap.fromTo(children,
-      { opacity: 0, y: 50 },
+      { opacity: 0, y: 30 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.7,
-        ease: 'power3.out',
-        stagger: 0.1,
+        duration: 0.3,
+        ease: 'power2.out',
+        stagger: 0.05,
         scrollTrigger: {
           trigger: parent,
-          start: 'top 85%',
+          start: 'top 93%',
           once: true,
         },
       }
@@ -100,16 +100,16 @@ function initScrollReveals() {
   /* Generic individual reveals */
   gsap.utils.toArray('[data-reveal]').forEach((el, i) => {
     gsap.fromTo(el,
-      { opacity: 0, y: 50 },
+      { opacity: 0, y: 20 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        delay: (i % 4) * 0.06,
+        duration: 0.28,
+        ease: 'power2.out',
+        delay: (i % 4) * 0.03,
         scrollTrigger: {
           trigger: el,
-          start: 'top 87%',
+          start: 'top 94%',
           once: true,
         },
       }
