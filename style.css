@@ -248,7 +248,7 @@ section { padding: var(--s12) 0; }
 }
 
 .hero-photo {
-  width: 300px;
+  width: 480px;
   height: auto;
   min-height: 420px;
   border-radius: var(--r-lg);
