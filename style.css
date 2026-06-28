@@ -187,8 +187,8 @@ svg { display: block; }
 }
 
 .hero-photo {
-  width: 380px;
-  height: 470px;
+  width: 420px;
+  height: 520px;
   border-radius: 0;
   border: none;
   background: var(--surface);
