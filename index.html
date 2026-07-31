@@ -18,6 +18,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#current-work">Current Work</a></li>
         <li><a href="#stack">Stack</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
@@ -55,7 +56,10 @@
       <div class="hstat-div" aria-hidden="true"></div>
       <div class="hstat"><span class="hstat-n">ISEF</span><span class="hstat-l">2026 Nominee</span></div>
       <div class="hstat-div" aria-hidden="true"></div>
-      <div class="hstat"><span class="hstat-n">1</span><span class="hstat-l">Research Paper</span></div>
+      <div class="hstat-div" aria-hidden="true"></div>
+      <div class="hstat"><span class="hstat-n">[[FILL: number]]</span><span class="hstat-l">Research Papers</span></div>
+      <div class="hstat-div" aria-hidden="true"></div>
+      <div class="hstat"><span class="hstat-n">ISSN</span><span class="hstat-l">Certified Journal</span></div>
     </div>
   </section>
 
@@ -66,7 +70,7 @@
         <div class="about-left">
           <h2 class="sec-label" data-reveal>[ About ]</h2>
           <p class="about-text" data-reveal>
-            Shreya Sutar is a high school engineer focused on building hardware at the intersection of biomedical engineering and embedded systems. My work centers on prosthetics and assistive technology—specifically building devices that restore function to people who have lost it.
+            I build hardware at the intersection of biomedical engineering and embedded systems, focused on prosthetics and assistive technology — devices that restore function to people who have lost it. Most of what I've made was built without a lab, a mentor, or a budget, which has meant learning why systems fail rather than buying past the problem. Alongside the engineering, I founded and edit ISE, a student research journal, because the writing half of research is the part students are least often taught.
           </p>
         </div>
         <div class="about-right" data-reveal>
@@ -112,6 +116,45 @@
             <a href="#pandaware" class="arrow-link">View Project <span aria-hidden="true">→</span></a>
           </div>
         </article>
+
+        <!-- [ 02 ] ISE Journal -->
+        <article class="project-card" data-reveal>
+          <div class="project-num">[ 02 ]</div>
+          <!-- replace with /media/ise-journal-cover.jpg -->
+          <div class="card-thumb placeholder" role="img" aria-label="ISE journal cover or published article spread placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="badge">Research Publishing · Editorial</span>
+            <h3>ISE — Innovation in Science and Engineering Journal</h3>
+            <p>An ISSN-registered student research journal I founded and edit, publishing high school and undergraduate research free of charge. Built the full manuscript infrastructure, recruited faculty reviewers across multiple universities, and now operate it with faculty advising from MIT.</p>
+            <a href="https://iseofficial.org/" class="arrow-link" target="_blank" rel="noopener">Visit ISE <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <!-- [ 03 ] Assistive Technology Outreach -->
+        <article class="project-card" data-reveal>
+          <div class="project-num">[ 03 ]</div>
+          <!-- replace with /media/outreach-session.jpg -->
+          <div class="card-thumb placeholder" role="img" aria-label="Outreach session photo placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="badge">Community · Education</span>
+            <h3>Assistive Technology Outreach</h3>
+            <p>Led a prosthetics outreach project bringing assistive technology to a senior living community, directing the CAD, electrical, and programming work and writing the lesson plans that let other students contribute to the build rather than watch it.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -119,6 +162,37 @@
   <!-- ── PandaWare Detail ─────────────────────────────────── -->
   <section id="pandaware">
     <div class="site-wrap">
+
+      <!-- Change 1: Demo video — highest-priority evidence. Replace div with <video> when clip is ready. -->
+      <!-- replace with /media/demo-pandaware-emg.mp4 -->
+      <figure class="media-slot" data-reveal>
+        <div class="media-slot__inner" role="img" aria-label="VIDEO — PandaWare closing around an object (EMG-driven)">
+          <span class="media-slot__label">VIDEO — PandaWare closing around an object (EMG-driven)</span>
+        </div>
+        <figcaption class="media-slot__caption">PandaWare responding to forearm EMG activation. [[FILL: one-sentence description of exactly what the clip shows]]</figcaption>
+      </figure>
+
+      <!-- Three supporting slots: EMG live / closed-loop / object set scale -->
+      <div class="media-row-3" data-reveal>
+        <!-- replace with /media/emg-signal-live.mp4 -->
+        <figure class="media-slot">
+          <div class="media-slot__inner" role="img" aria-label="VIDEO — EMG signal responding live to muscle activation">
+            <span class="media-slot__label">VIDEO — EMG signal responding live to muscle activation</span>
+          </div>
+        </figure>
+        <!-- replace with /media/closed-loop-current.mp4 -->
+        <figure class="media-slot">
+          <div class="media-slot__inner" role="img" aria-label="VIDEO — closed-loop current sensing halting grip on a soft object">
+            <span class="media-slot__label">VIDEO — closed-loop current sensing halting grip on a soft object</span>
+          </div>
+        </figure>
+        <!-- replace with /media/object-set-scale.jpg -->
+        <figure class="media-slot">
+          <div class="media-slot__inner" role="img" aria-label="IMAGE — hand held next to the object set used for testing (scale reference)">
+            <span class="media-slot__label">IMAGE — hand held next to the object set used for testing (scale reference)</span>
+          </div>
+        </figure>
+      </div>
 
       <div class="detail-img" data-reveal>
         <img src="prosthetic.png" alt="PandaWare prosthetic hand" style="position:absolute;top:50%;left:50%;width:100vmax;height:100vmax;max-width:none;object-fit:cover;transform:translate(-50%,-50%) rotate(-90deg);">
@@ -133,6 +207,7 @@
           <a href="Shreya_Sutar_Official_Paper.pdf" class="btn-secondary" target="_blank" rel="noopener">Read the Paper ↗</a>
           <a href="sutarposter.pdf" class="btn-secondary" target="_blank" rel="noopener">Read the Poster ↗</a>
           <a href="https://drive.google.com/file/d/1aEplw--r2NXagsUH0YUOPjhpAVwstKOR/view?usp=sharing" class="btn-secondary" target="_blank" rel="noopener">Documentation Log ↗</a>
+          <a href="https://cad.onshape.com/documents/01846624b9cea47c0def8825/w/19642d9b3fb19bd6c92f9745/e/b12947016f13ac444aeb0029" class="btn-secondary" target="_blank" rel="noopener">Onshape CAD ↗</a>
         </div>
       </div>
 
@@ -176,18 +251,138 @@
               <div class="overview-rule"></div>
               <h4 class="overview-title">EMG Signal Pipeline</h4>
               <p class="overview-desc">Adaptive normalization enabling reliable grip detection across varying muscle fatigue and electrode placement.</p>
+              <figcaption class="fig-caption">normalization.png — x-axis: [[FILL: x-axis label, e.g. Time (s)]] · y-axis: [[FILL: y-axis label, e.g. Normalized EMG amplitude]]. [[FILL: one sentence on what the reader should conclude]]</figcaption>
             </div>
-            <div class="overview-card-img"><img src="normalization.png" alt="EMG signal normalization" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
+            <div class="overview-card-img"><img src="normalization.png" alt="EMG signal normalization graph" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
           </div>
           <div class="overview-card" data-reveal>
             <div class="overview-card-text">
               <span class="overview-num">[ 04 ]</span>
               <div class="overview-rule"></div>
               <h4 class="overview-title">Closed-Loop Safety</h4>
-              <p class="overview-desc">Real-time current sensing via INA219 limits grip force automatically, preventing damage to objects.</p>
+              <p class="overview-desc">Real-time current sensing via INA219 limits grip force automatically, preventing damage to objects. Works reliably on rigid objects; degrades on compliant surfaces.</p>
+              <figcaption class="fig-caption">graph.png — x-axis: [[FILL: x-axis label, e.g. Grip attempt #]] · y-axis: [[FILL: y-axis label, e.g. Current draw (mA)]]. [[FILL: one sentence on what the reader should conclude]]</figcaption>
             </div>
-            <div class="overview-card-img"><img src="graph.png" alt="Closed-loop safety graph" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
+            <div class="overview-card-img"><img src="graph.png" alt="Closed-loop current sensing performance graph" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
           </div>
+        </div>
+      </div>
+
+      <!-- Change 2: Measured Performance stat grid -->
+      <div class="detail-block" data-reveal>
+        <h3 class="block-label">Measured Performance</h3>
+        <div class="perf-grid">
+          <div class="perf-stat">
+            <span class="perf-stat__value">[[FILL: $180]]</span>
+            <span class="perf-stat__label">Total Build Cost</span>
+          </div>
+          <div class="perf-stat">
+            <span class="perf-stat__value">[[FILL: 0–12 N]]</span>
+            <span class="perf-stat__label">Grip Force Range</span>
+          </div>
+          <div class="perf-stat">
+            <span class="perf-stat__value">[[FILL: 92%]]</span>
+            <span class="perf-stat__label">Grip Detection Success Rate</span>
+          </div>
+          <div class="perf-stat">
+            <span class="perf-stat__value">[[FILL: ms]]</span>
+            <span class="perf-stat__label">EMG to Finger Motion Latency</span>
+          </div>
+          <div class="perf-stat">
+            <span class="perf-stat__value">[[FILL: N]]</span>
+            <span class="perf-stat__label">Mechanical Design Iterations</span>
+          </div>
+          <div class="perf-stat">
+            <span class="perf-stat__value">[[FILL: mA]]</span>
+            <span class="perf-stat__label">Contact-Detection Current Threshold</span>
+          </div>
+        </div>
+        <p class="perf-note">Commercial myoelectric prosthetic hands cost between $20,000 and $100,000. PandaWare was built for [[FILL: total cost]] using consumer components, a hobbyist 3D printer, and no laboratory access. The performance figures above are the honest measured envelope, including where the system underperforms.</p>
+        <p class="perf-limit">Known limitations: [[FILL: 2–3 sentences on where the system currently fails — e.g. performance under electrode shift, soft vs. rigid object behavior, grip types not yet supported]]</p>
+      </div>
+
+      <!-- Change 4: What Broke, and What I Changed -->
+      <div class="detail-block" data-reveal>
+        <h3 class="block-label">What Broke, and What I Changed</h3>
+        <p class="iter-intro">Every version of this hand failed in a specific way before it worked. The failures were more instructive than the successes.</p>
+        <div class="iter-list">
+
+          <!-- Iteration 1 — image left -->
+          <div class="iter-entry">
+            <div class="iter-entry__media">
+              <!-- replace with /media/v1-failure.jpg -->
+              <figure class="media-slot media-slot--square">
+                <div class="media-slot__inner" role="img" aria-label="IMAGE — v1 failure detail">
+                  <span class="media-slot__label">IMAGE — v[[FILL]] failure detail</span>
+                </div>
+              </figure>
+            </div>
+            <div class="iter-entry__text">
+              <span class="iter-version">v[[FILL]]</span>
+              <span class="iter-failed-label">What failed</span>
+              <p class="iter-failed">[[FILL: specific failure — e.g. tendon slipped out of the routing channel under load]]</p>
+              <span class="iter-changed-label">What changed</span>
+              <p class="iter-changed">[[FILL: the specific design change made in response]]</p>
+            </div>
+          </div>
+
+          <!-- Iteration 2 — image right -->
+          <div class="iter-entry iter-entry--flip">
+            <div class="iter-entry__media">
+              <!-- replace with /media/v2-failure.jpg -->
+              <figure class="media-slot media-slot--square">
+                <div class="media-slot__inner" role="img" aria-label="IMAGE — v2 failure detail">
+                  <span class="media-slot__label">IMAGE — v[[FILL]] failure detail</span>
+                </div>
+              </figure>
+            </div>
+            <div class="iter-entry__text">
+              <span class="iter-version">v[[FILL]]</span>
+              <span class="iter-failed-label">What failed</span>
+              <p class="iter-failed">[[FILL: specific failure]]</p>
+              <span class="iter-changed-label">What changed</span>
+              <p class="iter-changed">[[FILL: the specific design change made in response]]</p>
+            </div>
+          </div>
+
+          <!-- Iteration 3 — image left -->
+          <div class="iter-entry">
+            <div class="iter-entry__media">
+              <!-- replace with /media/v3-failure.jpg -->
+              <figure class="media-slot media-slot--square">
+                <div class="media-slot__inner" role="img" aria-label="IMAGE — v3 failure detail">
+                  <span class="media-slot__label">IMAGE — v[[FILL]] failure detail</span>
+                </div>
+              </figure>
+            </div>
+            <div class="iter-entry__text">
+              <span class="iter-version">v[[FILL]]</span>
+              <span class="iter-failed-label">What failed</span>
+              <p class="iter-failed">[[FILL: specific failure]]</p>
+              <span class="iter-changed-label">What changed</span>
+              <p class="iter-changed">[[FILL: the specific design change made in response]]</p>
+            </div>
+          </div>
+
+          <!-- Iteration 4 — image right -->
+          <div class="iter-entry iter-entry--flip">
+            <div class="iter-entry__media">
+              <!-- replace with /media/v4-failure.jpg -->
+              <figure class="media-slot media-slot--square">
+                <div class="media-slot__inner" role="img" aria-label="IMAGE — v4 failure detail">
+                  <span class="media-slot__label">IMAGE — v[[FILL]] failure detail</span>
+                </div>
+              </figure>
+            </div>
+            <div class="iter-entry__text">
+              <span class="iter-version">v[[FILL]]</span>
+              <span class="iter-failed-label">What failed</span>
+              <p class="iter-failed">[[FILL: specific failure]]</p>
+              <span class="iter-changed-label">What changed</span>
+              <p class="iter-changed">[[FILL: the specific design change made in response]]</p>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -228,6 +423,52 @@
     </div>
   </section>
 
+  <!-- ── Current Work ─────────────────────────────────────── -->
+  <!-- Change 5: New section between Projects/PandaWare and Tech Stack -->
+  <section id="current-work">
+    <div class="pcb-grid" aria-hidden="true"></div>
+    <div class="pcb-fade" aria-hidden="true"></div>
+    <div class="site-wrap">
+      <h2 class="sec-label" data-reveal>[ Current Work ]</h2>
+
+      <div class="cw-list">
+
+        <div class="cw-entry" data-reveal>
+          <div class="cw-content">
+            <span class="status-tag">In progress</span>
+            <h3 class="cw-title">PandaWare v2 — Independently Actuated Hand</h3>
+            <p class="cw-body">The first hand couples the finger joints together, so the fingers curl as a single unit. That's sufficient for grasping and insufficient for anything requiring a specific hand configuration. The second-generation design drives each finger joint independently — three flexor tendons per finger for the MCP, PIP, and DIP joints, with passive spring return in place of antagonistic extensor tendons. The goal is to remove mechanical coupling as a source of positioning error entirely.</p>
+          </div>
+          <div class="cw-media">
+            <!-- replace with /media/v2-cad-render.jpg -->
+            <figure class="media-slot">
+              <div class="media-slot__inner" role="img" aria-label="IMAGE — v2 CAD render or finger assembly">
+                <span class="media-slot__label">IMAGE — v2 CAD render or finger assembly</span>
+              </div>
+            </figure>
+          </div>
+        </div>
+
+        <div class="cw-entry" data-reveal>
+          <div class="cw-content">
+            <span class="status-tag">In design</span>
+            <h3 class="cw-title">Precision Characterization Study</h3>
+            <p class="cw-body">How accurately and repeatably can a low-cost tendon-driven hand reach and hold a defined target configuration, and which subsystem limits that precision — the mechanism, the sensing, or the intent decoding? I'm using classical Odissi mudras as the ground-truth pose set, since each mudra is an exactly defined joint-angle configuration that a coupled mechanism physically cannot produce. That makes them a substantially harder benchmark than grasping tasks, and it yields continuous per-joint error data rather than pass/fail on whether an object was picked up.</p>
+          </div>
+          <div class="cw-media">
+            <!-- replace with /media/mudra-reference.jpg -->
+            <figure class="media-slot">
+              <div class="media-slot__inner" role="img" aria-label="IMAGE — reference mudra alongside the hand attempting it">
+                <span class="media-slot__label">IMAGE — reference mudra alongside the hand attempting it</span>
+              </div>
+            </figure>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ── Tech Stack ───────────────────────────────────────── -->
   <section id="stack">
     <div class="pcb-grid" aria-hidden="true"></div>
@@ -251,7 +492,7 @@
               </svg>
             </div>
             <h3 class="stack-name">RP2040</h3>
-            <p class="stack-desc">Dual-core ARM Cortex-M0+ at 133 MHz. Main compute unit controlling servo PWM output, I²C sensor bus, and real-time EMG acquisition loop.</p>
+            <p class="stack-desc">Chosen over an Arduino Uno because the EMG acquisition loop and the servo control loop need to run without blocking each other, and the RP2040's dual cores made that possible at a $4 price point. The tradeoff is no hardware floating-point unit, which constrains how much signal processing can happen on-device.</p>
           </div>
           <div class="stack-img placeholder" aria-hidden="true"></div>
         </div>
@@ -269,7 +510,7 @@
               </svg>
             </div>
             <h3 class="stack-name">MicroPython</h3>
-            <p class="stack-desc">Python-based firmware running on the RP2040. Handles the full signal processing pipeline, servo control loop, and I²C bus coordination.</p>
+            <p class="stack-desc">Chosen for iteration speed. Being able to change a filter constant and re-run immediately mattered more than raw execution speed during development, since the bottleneck was mechanical settling time rather than compute. [[FILL: optional — note whether you plan to migrate to C for the v2 build and why]]</p>
           </div>
           <div class="stack-img placeholder" aria-hidden="true"></div>
         </div>
@@ -286,7 +527,7 @@
               </svg>
             </div>
             <h3 class="stack-name">MyoWare 2.0</h3>
-            <p class="stack-desc">Surface electromyography sensor capturing forearm muscle activation. Outputs an analog voltage representing muscle contraction intensity for grip detection.</p>
+            <p class="stack-desc">Surface EMG was the only viable intent signal available without implanted hardware or a lab budget. The core problem it creates is that its output drifts with electrode placement, skin impedance, sweat, and muscle fatigue, which is what drove the custom normalization pipeline below.</p>
           </div>
           <div class="stack-img placeholder" aria-hidden="true"></div>
         </div>
@@ -305,7 +546,7 @@
               </svg>
             </div>
             <h3 class="stack-name">PCA9685</h3>
-            <p class="stack-desc">16-channel PWM/servo driver over I²C. Generates precise servo signals for all 5 finger motors, offloading timing-critical work from the main CPU.</p>
+            <p class="stack-desc">Offloads servo timing to dedicated hardware over I²C, freeing the microcontroller to sample EMG continuously rather than interleaving PWM generation with acquisition. Drives all finger servos from two pins.</p>
           </div>
           <div class="stack-img placeholder" aria-hidden="true"></div>
         </div>
@@ -322,7 +563,7 @@
               </svg>
             </div>
             <h3 class="stack-name">INA219</h3>
-            <p class="stack-desc">High-side DC current and power sensor over I²C. Monitors servo current draw in real time for closed-loop grip force limiting and object safety.</p>
+            <p class="stack-desc">This is the component the whole grip-safety system depends on, and it was chosen because fingertip force sensors were outside budget. Instead of measuring force directly, the system infers object contact from the spike in servo current draw when a finger stalls against something. It works well on rigid objects and degrades on compliant ones, which is the exact relationship I'm now characterizing formally in a follow-up study.</p>
           </div>
           <div class="stack-img placeholder" aria-hidden="true"></div>
         </div>
@@ -340,7 +581,7 @@
               </svg>
             </div>
             <h3 class="stack-name">MG996R Servos</h3>
-            <p class="stack-desc">High-torque metal gear servos, one per finger. Drive tendon cables through 3D-printed finger channels for independent, human-like digit actuation.</p>
+            <p class="stack-desc">High-torque metal-gear servos chosen for holding position under load rather than for speed. One servo per finger, driving tendon cables through the printed finger channels. [[FILL: brief note on what the torque requirement actually was and how you determined it]]</p>
           </div>
           <div class="stack-img placeholder" aria-hidden="true"></div>
         </div>
@@ -359,7 +600,7 @@
               </svg>
             </div>
             <h3 class="stack-name">FDM 3D Printing</h3>
-            <p class="stack-desc">Fused deposition modeling in PLA+. Multiple design iterations per finger joint to refine range of motion, tendon routing, and structural durability.</p>
+            <p class="stack-desc">Printed in PLA+ on a partially broken consumer printer, which meant designing around inconsistent tolerances rather than assuming them. Wall thickness and pin-joint reinforcement were sized for print reliability, not just for strength.</p>
           </div>
           <div class="stack-img placeholder" aria-hidden="true"></div>
         </div>
@@ -377,7 +618,7 @@
               </svg>
             </div>
             <h3 class="stack-name">Tendon Actuation</h3>
-            <p class="stack-desc">Stainless steel cables routed through finger channels, anchored at fingertip and servo horn. Lightweight, human-analogous flexion with minimal moving parts.</p>
+            <p class="stack-desc">Tendon routing was chosen because it moves the actuators off the fingers and into the palm, which is the only way to keep finger geometry close to human scale. The cost is friction and slack accumulating along the tendon path, which sets a hard ceiling on positioning precision — the limitation that motivates the second-generation design.</p>
           </div>
           <div class="stack-img placeholder" aria-hidden="true"></div>
         </div>

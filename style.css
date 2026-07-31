@@ -1250,3 +1250,273 @@ svg { display: block; }
   .gallery { grid-template-columns: 1fr; }
   .hero-photo-wrap { display: none; }
 }
+
+
+/* ========================================================================
+   MEDIA SLOT COMPONENT  (Changes 1, 4, 5)
+   Consistent class .media-slot across all instances — grep to find all.
+   Swap .media-slot__inner for <video> or <img> to replace with real asset.
+   ======================================================================== */
+
+.media-slot {
+  display: block;
+  margin: 0;
+}
+
+.media-slot__inner {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px dashed var(--border-2);
+  border-radius: var(--r);
+  background: rgba(232, 146, 46, 0.025);
+  overflow: hidden;
+}
+
+/* Aspect ratio via pseudo-element padding trick */
+.media-slot__inner::before {
+  content: '';
+  display: block;
+  padding-bottom: 56.25%; /* 16:9 default */
+  width: 0;
+}
+
+.media-slot--square .media-slot__inner::before { padding-bottom: 100%; }
+.media-slot--4-3    .media-slot__inner::before { padding-bottom: 75%; }
+
+.media-slot__label {
+  position: absolute;
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6875rem;
+  color: var(--muted);
+  padding: var(--s2);
+  line-height: 1.55;
+  max-width: 85%;
+}
+
+.media-slot__caption {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: var(--s2);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* Row of three equal 16:9 slots beneath the main demo video */
+.media-row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s3);
+  margin-bottom: var(--s8);
+}
+
+
+/* ========================================================================
+   FIGURE CAPTION (Change 8 — overview card annotations)
+   ======================================================================== */
+
+.fig-caption {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.6;
+  font-style: italic;
+  margin-top: var(--s2);
+}
+
+
+/* ========================================================================
+   MEASURED PERFORMANCE GRID  (Change 2)
+   ======================================================================== */
+
+.perf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s3);
+  margin-bottom: var(--s6);
+}
+
+.perf-stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: var(--s3);
+  transition: border-color 0.18s;
+}
+
+.perf-stat:hover { border-color: var(--border-hi); }
+
+.perf-stat__value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  display: block;
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.perf-stat__label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6875rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.perf-note {
+  font-size: 0.9375rem;
+  color: var(--muted-hi);
+  line-height: 1.82;
+  margin-bottom: var(--s4);
+  max-width: 700px;
+}
+
+/* Left-accent rule to flag the limitations paragraph */
+.perf-limit {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.78;
+  border-left: 2px solid rgba(232, 146, 46, 0.35);
+  padding-left: var(--s3);
+  font-style: italic;
+}
+
+
+/* ========================================================================
+   ITERATION / FAILURE ENTRIES  (Change 4)
+   ======================================================================== */
+
+.iter-intro {
+  font-size: 0.9375rem;
+  color: var(--muted-hi);
+  line-height: 1.78;
+  margin-bottom: var(--s6);
+  max-width: 580px;
+}
+
+.iter-list { display: flex; flex-direction: column; }
+
+.iter-entry {
+  display: flex;
+  gap: var(--s6);
+  align-items: flex-start;
+  padding: var(--s6) 0;
+  border-top: 1px solid var(--border);
+}
+
+.iter-entry__media,
+.iter-entry__text { flex: 1; }
+
+/* Flip: visually places the image on the right */
+.iter-entry--flip { flex-direction: row-reverse; }
+
+.iter-version {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6875rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: var(--s3);
+}
+
+.iter-failed-label,
+.iter-changed-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.iter-failed-label  { color: rgba(220, 80, 80, 0.7); }
+.iter-changed-label { color: var(--accent-2); }
+
+.iter-failed,
+.iter-changed {
+  font-size: 0.9rem;
+  color: var(--muted-hi);
+  line-height: 1.72;
+  margin-bottom: var(--s3);
+}
+
+.iter-changed { margin-bottom: 0; }
+
+
+/* ========================================================================
+   CURRENT WORK SECTION  (Change 5)
+   ======================================================================== */
+
+#current-work {
+  padding: var(--s12) 0;
+  border-top: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.cw-list { display: flex; flex-direction: column; }
+
+.cw-entry {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s8);
+  align-items: start;
+  padding: var(--s8) 0;
+  border-top: 1px solid var(--border);
+}
+
+.cw-entry:first-child { border-top: none; }
+
+.cw-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: var(--s2) 0 var(--s3);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.cw-body {
+  font-size: 0.9375rem;
+  color: var(--muted-hi);
+  line-height: 1.82;
+}
+
+/* Matches .badge style; uses accent-2 (gold) to distinguish from tag badges */
+.status-tag {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  background: rgba(245, 200, 66, 0.07);
+  border: 1px solid rgba(245, 200, 66, 0.28);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--r-sm);
+}
+
+
+/* ========================================================================
+   RESPONSIVE ADDITIONS
+   ======================================================================== */
+
+@media (max-width: 960px) {
+  .perf-grid { grid-template-columns: repeat(2, 1fr); }
+  .cw-entry  { grid-template-columns: 1fr; gap: var(--s4); }
+}
+
+@media (max-width: 640px) {
+  .media-row-3 { grid-template-columns: 1fr; }
+  .perf-grid   { grid-template-columns: 1fr; }
+  .iter-entry,
+  .iter-entry--flip { flex-direction: column; }
+}
