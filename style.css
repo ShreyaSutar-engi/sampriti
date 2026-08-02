@@ -764,6 +764,12 @@ svg { display: block; }
   color: var(--muted-hi);
   line-height: 1.6;
   flex: 1;
+  transition: font-size 0.3s ease, line-height 0.3s ease;
+}
+
+.stack-item:hover .stack-desc {
+  font-size: 0.75rem;
+  line-height: 1.5;
 }
 
 .stack-img {
@@ -1064,7 +1070,8 @@ svg { display: block; }
 #footer {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding: var(--s12) 0 var(--s12);
+  padding: var(--s12) 0 0;
+  margin-top: var(--s12);
 }
 
 .footer-inner {
