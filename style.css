@@ -551,11 +551,16 @@ svg { display: block; }
 }
 
 .overview-card-img {
-  width: 220px;
+  width: 300px;
   flex-shrink: 0;
   background: var(--surface-2);
   overflow: hidden;
   align-self: stretch;
+}
+
+.overview-card-img.img-contain img {
+  object-fit: contain !important;
+  background: var(--surface-2);
 }
 
 
