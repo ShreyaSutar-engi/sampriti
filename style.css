@@ -486,6 +486,10 @@ svg { display: block; }
   margin-bottom: var(--s8);
 }
 
+.detail-title-block {
+  width: 100%;
+}
+
 .detail-title {
   font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
@@ -576,14 +580,16 @@ svg { display: block; }
 
 .award {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.8125rem;
-  padding: 0.5rem 1.1rem;
-  border: 1px solid var(--border-hi);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid rgba(232, 146, 46, 0.45);
   border-radius: var(--r-sm);
   color: var(--accent);
-  background: rgba(232,146,46,0.06);
+  background: rgba(232, 146, 46, 0.09);
   cursor: pointer;
-  transition: border-color 0.18s, color 0.18s, background 0.18s;
+  transition: border-color 0.18s, background 0.18s;
   -webkit-appearance: none;
   appearance: none;
   line-height: 1.4;
@@ -593,15 +599,13 @@ svg { display: block; }
 
 .award:hover {
   border-color: var(--accent);
-  background: rgba(232,146,46,0.12);
-  color: var(--accent);
+  background: rgba(232,146,46,0.18);
 }
 
 .award.highlight,
 .award.active {
   border-color: var(--accent);
-  color: var(--accent);
-  background: rgba(232,146,46,0.14);
+  background: rgba(232,146,46,0.18);
 }
 
 .award-gallery {
@@ -698,7 +702,7 @@ svg { display: block; }
 }
 
 .stack-item:hover .stack-content {
-  transform: translateY(-260px);
+  transform: translateY(-150px);
 }
 
 .stack-item:hover .stack-item-top,
@@ -1060,7 +1064,7 @@ svg { display: block; }
 #footer {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding: var(--s12) 0 0;
+  padding: var(--s12) 0 var(--s12);
 }
 
 .footer-inner {
@@ -1246,25 +1250,30 @@ svg { display: block; }
   color: #090909;
   font-weight: 700;
   font-size: 1rem;
-  padding: 0.75rem 1.6rem;
-  border-radius: var(--r-sm);
-  border: none;
+  padding: 0.625rem 1.35rem;
+  border-radius: 0;
+  border: 2px solid var(--accent);
   cursor: pointer;
-  transition: background 0.16s;
-  text-decoration: none;
+  transition: background 0.16s, border-color 0.16s;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
-.btn-detail:hover { background: var(--accent-dim); }
+.btn-detail:hover {
+  background: var(--accent-dim);
+  border-color: var(--accent-dim);
+}
 
 .btn-detail--ghost {
   background: transparent;
   color: var(--accent);
-  border: 1px solid var(--border-hi);
+  border: 2px solid var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .btn-detail--ghost:hover {
-  background: rgba(232,146,46,0.08);
-  border-color: var(--accent);
+  background: rgba(232,146,46,0.10);
 }
 
 .badge {
@@ -1308,7 +1317,7 @@ svg { display: block; }
 
 .block-label {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.875rem;
+  font-size: 1.0625rem;
   color: var(--muted);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1488,13 +1497,19 @@ svg { display: block; }
 
 .perf-stat__value {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.25rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--accent);
   letter-spacing: -0.02em;
   display: block;
   line-height: 1;
   margin-bottom: 0.4rem;
+}
+
+.perf-inf {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 2.5rem;
+  line-height: 1;
 }
 
 .perf-stat__label {
@@ -1530,7 +1545,7 @@ svg { display: block; }
    ======================================================================== */
 
 .iter-intro {
-  font-size: 0.9375rem;
+  font-size: 1.0625rem;
   color: var(--muted-hi);
   line-height: 1.78;
   margin-bottom: var(--s6);
@@ -1555,7 +1570,7 @@ svg { display: block; }
 
 .iter-version {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--accent);
   letter-spacing: 0.06em;
   display: block;
@@ -1565,7 +1580,7 @@ svg { display: block; }
 .iter-failed-label,
 .iter-changed-label {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.8125rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1578,7 +1593,7 @@ svg { display: block; }
 
 .iter-failed,
 .iter-changed {
-  font-size: 0.9rem;
+  font-size: 1.0625rem;
   color: var(--muted-hi);
   line-height: 1.72;
   margin-bottom: var(--s3);
