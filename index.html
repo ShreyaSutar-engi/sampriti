@@ -67,7 +67,7 @@
         <div class="about-left">
           <h2 class="sec-label" data-reveal>[ About ]</h2>
           <p class="about-text" data-reveal>
-            I build hardware at the intersection of biomedical engineering and embedded systems, focused on prosthetics and assistive technology — devices that restore function to people who have lost it. Most of what I've made was built without a lab, a mentor, or a budget, which has meant learning why systems fail rather than buying past the problem. Alongside the engineering, I founded and edit ISE, a student research journal, because the writing half of research is the part students are least often taught.
+            I build hardware at the intersection of biomedical engineering and embedded systems, focused on prosthetics and assistive technology, devices that restore function to people who have lost it. Most of what I've made was built without a lab, a mentor, or a budget, which has meant learning why systems fail rather than buying past the problem. Alongside the engineering, I founded and edit ISE, a student research journal, because the writing half of research is the part students are least often taught.
           </p>
         </div>
         <div class="about-right" data-reveal>
@@ -117,14 +117,8 @@
         <!-- [ 02 ] ISE Journal -->
         <article class="project-card" data-reveal>
           <div class="project-num">[ 02 ]</div>
-          <!-- replace with /media/ise-journal-cover.jpg -->
-          <div class="card-thumb placeholder" role="img" aria-label="ISE journal cover or published article spread placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-            </svg>
+          <div class="card-thumb" role="img" aria-label="ISE journal cover">
+            <img src="ise.projects.card.png" alt="ISE journal cover" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
           </div>
           <div class="card-body">
             <span class="badge">Research Publishing · Editorial</span>
@@ -198,7 +192,7 @@
       <div class="detail-hd" data-reveal>
         <div class="detail-title-block">
           <h2 class="detail-title">PandaWare</h2>
-          <p class="detail-sub">EMG-controlled myoelectric prosthetic hand, built from scratch.</p>
+          <p class="detail-sub">EMG-controlled myoelectric prosthetic hand, built from scratch. PandaWare reads forearm surface EMG, classifies muscle activation in real time on an RP2040, and drives five MG996R servos through a tendon-routed finger mechanism printed in PLA+. A current-sensing safety loop on the INA219 detects object contact and halts grip before force becomes damaging. Total build cost: $180, no lab, no machined parts.</p>
         </div>
         <div class="detail-actions">
           <a href="Shreya_Sutar_Official_Paper.pdf" class="btn-secondary" target="_blank" rel="noopener">Read the Paper ↗</a>
@@ -385,49 +379,31 @@
 
       <div class="detail-block" data-reveal>
         <h3 class="block-label">Awards</h3>
-        <div class="awards-row" id="awards-tabs" role="tablist">
-          <button class="award active" role="tab" aria-selected="true"  aria-controls="award-panel-0" data-panel="0">ISEF 2026 Nominee</button>
-          <button class="award"        role="tab" aria-selected="false" aria-controls="award-panel-1" data-panel="1">CSEF 5th Place</button>
-          <button class="award"        role="tab" aria-selected="false" aria-controls="award-panel-2" data-panel="2">LACSEF 2nd Place</button>
-          <button class="award"        role="tab" aria-selected="false" aria-controls="award-panel-3" data-panel="3">Invention Convention Winner</button>
-        </div>
+        <div class="award-gallery">
 
-        <div class="award-panels">
-
-          <div class="award-panel active" id="award-panel-0" role="tabpanel">
-            <div class="gallery">
-              <!-- replace with /media/isef-1.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="ISEF photo 1"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-              <!-- replace with /media/isef-2.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="ISEF photo 2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-              <!-- replace with /media/isef-3.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="ISEF photo 3"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-              <!-- replace with /media/isef-4.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="ISEF photo 4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+          <div class="award-col">
+            <span class="award">ISEF 2026 Nominee</span>
+            <div class="gal-slot" style="overflow:hidden;">
+              <img src="isef.nominee.png" alt="ISEF 2026 Nominee" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
             </div>
           </div>
 
-          <div class="award-panel" id="award-panel-1" role="tabpanel" hidden>
-            <div class="gallery">
-              <!-- replace with /media/csef-1.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="CSEF photo 1"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-              <!-- replace with /media/csef-2.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="CSEF photo 2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-              <!-- replace with /media/csef-3.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="CSEF photo 3"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-              <!-- replace with /media/csef-4.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="CSEF photo 4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-            </div>
+          <div class="award-col">
+            <span class="award">CSEF 5th Place</span>
+            <!-- replace with /media/csef.jpg -->
+            <div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="CSEF photo"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
           </div>
 
-          <div class="award-panel" id="award-panel-2" role="tabpanel" hidden>
-            <div class="gallery">
-              <!-- replace with /media/lacsef-1.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="LACSEF photo 1"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-              <!-- replace with /media/lacsef-2.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="LACSEF photo 2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-              <!-- replace with /media/lacsef-3.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="LACSEF photo 3"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-              <!-- replace with /media/lacsef-4.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="LACSEF photo 4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-            </div>
+          <div class="award-col">
+            <span class="award">LACSEF 2nd Place</span>
+            <!-- replace with /media/lacsef.jpg -->
+            <div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="LACSEF photo"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
           </div>
 
-          <div class="award-panel" id="award-panel-3" role="tabpanel" hidden>
-            <div class="gallery">
-              <!-- replace with /media/ic-1.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Invention Convention photo 1"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-              <!-- replace with /media/ic-2.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Invention Convention photo 2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-              <!-- replace with /media/ic-3.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Invention Convention photo 3"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-              <!-- replace with /media/ic-4.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Invention Convention photo 4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-            </div>
+          <div class="award-col">
+            <span class="award">Invention Convention Winner</span>
+            <!-- replace with /media/ic.jpg -->
+            <div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Invention Convention photo"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
           </div>
 
         </div>
@@ -453,12 +429,9 @@
             <p class="cw-body">The first hand couples the finger joints together, so the fingers curl as a single unit. That's sufficient for grasping and insufficient for anything requiring a specific hand configuration. The second-generation design drives each finger joint independently — three flexor tendons per finger for the MCP, PIP, and DIP joints, with passive spring return in place of antagonistic extensor tendons. The goal is to remove mechanical coupling as a source of positioning error entirely.</p>
           </div>
           <div class="cw-media">
-            <!-- replace with /media/v2-cad-render.jpg -->
-            <figure class="media-slot">
-              <div class="media-slot__inner" role="img" aria-label="IMAGE — v2 CAD render or finger assembly">
-                <span class="media-slot__label">IMAGE — v2 CAD render or finger assembly</span>
-              </div>
-            </figure>
+            <div class="cw-img-wrap">
+              <img src="inprogress.panda2.png" alt="PandaWare v2 in progress" style="width:100%;height:100%;object-fit:cover;border-radius:var(--r);">
+            </div>
           </div>
         </div>
 
@@ -469,12 +442,9 @@
             <p class="cw-body">How accurately and repeatably can a low-cost tendon-driven hand reach and hold a defined target configuration, and which subsystem limits that precision — the mechanism, the sensing, or the intent decoding? I'm using classical Odissi mudras as the ground-truth pose set, since each mudra is an exactly defined joint-angle configuration that a coupled mechanism physically cannot produce. That makes them a substantially harder benchmark than grasping tasks, and it yields continuous per-joint error data rather than pass/fail on whether an object was picked up.</p>
           </div>
           <div class="cw-media">
-            <!-- replace with /media/mudra-reference.jpg -->
-            <figure class="media-slot">
-              <div class="media-slot__inner" role="img" aria-label="IMAGE — reference mudra alongside the hand attempting it">
-                <span class="media-slot__label">IMAGE — reference mudra alongside the hand attempting it</span>
-              </div>
-            </figure>
+            <div class="cw-img-wrap">
+              <img src="indesign.mudras.jpg" alt="Odissi mudra reference" style="width:100%;height:100%;object-fit:cover;border-radius:var(--r);">
+            </div>
           </div>
         </div>
 
