@@ -481,9 +481,8 @@ svg { display: block; }
 
 .detail-hd {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--s8);
+  flex-direction: column;
+  gap: var(--s4);
   margin-bottom: var(--s8);
 }
 
@@ -500,7 +499,8 @@ svg { display: block; }
   font-size: 1.0625rem;
   color: var(--muted-hi);
   margin-top: var(--s2);
-  max-width: 50ch;
+  max-width: 80ch;
+  line-height: 1.75;
 }
 
 .detail-actions {
@@ -1327,7 +1327,7 @@ svg { display: block; }
   .about-layout { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .overview-grid { grid-template-columns: 1fr; }
-  .detail-hd { flex-direction: column; }
+
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
 
