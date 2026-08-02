@@ -166,3 +166,31 @@ function initScrollReveals() {
     });
   });
 })();
+/* ═══════════════════════════════════════════════════════
+   AWARDS TABS — click button → show matching gallery panel
+   ═══════════════════════════════════════════════════════ */
+(function initAwardsTabs() {
+  const tablist = document.getElementById('awards-tabs');
+  if (!tablist) return;
+
+  tablist.addEventListener('click', e => {
+    const btn = e.target.closest('[data-panel]');
+    if (!btn) return;
+
+    const panelId = btn.dataset.panel;
+
+    tablist.querySelectorAll('.award').forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+
+    document.querySelectorAll('.award-panel').forEach(p => {
+      const isTarget = p.id === `award-panel-${panelId}`;
+      p.hidden = !isTarget;
+      if (isTarget) p.classList.add('active');
+      else p.classList.remove('active');
+    });
+  });
+})();

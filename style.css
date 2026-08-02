@@ -577,12 +577,29 @@ svg { display: block; }
   border: 1px solid var(--border);
   border-radius: var(--r-sm);
   color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.18s, color 0.18s, background 0.18s;
 }
 
-.award.highlight {
+.award:hover {
+  border-color: var(--border-hi);
+  color: var(--muted-hi);
+}
+
+.award.highlight,
+.award.active {
   border-color: var(--accent);
   color: var(--accent);
   background: rgba(232,146,46,0.06);
+}
+
+.award-panels {
+  margin-top: var(--s4);
+}
+
+.award-panel[hidden] {
+  display: none;
 }
 
 
