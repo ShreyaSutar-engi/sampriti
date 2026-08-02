@@ -56,10 +56,7 @@
       <div class="hstat-div" aria-hidden="true"></div>
       <div class="hstat"><span class="hstat-n">ISEF</span><span class="hstat-l">2026 Nominee</span></div>
       <div class="hstat-div" aria-hidden="true"></div>
-      <div class="hstat-div" aria-hidden="true"></div>
-      <div class="hstat"><span class="hstat-n">[[FILL: number]]</span><span class="hstat-l">Research Papers</span></div>
-      <div class="hstat-div" aria-hidden="true"></div>
-      <div class="hstat"><span class="hstat-n">ISSN</span><span class="hstat-l">Certified Journal</span></div>
+      <div class="hstat"><span class="hstat-n">1</span><span class="hstat-l">Research Paper</span></div>
     </div>
   </section>
 
@@ -273,15 +270,15 @@
         <h3 class="block-label">Measured Performance</h3>
         <div class="perf-grid">
           <div class="perf-stat">
-            <span class="perf-stat__value">[[FILL: $180]]</span>
+            <span class="perf-stat__value">$180</span>
             <span class="perf-stat__label">Total Build Cost</span>
           </div>
           <div class="perf-stat">
-            <span class="perf-stat__value">[[FILL: 0–12 N]]</span>
+            <span class="perf-stat__value">0–12 N</span>
             <span class="perf-stat__label">Grip Force Range</span>
           </div>
           <div class="perf-stat">
-            <span class="perf-stat__value">[[FILL: 92%]]</span>
+            <span class="perf-stat__value">92%</span>
             <span class="perf-stat__label">Grip Detection Success Rate</span>
           </div>
           <div class="perf-stat">
@@ -297,7 +294,7 @@
             <span class="perf-stat__label">Contact-Detection Current Threshold</span>
           </div>
         </div>
-        <p class="perf-note">Commercial myoelectric prosthetic hands cost between $20,000 and $100,000. PandaWare was built for [[FILL: total cost]] using consumer components, a hobbyist 3D printer, and no laboratory access. The performance figures above are the honest measured envelope, including where the system underperforms.</p>
+        <p class="perf-note">Commercial myoelectric prosthetic hands cost between $20,000 and $100,000. PandaWare was built for $180 using consumer components, a hobbyist 3D printer, and no laboratory access. The performance figures above are the honest measured envelope, including where the system underperforms.</p>
         <p class="perf-limit">Known limitations: [[FILL: 2–3 sentences on where the system currently fails — e.g. performance under electrode shift, soft vs. rigid object behavior, grip types not yet supported]]</p>
       </div>
 
@@ -388,35 +385,51 @@
 
       <div class="detail-block" data-reveal>
         <h3 class="block-label">Awards</h3>
-        <div class="awards-row">
-          <div class="award highlight">ISEF 2026 Nominee</div>
-          <div class="award">CSEF 5th Place</div>
-          <div class="award">LACSEF 2nd Place</div>
-          <div class="award">Invention Convention Winner</div>
+        <div class="awards-row" id="awards-tabs" role="tablist">
+          <button class="award active" role="tab" aria-selected="true"  aria-controls="award-panel-0" data-panel="0">ISEF 2026 Nominee</button>
+          <button class="award"        role="tab" aria-selected="false" aria-controls="award-panel-1" data-panel="1">CSEF 5th Place</button>
+          <button class="award"        role="tab" aria-selected="false" aria-controls="award-panel-2" data-panel="2">LACSEF 2nd Place</button>
+          <button class="award"        role="tab" aria-selected="false" aria-controls="award-panel-3" data-panel="3">Invention Convention Winner</button>
         </div>
-      </div>
 
-      <div class="detail-block" data-reveal>
-        <h3 class="block-label">Gallery</h3>
-        <div class="gallery">
-          <div class="placeholder gal-slot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Gallery image">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-              <circle cx="12" cy="13" r="4"/>
-            </svg>
+        <div class="award-panels">
+
+          <div class="award-panel active" id="award-panel-0" role="tabpanel">
+            <div class="gallery">
+              <!-- replace with /media/isef-1.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="ISEF photo 1"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+              <!-- replace with /media/isef-2.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="ISEF photo 2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+              <!-- replace with /media/isef-3.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="ISEF photo 3"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+              <!-- replace with /media/isef-4.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="ISEF photo 4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+            </div>
           </div>
-          <div class="placeholder gal-slot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Gallery image">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-              <circle cx="12" cy="13" r="4"/>
-            </svg>
+
+          <div class="award-panel" id="award-panel-1" role="tabpanel" hidden>
+            <div class="gallery">
+              <!-- replace with /media/csef-1.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="CSEF photo 1"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+              <!-- replace with /media/csef-2.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="CSEF photo 2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+              <!-- replace with /media/csef-3.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="CSEF photo 3"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+              <!-- replace with /media/csef-4.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="CSEF photo 4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+            </div>
           </div>
-          <div class="placeholder gal-slot">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Gallery image">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-              <circle cx="12" cy="13" r="4"/>
-            </svg>
+
+          <div class="award-panel" id="award-panel-2" role="tabpanel" hidden>
+            <div class="gallery">
+              <!-- replace with /media/lacsef-1.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="LACSEF photo 1"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+              <!-- replace with /media/lacsef-2.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="LACSEF photo 2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+              <!-- replace with /media/lacsef-3.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="LACSEF photo 3"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+              <!-- replace with /media/lacsef-4.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="LACSEF photo 4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+            </div>
           </div>
+
+          <div class="award-panel" id="award-panel-3" role="tabpanel" hidden>
+            <div class="gallery">
+              <!-- replace with /media/ic-1.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Invention Convention photo 1"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+              <!-- replace with /media/ic-2.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Invention Convention photo 2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+              <!-- replace with /media/ic-3.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Invention Convention photo 3"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+              <!-- replace with /media/ic-4.jpg --><div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Invention Convention photo 4"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+            </div>
+          </div>
+
         </div>
       </div>
 
