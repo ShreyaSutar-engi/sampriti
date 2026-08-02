@@ -580,6 +580,12 @@ svg { display: block; }
   background: transparent;
   cursor: pointer;
   transition: border-color 0.18s, color 0.18s, background 0.18s;
+  /* reset browser button defaults */
+  -webkit-appearance: none;
+  appearance: none;
+  line-height: 1.4;
+  display: inline-flex;
+  align-items: center;
 }
 
 .award:hover {
@@ -609,7 +615,7 @@ svg { display: block; }
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--s3);
   margin-top: var(--s4);
 }
