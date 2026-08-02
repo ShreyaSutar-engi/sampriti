@@ -215,7 +215,7 @@
               <p class="overview-desc">Adaptive normalization enabling reliable grip detection across varying muscle fatigue and electrode placement.</p>
               <figcaption class="fig-caption">normalization.png — x-axis: [[FILL: x-axis label, e.g. Time (s)]] · y-axis: [[FILL: y-axis label, e.g. Normalized EMG amplitude]]. [[FILL: one sentence on what the reader should conclude]]</figcaption>
             </div>
-            <div class="overview-card-img"><img src="normalization.png" alt="EMG signal normalization graph" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
+            <div class="overview-card-img img-contain"><img src="normalization.png" alt="EMG signal normalization graph" style="width:100%;height:100%;object-fit:contain;border-radius:inherit;"></div>
           </div>
           <div class="overview-card" data-reveal>
             <div class="overview-card-text">
@@ -225,7 +225,7 @@
               <p class="overview-desc">Real-time current sensing via INA219 limits grip force automatically, preventing damage to objects. Works reliably on rigid objects; degrades on compliant surfaces.</p>
               <figcaption class="fig-caption">graph.png — x-axis: [[FILL: x-axis label, e.g. Grip attempt #]] · y-axis: [[FILL: y-axis label, e.g. Current draw (mA)]]. [[FILL: one sentence on what the reader should conclude]]</figcaption>
             </div>
-            <div class="overview-card-img"><img src="graph.png" alt="Closed-loop current sensing performance graph" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
+            <div class="overview-card-img img-contain"><img src="graph.png" alt="Closed-loop current sensing performance graph" style="width:100%;height:100%;object-fit:contain;border-radius:inherit;"></div>
           </div>
         </div>
       </div>
@@ -355,7 +355,7 @@
           <div class="award-col">
             <span class="award">ISEF 2026 Nominee</span>
             <div class="gal-slot" style="overflow:hidden;">
-              <img src="isef.nominee.png" alt="ISEF 2026 Nominee" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+              <img src="isef.nominee.png" alt="ISEF 2026 Nominee" style="width:100%;height:100%;object-fit:contain;border-radius:inherit;background:#0e0e0e;">
             </div>
           </div>
 
@@ -397,7 +397,7 @@
           <div class="cw-content">
             <span class="status-tag">In progress</span>
             <h3 class="cw-title">PandaWare v2 — Independently Actuated Hand</h3>
-            <p class="cw-body">The first hand couples the finger joints together, so the fingers curl as a single unit. That's sufficient for grasping and insufficient for anything requiring a specific hand configuration. The second-generation design drives each finger joint independently — three flexor tendons per finger for the MCP, PIP, and DIP joints, with passive spring return in place of antagonistic extensor tendons. The goal is to remove mechanical coupling as a source of positioning error entirely.</p>
+            <p class="cw-body">The first hand couples the finger joints together, so the fingers curl as a single unit. That's sufficient for grasping and insufficient for anything requiring a specific hand configuration. The second-generation design drives each finger joint independently, with three flexor tendons per finger for the MCP, PIP, and DIP joints and passive spring return in place of antagonistic extensor tendons. The goal is to remove mechanical coupling as a source of positioning error entirely.</p>
           </div>
           <div class="cw-media">
             <div class="cw-img-wrap">
@@ -410,11 +410,11 @@
           <div class="cw-content">
             <span class="status-tag">In design</span>
             <h3 class="cw-title">Precision Characterization Study</h3>
-            <p class="cw-body">How accurately and repeatably can a low-cost tendon-driven hand reach and hold a defined target configuration, and which subsystem limits that precision — the mechanism, the sensing, or the intent decoding? I'm using classical Odissi mudras as the ground-truth pose set, since each mudra is an exactly defined joint-angle configuration that a coupled mechanism physically cannot produce. That makes them a substantially harder benchmark than grasping tasks, and it yields continuous per-joint error data rather than pass/fail on whether an object was picked up.</p>
+            <p class="cw-body">How accurately and repeatably can a low-cost tendon-driven hand reach and hold a defined target configuration, and which subsystem limits that precision: the mechanism, the sensing, or the intent decoding? I'm using classical Odissi mudras as the ground-truth pose set, since each mudra is an exactly defined joint-angle configuration that a coupled mechanism physically cannot produce. That makes them a substantially harder benchmark than grasping tasks, and it yields continuous per-joint error data rather than pass/fail on whether an object was picked up.</p>
           </div>
           <div class="cw-media">
             <div class="cw-img-wrap">
-              <img src="indesign.mudras.jpg" alt="Odissi mudra reference" style="width:100%;height:100%;object-fit:cover;border-radius:var(--r);">
+              <img src="indesign.mudras.jpg" alt="Odissi mudra reference" style="width:100%;height:100%;object-fit:contain;border-radius:var(--r);background:#0e0e0e;">
             </div>
           </div>
         </div>
@@ -572,7 +572,7 @@
               </svg>
             </div>
             <h3 class="stack-name">Tendon Actuation</h3>
-            <p class="stack-desc">Tendon routing was chosen because it moves the actuators off the fingers and into the palm, which is the only way to keep finger geometry close to human scale. The cost is friction and slack accumulating along the tendon path, which sets a hard ceiling on positioning precision — the limitation that motivates the second-generation design.</p>
+            <p class="stack-desc">Tendon routing was chosen because it moves the actuators off the fingers and into the palm, which is the only way to keep finger geometry close to human scale. The cost is friction and slack accumulating along the tendon path, which sets a hard ceiling on positioning precision, which is the limitation that motivates the second-generation design.</p>
           </div>
           <div class="stack-img placeholder" aria-hidden="true"></div>
         </div>
@@ -643,7 +643,7 @@
     <div class="site-wrap contact-inner">
       <p class="contact-eyebrow" data-reveal>[ Let's Connect ]</p>
       <h2 class="contact-heading" data-reveal>Building something<br>that matters.</h2>
-      <p class="contact-sub" data-reveal>Whether you're a researcher, engineer, or just curious — I'd love to talk about hardware, prosthetics, and building things that change lives.</p>
+      <p class="contact-sub" data-reveal>Whether you're a researcher, engineer, or just curious, I'd love to talk about hardware, prosthetics, and building things that change lives.</p>
       <div class="contact-btns" data-reveal>
         <button class="btn-primary contact-btn" onclick="document.getElementById('contactPopup').classList.add('open')">Contact Me</button>
       </div>
@@ -657,12 +657,21 @@
       <button class="contact-popup-close" aria-label="Close" onclick="document.getElementById('contactPopup').classList.remove('open')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
-      <a href="mailto:shreya.sutar057@gmail.com" class="contact-popup-row">
-        <span class="contact-popup-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-        </span>
-        <span class="contact-popup-handle">shreya.sutar057@gmail.com</span>
-      </a>
+      <div class="contact-popup-row" id="emailRow">
+        <a href="mailto:shreya.sutar057@gmail.com" class="contact-popup-row-link">
+          <span class="contact-popup-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          </span>
+          <span class="contact-popup-handle">shreya.sutar057@gmail.com</span>
+        </a>
+        <button class="copy-btn" aria-label="Copy email address" onclick="copyEmail()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          <span class="copy-toast">Copied!</span>
+        </button>
+      </div>
     </div>
   </div>
 

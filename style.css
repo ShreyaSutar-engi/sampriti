@@ -212,7 +212,7 @@ svg { display: block; }
 
 .hero-eyebrow {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.9375rem;
   color: var(--accent);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -272,7 +272,7 @@ svg { display: block; }
 }
 
 .hstat-l {
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   color: var(--muted);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -351,7 +351,7 @@ svg { display: block; }
 
 .about-card-label {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   color: var(--muted);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -396,7 +396,7 @@ svg { display: block; }
 
 .project-num {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.9375rem;
   color: var(--accent);
   letter-spacing: 0.06em;
   padding: var(--s2);
@@ -481,9 +481,8 @@ svg { display: block; }
 
 .detail-hd {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--s8);
+  flex-direction: column;
+  gap: var(--s4);
   margin-bottom: var(--s8);
 }
 
@@ -500,7 +499,8 @@ svg { display: block; }
   font-size: 1.0625rem;
   color: var(--muted-hi);
   margin-top: var(--s2);
-  max-width: 50ch;
+  max-width: 80ch;
+  line-height: 1.75;
 }
 
 .detail-actions {
@@ -551,11 +551,16 @@ svg { display: block; }
 }
 
 .overview-card-img {
-  width: 220px;
+  width: 300px;
   flex-shrink: 0;
   background: var(--surface-2);
   overflow: hidden;
   align-self: stretch;
+}
+
+.overview-card-img.img-contain img {
+  object-fit: contain !important;
+  background: var(--surface-2);
 }
 
 
@@ -676,6 +681,7 @@ svg { display: block; }
   display: flex;
   flex-direction: column;
   position: relative;
+  height: 360px;
   transition: border-color 0.18s;
 }
 
@@ -686,8 +692,14 @@ svg { display: block; }
   display: flex;
   flex-direction: column;
   gap: var(--s1);
-  flex: 1;
+  transition: transform 0.4s ease;
+  /* clip overflowing text inside fixed-height card */
   overflow: hidden;
+  height: 100%;
+}
+
+.stack-item:hover .stack-content {
+  transform: translateY(-130px);
 }
 
 
@@ -700,14 +712,14 @@ svg { display: block; }
 
 .stack-num {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   color: var(--accent);
   letter-spacing: 0.06em;
 }
 
 .stack-cat {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.625rem;
+  font-size: 0.8125rem;
   color: var(--muted);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -739,16 +751,18 @@ svg { display: block; }
 }
 
 .stack-img {
-  width: 100%;
-  height: 120px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 130px;
   overflow: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  flex-shrink: 0;
+  transform: translateY(130px);
+  transition: transform 0.4s ease;
 }
 
 .stack-item:hover .stack-img {
-  opacity: 1;
+  transform: translateY(0);
 }
 
 
@@ -841,7 +855,7 @@ svg { display: block; }
 
 .contact-eyebrow {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.9375rem;
   color: var(--accent);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -944,11 +958,68 @@ svg { display: block; }
   border-radius: var(--r-sm);
   transition: background 0.16s, border-color 0.16s;
   color: var(--text);
+  position: relative;
 }
 
 .contact-popup-row:hover {
   background: rgba(232,146,46,0.06);
   border-color: var(--border-2);
+}
+
+.contact-popup-row.flash {
+  background: rgba(232,146,46,0.18);
+  border-color: var(--accent);
+  transition: background 0.08s, border-color 0.08s;
+}
+
+.contact-popup-row-link {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  flex: 1;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.copy-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  padding: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-sm);
+  position: relative;
+  flex-shrink: 0;
+  transition: color 0.16s;
+}
+
+.copy-btn:hover { color: var(--accent); }
+.copy-btn svg { width: 1.05rem; height: 1.05rem; }
+
+.copy-toast {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  right: 0;
+  background: var(--accent);
+  color: #000;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--r-sm);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.copy-toast.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .contact-popup-icon {
@@ -1004,14 +1075,14 @@ svg { display: block; }
 }
 
 .footer-school {
-  font-size: 0.75rem;
+  font-size: 0.9375rem;
   color: var(--muted);
   opacity: 0.6;
 }
 
 .footer-col-label {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   color: var(--muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1065,7 +1136,7 @@ svg { display: block; }
 
 .footer-award {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   color: var(--accent) !important;
   opacity: 1 !important;
   letter-spacing: 0.06em;
@@ -1156,7 +1227,7 @@ svg { display: block; }
 
 .badge {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   color: var(--accent);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1164,7 +1235,7 @@ svg { display: block; }
 
 .chip {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.9375rem;
   padding: 0.35rem 0.75rem;
   background: var(--surface-2);
   border: 1px solid var(--border);
@@ -1186,7 +1257,7 @@ svg { display: block; }
 
 .sec-label {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.9375rem;
   color: var(--accent);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1195,7 +1266,7 @@ svg { display: block; }
 
 .block-label {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   color: var(--muted);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1209,7 +1280,7 @@ svg { display: block; }
 
 .overview-num {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   color: var(--accent);
   letter-spacing: 0.06em;
 }
@@ -1270,7 +1341,7 @@ svg { display: block; }
   .about-layout { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .overview-grid { grid-template-columns: 1fr; }
-  .detail-hd { flex-direction: column; }
+
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
 
@@ -1316,14 +1387,14 @@ svg { display: block; }
   justify-content: center;
   text-align: center;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   color: var(--muted);
   padding: var(--s2);
   line-height: 1.55;
 }
 
 .media-slot__caption {
-  font-size: 0.78rem;
+  font-size: 0.9375rem;
   color: var(--muted);
   margin-top: var(--s2);
   line-height: 1.65;
@@ -1344,7 +1415,7 @@ svg { display: block; }
    ======================================================================== */
 
 .fig-caption {
-  font-size: 0.75rem;
+  font-size: 0.9375rem;
   color: var(--muted);
   line-height: 1.6;
   font-style: italic;
@@ -1386,7 +1457,7 @@ svg { display: block; }
 
 .perf-stat__label {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   color: var(--muted);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1442,7 +1513,7 @@ svg { display: block; }
 
 .iter-version {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   color: var(--accent);
   letter-spacing: 0.06em;
   display: block;
@@ -1452,7 +1523,7 @@ svg { display: block; }
 .iter-failed-label,
 .iter-changed-label {
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.625rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1532,7 +1603,7 @@ svg { display: block; }
 .status-tag {
   display: inline-block;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
