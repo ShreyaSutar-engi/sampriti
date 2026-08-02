@@ -194,3 +194,19 @@ function initScrollReveals() {
     });
   });
 })();
+
+/* ═══════════════════════════════════════════════════════
+   COPY EMAIL
+   ═══════════════════════════════════════════════════════ */
+function copyEmail() {
+  navigator.clipboard.writeText('shreya.sutar057@gmail.com').then(() => {
+    const row = document.getElementById('emailRow');
+    const toast = row.querySelector('.copy-toast');
+    row.classList.add('flash');
+    toast.classList.add('show');
+    setTimeout(() => {
+      row.classList.remove('flash');
+      toast.classList.remove('show');
+    }, 1600);
+  });
+}

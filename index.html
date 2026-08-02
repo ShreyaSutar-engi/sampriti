@@ -657,12 +657,21 @@
       <button class="contact-popup-close" aria-label="Close" onclick="document.getElementById('contactPopup').classList.remove('open')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
-      <a href="mailto:shreya.sutar057@gmail.com" class="contact-popup-row">
-        <span class="contact-popup-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-        </span>
-        <span class="contact-popup-handle">shreya.sutar057@gmail.com</span>
-      </a>
+      <div class="contact-popup-row" id="emailRow">
+        <a href="mailto:shreya.sutar057@gmail.com" class="contact-popup-row-link">
+          <span class="contact-popup-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          </span>
+          <span class="contact-popup-handle">shreya.sutar057@gmail.com</span>
+        </a>
+        <button class="copy-btn" aria-label="Copy email address" onclick="copyEmail()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          <span class="copy-toast">Copied!</span>
+        </button>
+      </div>
     </div>
   </div>
 
