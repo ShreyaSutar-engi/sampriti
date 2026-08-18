@@ -126,8 +126,20 @@
             <h3>ISE — Innovation in Science and Engineering Journal</h3>
             <p>An ISSN-registered student research journal I founded and edit, publishing high school and undergraduate research free of charge. Built the full manuscript infrastructure, recruited faculty reviewers across multiple universities, and now operate it with faculty advising from MIT.</p>
             <a href="https://iseofficial.org/" class="arrow-link" target="_blank" rel="noopener">Visit ISE <span aria-hidden="true">→</span></a>
+            <button class="arrow-link" style="background:none;border:none;padding:0;cursor:pointer;font:inherit;" onclick="document.getElementById('iseSubmitPopup').classList.add('open')">Submit Paper <span aria-hidden="true">→</span></button>
           </div>
         </article>
+
+        <!-- ISE Submit Paper Popup -->
+        <div id="iseSubmitPopup" class="contact-popup" role="dialog" aria-modal="true" aria-label="Submit a paper to ISE">
+          <div class="contact-popup-inner">
+            <button class="popup-close" onclick="document.getElementById('iseSubmitPopup').classList.remove('open')" aria-label="Close">✕</button>
+            <p class="contact-popup-label">[ Submit a Paper ]</p>
+            <h3 class="contact-popup-name" style="font-size:1.5rem;">ISE Journal</h3>
+            <p class="contact-popup-sub">Email your paper to</p>
+            <a href="mailto:iseofficialjournal@gmail.com" class="contact-popup-email" style="font-size:1.1rem;">iseofficialjournal@gmail.com</a>
+          </div>
+        </div>
 
         <!-- [ 03 ] Assistive Technology Outreach -->
         <article class="project-card" data-reveal>
