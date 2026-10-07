@@ -299,60 +299,6 @@
     </div>
   </section>
 
-  <!-- ── Current Work ─────────────────────────────────────── -->
-  <!-- Change 5: New section between Projects/PandaWare and Tech Stack -->
-  <section id="current-work">
-    <div class="pcb-grid" aria-hidden="true"></div>
-    <div class="pcb-fade" aria-hidden="true"></div>
-    <div class="site-wrap">
-      <h2 class="sec-label" data-reveal>[ Current Work ]</h2>
-
-      <div class="cw-list">
-
-        <div class="cw-entry" data-reveal>
-          <div class="cw-content">
-            <span class="status-tag">In progress</span>
-            <h3 class="cw-title">PandaWare v2 — Independently Actuated Hand</h3>
-            <p class="cw-body">The first hand couples its finger joints, so it can grasp but cannot reach a defined hand configuration. v2 actuates each joint independently to remove coupling as a source of positioning error.</p>
-            <a href="#pandaware-v2" class="arrow-link">View v2 Design <span aria-hidden="true">→</span></a>
-          </div>
-          <div class="cw-media">
-            <div class="cw-img-wrap" style="padding-bottom: var(--s4);">
-              <img src="inprogress.panda2.png" alt="PandaWare v2 in progress" style="width:100%;height:100%;object-fit:cover;border-radius:var(--r);">
-            </div>
-          </div>
-        </div>
-
-        <div class="cw-entry" data-reveal>
-          <div class="cw-content">
-            <span class="status-tag">In design</span>
-            <h3 class="cw-title">Precision Characterization Study</h3>
-            <p class="cw-body">How accurately and repeatably can a low-cost tendon-driven hand reach and hold a defined target configuration, and which subsystem limits that precision: the mechanism, the sensing, or the intent decoding? I'm using classical Odissi mudras as the ground-truth pose set, since each mudra is an exactly defined joint-angle configuration that a coupled mechanism physically cannot produce. That makes them a substantially harder benchmark than grasping tasks, and it yields continuous per-joint error data rather than pass/fail on whether an object was picked up.</p>
-          </div>
-          <div class="cw-media">
-            <div class="cw-img-wrap">
-              <img src="indesign.mudras.jpg" alt="Odissi mudra reference" style="width:100%;height:100%;object-fit:contain;border-radius:var(--r);background:#6b3318;">
-            </div>
-          </div>
-        </div>
-
-        <div class="cw-entry" data-reveal>
-          <div class="cw-content">
-            <span class="status-tag">In design</span>
-            <h3 class="cw-title">EMG Assistive Glove (ISEF 2027)</h3>
-            <p class="cw-body">A wearable glove that reads forearm muscle signals and assists people with weak grip. Most assistive gloves leave the thumb passive, which rules out most everyday grasps. This design actuates the thumb in two degrees of freedom, adds force-aware grasping through motor current sensing so delicate objects aren't crushed, and uses flexor-extensor co-contraction to hold flat objects that typically slip out of tendon-driven gloves.</p>
-          </div>
-          <div class="cw-media">
-            <div class="cw-img-wrap">
-              <div class="img-ph" style="height:100%;"><span class="img-ph__label">Glove concept image coming soon</span><img src="glove-concept.png" alt="EMG assistive glove concept" onerror="this.remove()"></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <!-- ── PandaWare v2 ─────────────────────────────────────── -->
   <section id="pandaware-v2">
     <div class="site-wrap">
@@ -462,6 +408,60 @@
         <p class="perf-limit">v2 is the hardware for the <a href="#current-work">Precision Characterization Study</a>. Classical Odissi mudras serve as the ground-truth pose set: each one is an exactly defined joint-angle configuration that v1's coupled mechanism cannot produce, so v2 is measured against them joint by joint.</p>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ── Current Work ─────────────────────────────────────── -->
+  <!-- Change 5: New section between Projects/PandaWare and Tech Stack -->
+  <section id="current-work">
+    <div class="pcb-grid" aria-hidden="true"></div>
+    <div class="pcb-fade" aria-hidden="true"></div>
+    <div class="site-wrap">
+      <h2 class="sec-label" data-reveal>[ Current Work ]</h2>
+
+      <div class="cw-list">
+
+        <div class="cw-entry" data-reveal>
+          <div class="cw-content">
+            <span class="status-tag">In progress</span>
+            <h3 class="cw-title">PandaWare v2 — Independently Actuated Hand</h3>
+            <p class="cw-body">The first hand couples its finger joints, so it can grasp but cannot reach a defined hand configuration. v2 actuates each joint independently to remove coupling as a source of positioning error.</p>
+            <a href="#pandaware-v2" class="arrow-link">View v2 Design <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="cw-media">
+            <div class="cw-img-wrap" style="padding-bottom: var(--s4);">
+              <img src="inprogress.panda2.png" alt="PandaWare v2 in progress" style="width:100%;height:100%;object-fit:cover;border-radius:var(--r);">
+            </div>
+          </div>
+        </div>
+
+        <div class="cw-entry" data-reveal>
+          <div class="cw-content">
+            <span class="status-tag">In design</span>
+            <h3 class="cw-title">Precision Characterization Study</h3>
+            <p class="cw-body">How accurately and repeatably can a low-cost tendon-driven hand reach and hold a defined target configuration, and which subsystem limits that precision: the mechanism, the sensing, or the intent decoding? I'm using classical Odissi mudras as the ground-truth pose set, since each mudra is an exactly defined joint-angle configuration that a coupled mechanism physically cannot produce. That makes them a substantially harder benchmark than grasping tasks, and it yields continuous per-joint error data rather than pass/fail on whether an object was picked up.</p>
+          </div>
+          <div class="cw-media">
+            <div class="cw-img-wrap">
+              <img src="indesign.mudras.jpg" alt="Odissi mudra reference" style="width:100%;height:100%;object-fit:contain;border-radius:var(--r);background:#6b3318;">
+            </div>
+          </div>
+        </div>
+
+        <div class="cw-entry" data-reveal>
+          <div class="cw-content">
+            <span class="status-tag">In design</span>
+            <h3 class="cw-title">EMG Assistive Glove (ISEF 2027)</h3>
+            <p class="cw-body">A wearable glove that reads forearm muscle signals and assists people with weak grip. Most assistive gloves leave the thumb passive, which rules out most everyday grasps. This design actuates the thumb in two degrees of freedom, adds force-aware grasping through motor current sensing so delicate objects aren't crushed, and uses flexor-extensor co-contraction to hold flat objects that typically slip out of tendon-driven gloves.</p>
+          </div>
+          <div class="cw-media">
+            <div class="cw-img-wrap">
+              <div class="img-ph" style="height:100%;"><span class="img-ph__label">Glove concept image coming soon</span><img src="glove-concept.png" alt="EMG assistive glove concept" onerror="this.remove()"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -733,8 +733,8 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#current-work">Current Work</a></li>
           <li><a href="#pandaware-v2">PandaWare v2</a></li>
+          <li><a href="#current-work">Current Work</a></li>
           <li><a href="#stack">Tech Stack</a></li>
           <li><a href="#skills">Skills</a></li>
         </ul>
