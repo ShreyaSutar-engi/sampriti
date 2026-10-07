@@ -152,6 +152,131 @@
     </div>
   </section>
 
+  <!-- ── PandaWare v2 ─────────────────────────────────────── -->
+  <section id="pandaware-v2">
+    <div class="site-wrap">
+
+      <div class="v2-hero" data-reveal>
+        <div class="img-ph" style="height:100%;"><span class="img-ph__label">PandaWare v2 render coming soon</span><img class="v2-hero-blur" src="pandaware-v2-hero.jpg" alt="" aria-hidden="true" onerror="this.remove()"><img src="pandaware-v2-hero.jpg" alt="PandaWare v2 finger assembly in CAD" style="object-fit:contain;background:transparent;" onerror="this.remove()"></div>
+      </div>
+
+      <div class="detail-hd" data-reveal>
+        <div class="detail-title-block">
+          <span class="status-tag">In progress</span>
+          <h2 class="detail-title" style="margin-top:var(--s2);">PandaWare v2</h2>
+          <!-- TODO(status): replace with exact CAD status once confirmed -->
+          <p class="detail-sub">PandaWare v1 couples its finger joints, so the fingers curl as a single unit. That is enough to grasp an object and not enough to reach a defined hand configuration. v2 drives each finger joint independently, with three flexor tendons per finger for the MCP, PIP, and DIP joints and passive spring return in place of antagonistic extensors, to remove mechanical coupling as a source of positioning error. It is currently in CAD.</p>
+        </div>
+        <!-- TODO(cad-link): add Onshape button here if the v2 document is public -->
+      </div>
+
+      <div class="detail-block" data-reveal>
+        <h3 class="block-label">Design Decisions</h3>
+        <div class="overview-grid">
+          <div class="overview-card" data-reveal>
+            <div class="overview-card-text">
+              <span class="overview-num">[ 01 ]</span>
+              <div class="overview-rule"></div>
+              <h4 class="overview-title">Independent Joint Actuation</h4>
+              <p class="overview-desc">Each joint gets its own flexor tendon with passive spring return, so a commanded pose is a set of independent joint angles rather than one shared curl. Dropping antagonistic extensors halves the tendon count and the friction that comes with it.</p>
+            </div>
+          </div>
+          <div class="overview-card" data-reveal>
+            <div class="overview-card-text">
+              <span class="overview-num">[ 02 ]</span>
+              <div class="overview-rule"></div>
+              <h4 class="overview-title">Ball-Bearing Joints</h4>
+              <p class="overview-desc">Printed pin joints wear and loosen, so their friction changes from cycle to cycle. Ball bearings at each joint keep friction low and consistent, which is what makes motion repeatable over many cycles.</p>
+            </div>
+          </div>
+          <div class="overview-card" data-reveal>
+            <div class="overview-card-text">
+              <span class="overview-num">[ 03 ]</span>
+              <div class="overview-rule"></div>
+              <h4 class="overview-title">Rigid Skeleton, Compliant Contact</h4>
+              <p class="overview-desc">The skeleton is printed in nylon or PETG to hold geometry under tendon load, with TPU 85A on the gripping faces. Stiffness goes where precision matters and compliance goes where the hand touches objects.</p>
+            </div>
+          </div>
+          <div class="overview-card" data-reveal>
+            <div class="overview-card-text">
+              <span class="overview-num">[ 04 ]</span>
+              <div class="overview-rule"></div>
+              <h4 class="overview-title">Per-Joint Angle Sensing</h4>
+              <p class="overview-desc">An AS5600 magnetic encoder with a diametric magnet on each joint axis measures the configuration the finger actually reached, instead of inferring it from servo commands. That turns positioning error into something measured directly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-block" data-reveal>
+        <h3 class="block-label">Progress So Far</h3>
+        <!-- TODO(progress): replace steps with confirmed CAD milestones -->
+        <div class="tl-map">
+          <div class="tl-track" aria-hidden="true">
+            <span class="tl-seg tl-seg--r1"></span>
+            <span class="tl-seg tl-turn"></span>
+            <span class="tl-seg tl-seg--r2"></span>
+            <span class="tl-seg tl-seg--future"></span>
+          </div>
+          <ol class="tl-grid">
+          <li class="tl-step is-done" style="grid-column:1;grid-row:1;">
+            <svg class="tl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-phase">[ 01 ] Done</span>
+            <h4 class="tl-title">Finger Module</h4>
+            <p class="tl-desc">Modeled in Onshape with independent MCP, PIP, and DIP joints.</p>
+          </li>
+          <li class="tl-step is-done" style="grid-column:2;grid-row:1;">
+            <svg class="tl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></svg>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-phase">[ 02 ] Done</span>
+            <h4 class="tl-title">Tendon Routing</h4>
+            <p class="tl-desc">Paths laid out for three flexor tendons per finger.</p>
+          </li>
+          <li class="tl-step is-done" style="grid-column:3;grid-row:1;">
+            <svg class="tl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-phase">[ 03 ] Done</span>
+            <h4 class="tl-title">Bearing Seats</h4>
+            <p class="tl-desc">Ball-bearing seats integrated into the joint geometry.</p>
+          </li>
+          <li class="tl-step is-now" style="grid-column:3;grid-row:2;">
+            <svg class="tl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="1"/><path d="M7 17h10v4H7z"/></svg>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-phase">[ 04 ] Now</span>
+            <h4 class="tl-title">First Print</h4>
+            <p class="tl-desc">Printing and assembling the first finger module.</p>
+          </li>
+          <li class="tl-step " style="grid-column:2;grid-row:2;">
+            <svg class="tl-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5"/></svg>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-phase">[ 05 ] Next</span>
+            <h4 class="tl-title">Precision Study</h4>
+            <p class="tl-desc">Joint-by-joint testing against the mudra pose set.</p>
+          </li>
+          </ol>
+        </div>
+        <div class="v2-img-row">
+          <div class="img-ph"><span class="img-ph__label">CAD view 1 coming soon</span><img src="pandaware-v2-cad-1.png" alt="PandaWare v2 CAD view 1" onerror="this.remove()"></div>
+          <div class="img-ph"><span class="img-ph__label">CAD view 2 coming soon</span><img src="pandaware-v2-cad-2.png" alt="PandaWare v2 CAD view 2" onerror="this.remove()"></div>
+          <div class="img-ph"><span class="img-ph__label">Finger module coming soon</span><img src="pandaware-v2-finger.png" alt="PandaWare v2 finger module" onerror="this.remove()"></div>
+        </div>
+      </div>
+
+      <div class="detail-block" data-reveal>
+        <h3 class="block-label">Roadmap</h3>
+        <!-- TODO(roadmap): confirm milestones -->
+        <ul class="v2-list">
+          <li>Print and assemble the first finger module</li>
+          <li>Validate joint friction and repeatability over repeated cycles</li>
+          <li>Begin the precision characterization study</li>
+        </ul>
+        <p class="perf-limit">v2 is the hardware for the <a href="#current-work">Precision Characterization Study</a>. Classical Odissi mudras serve as the ground-truth pose set: each one is an exactly defined joint-angle configuration that v1's coupled mechanism cannot produce, so v2 is measured against them joint by joint.</p>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ── PandaWare Detail ─────────────────────────────────── -->
   <section id="pandaware">
     <div class="site-wrap">
@@ -294,118 +419,6 @@
           </div>
 
         </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── PandaWare v2 ─────────────────────────────────────── -->
-  <section id="pandaware-v2">
-    <div class="site-wrap">
-
-      <div class="v2-hero" data-reveal>
-        <div class="img-ph" style="height:100%;"><span class="img-ph__label">PandaWare v2 render coming soon</span><img class="v2-hero-blur" src="pandaware-v2-hero.jpg" alt="" aria-hidden="true" onerror="this.remove()"><img src="pandaware-v2-hero.jpg" alt="PandaWare v2 finger assembly in CAD" style="object-fit:contain;background:transparent;" onerror="this.remove()"></div>
-      </div>
-
-      <div class="detail-hd" data-reveal>
-        <div class="detail-title-block">
-          <span class="status-tag">In progress</span>
-          <h2 class="detail-title" style="margin-top:var(--s2);">PandaWare v2</h2>
-          <!-- TODO(status): replace with exact CAD status once confirmed -->
-          <p class="detail-sub">PandaWare v1 couples its finger joints, so the fingers curl as a single unit. That is enough to grasp an object and not enough to reach a defined hand configuration. v2 drives each finger joint independently, with three flexor tendons per finger for the MCP, PIP, and DIP joints and passive spring return in place of antagonistic extensors, to remove mechanical coupling as a source of positioning error. It is currently in CAD.</p>
-        </div>
-        <!-- TODO(cad-link): add Onshape button here if the v2 document is public -->
-      </div>
-
-      <div class="detail-block" data-reveal>
-        <h3 class="block-label">Design Decisions</h3>
-        <div class="overview-grid">
-          <div class="overview-card" data-reveal>
-            <div class="overview-card-text">
-              <span class="overview-num">[ 01 ]</span>
-              <div class="overview-rule"></div>
-              <h4 class="overview-title">Independent Joint Actuation</h4>
-              <p class="overview-desc">Each joint gets its own flexor tendon with passive spring return, so a commanded pose is a set of independent joint angles rather than one shared curl. Dropping antagonistic extensors halves the tendon count and the friction that comes with it.</p>
-            </div>
-          </div>
-          <div class="overview-card" data-reveal>
-            <div class="overview-card-text">
-              <span class="overview-num">[ 02 ]</span>
-              <div class="overview-rule"></div>
-              <h4 class="overview-title">Ball-Bearing Joints</h4>
-              <p class="overview-desc">Printed pin joints wear and loosen, so their friction changes from cycle to cycle. Ball bearings at each joint keep friction low and consistent, which is what makes motion repeatable over many cycles.</p>
-            </div>
-          </div>
-          <div class="overview-card" data-reveal>
-            <div class="overview-card-text">
-              <span class="overview-num">[ 03 ]</span>
-              <div class="overview-rule"></div>
-              <h4 class="overview-title">Rigid Skeleton, Compliant Contact</h4>
-              <p class="overview-desc">The skeleton is printed in nylon or PETG to hold geometry under tendon load, with TPU 85A on the gripping faces. Stiffness goes where precision matters and compliance goes where the hand touches objects.</p>
-            </div>
-          </div>
-          <div class="overview-card" data-reveal>
-            <div class="overview-card-text">
-              <span class="overview-num">[ 04 ]</span>
-              <div class="overview-rule"></div>
-              <h4 class="overview-title">Per-Joint Angle Sensing</h4>
-              <p class="overview-desc">An AS5600 magnetic encoder with a diametric magnet on each joint axis measures the configuration the finger actually reached, instead of inferring it from servo commands. That turns positioning error into something measured directly.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="detail-block" data-reveal>
-        <h3 class="block-label">Progress So Far</h3>
-        <!-- TODO(progress): replace steps with confirmed CAD milestones -->
-        <ol class="v2-timeline">
-          <li class="tl-step is-done">
-            <span class="tl-dot" aria-hidden="true"></span>
-            <span class="tl-phase">[ 01 ] Done</span>
-            <h4 class="tl-title">Finger Module</h4>
-            <p class="tl-desc">Modeled in Onshape with independent MCP, PIP, and DIP joints.</p>
-          </li>
-          <li class="tl-step is-done">
-            <span class="tl-dot" aria-hidden="true"></span>
-            <span class="tl-phase">[ 02 ] Done</span>
-            <h4 class="tl-title">Tendon Routing</h4>
-            <p class="tl-desc">Paths laid out for three flexor tendons per finger.</p>
-          </li>
-          <li class="tl-step is-done">
-            <span class="tl-dot" aria-hidden="true"></span>
-            <span class="tl-phase">[ 03 ] Done</span>
-            <h4 class="tl-title">Bearing Seats</h4>
-            <p class="tl-desc">Ball-bearing seats integrated into the joint geometry.</p>
-          </li>
-          <li class="tl-step is-now">
-            <span class="tl-dot" aria-hidden="true"></span>
-            <span class="tl-phase">[ 04 ] Now</span>
-            <h4 class="tl-title">First Print</h4>
-            <p class="tl-desc">Printing and assembling the first finger module.</p>
-          </li>
-          <li class="tl-step">
-            <span class="tl-dot" aria-hidden="true"></span>
-            <span class="tl-phase">[ 05 ] Next</span>
-            <h4 class="tl-title">Precision Study</h4>
-            <p class="tl-desc">Joint-by-joint testing against the mudra pose set.</p>
-          </li>
-        </ol>
-        <div class="v2-img-row">
-          <div class="img-ph"><span class="img-ph__label">CAD view 1 coming soon</span><img src="pandaware-v2-cad-1.png" alt="PandaWare v2 CAD view 1" onerror="this.remove()"></div>
-          <div class="img-ph"><span class="img-ph__label">CAD view 2 coming soon</span><img src="pandaware-v2-cad-2.png" alt="PandaWare v2 CAD view 2" onerror="this.remove()"></div>
-          <div class="img-ph"><span class="img-ph__label">Finger module coming soon</span><img src="pandaware-v2-finger.png" alt="PandaWare v2 finger module" onerror="this.remove()"></div>
-        </div>
-      </div>
-
-      <div class="detail-block" data-reveal>
-        <h3 class="block-label">Roadmap</h3>
-        <!-- TODO(roadmap): confirm milestones -->
-        <ul class="v2-list">
-          <li>Print and assemble the first finger module</li>
-          <li>Validate joint friction and repeatability over repeated cycles</li>
-          <li>Begin the precision characterization study</li>
-        </ul>
-        <p class="perf-limit">v2 is the hardware for the <a href="#current-work">Precision Characterization Study</a>. Classical Odissi mudras serve as the ground-truth pose set: each one is an exactly defined joint-angle configuration that v1's coupled mechanism cannot produce, so v2 is measured against them joint by joint.</p>
       </div>
 
     </div>
