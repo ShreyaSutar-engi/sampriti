@@ -1737,42 +1737,101 @@ svg { display: block; }
   gap: var(--s3);
 }
 
-/* ── v2 progress timeline: horizontal on desktop, vertical on mobile ── */
+/* ── v2 progress road map ──────────────────────────────────────────────
+   Desktop: winding path. Row 1 runs left → right, turns down on the right,
+   row 2 runs right → left. Solid = done, dashed = upcoming.
+   Mobile: collapses to a vertical line.
+   ─────────────────────────────────────────────────────────────────────── */
 
-.v2-timeline {
+.tl-map {
+  --row-h: 230px;   /* height of one row of stops */
+  --line-y: 52px;   /* where the path crosses each row (dot centre) */
+  --turn: 64px;     /* width of the U-turn on the right */
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: var(--s3);
-  list-style: none;
+  padding-right: var(--turn);
   margin-bottom: var(--s6);
 }
 
-/* track line: solid through completed steps, faint after */
-.v2-timeline::before {
-  content: '';
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  right: 0;
+.tl-track { position: absolute; inset: 0; pointer-events: none; }
+
+.tl-seg { position: absolute; display: block; }
+
+/* row 1: start → right edge */
+.tl-seg--r1 {
+  top: calc(var(--line-y) - 1px);
+  left: 7px;
+  right: var(--turn);
   height: 2px;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 64%, var(--border-2) 64%);
+  background: var(--accent);
+}
+
+/* U-turn */
+.tl-turn {
+  top: calc(var(--line-y) - 1px);
+  right: 0;
+  width: var(--turn);
+  height: calc(var(--row-h) + 2px);
+  border: 2px solid var(--accent);
+  border-left: none;
+  border-radius: 0 var(--row-h) var(--row-h) 0;
+}
+
+/* row 2: right edge → current stop (col 3) */
+.tl-seg--r2 {
+  top: calc(var(--row-h) + var(--line-y) - 1px);
+  left: calc((100% - var(--turn)) * 2 / 3 + 7px);
+  right: var(--turn);
+  height: 2px;
+  background: var(--accent);
+}
+
+/* upcoming: current stop → next stop (col 2), dashed */
+.tl-seg--future {
+  top: calc(var(--row-h) + var(--line-y) - 1px);
+  left: calc((100% - var(--turn)) / 3 + 7px);
+  width: calc((100% - var(--turn)) / 3);
+  height: 0;
+  border-top: 2px dashed var(--border-2);
+}
+
+.tl-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, var(--row-h));
+  column-gap: var(--s3);
+  list-style: none;
 }
 
 .tl-step {
   position: relative;
-  padding-top: var(--s4);
+  padding-top: calc(var(--line-y) + var(--s3));
+  padding-right: var(--s2);
 }
+
+.tl-icon {
+  position: absolute;
+  top: 0;
+  left: -3px;
+  width: 22px;
+  height: 22px;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+.tl-step.is-now .tl-icon { color: var(--accent-2); }
+.tl-step:not(.is-done):not(.is-now) .tl-icon { color: var(--muted); opacity: 0.6; }
 
 .tl-dot {
   position: absolute;
-  top: 0;
+  top: calc(var(--line-y) - 7px);
   left: 0;
   width: 14px;
   height: 14px;
   border-radius: 50%;
   background: var(--bg);
   border: 2px solid var(--border-2);
+  z-index: 1;
 }
 
 .tl-step.is-done .tl-dot { background: var(--accent); border-color: var(--accent); }
@@ -1814,6 +1873,7 @@ svg { display: block; }
   font-size: 0.9375rem;
   color: var(--muted-hi);
   line-height: 1.6;
+  max-width: 28ch;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1821,9 +1881,18 @@ svg { display: block; }
 }
 
 @media (max-width: 960px) {
-  .v2-timeline { grid-template-columns: 1fr; gap: var(--s4); padding-left: var(--s4); }
-  .v2-timeline::before { top: 6px; bottom: 6px; left: 6px; right: auto; width: 2px; height: auto;
-    background: linear-gradient(180deg, var(--accent) 0%, var(--accent) 60%, var(--border-2) 60%); }
-  .tl-step { padding-top: 0; }
-  .tl-dot { top: 4px; left: calc(-1 * var(--s4)); }
+  .tl-map { padding-right: 0; padding-left: var(--s5); }
+  .tl-track { display: none; }
+  .tl-map::before {
+    content: '';
+    position: absolute;
+    top: 6px; bottom: 6px; left: 6px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--accent) 72%, var(--border-2) 72%);
+  }
+  .tl-grid { grid-template-columns: 1fr; grid-template-rows: none; row-gap: var(--s4); }
+  .tl-step { grid-column: 1 !important; grid-row: auto !important; padding-top: 0; padding-left: 32px; }
+  .tl-dot { top: 4px; left: calc(-1 * var(--s5)); }
+  .tl-icon { top: 0; left: 0; width: 20px; height: 20px; }
+  .tl-desc { max-width: none; }
 }
