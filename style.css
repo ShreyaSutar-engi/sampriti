@@ -1701,6 +1701,11 @@ svg { display: block; }
   margin-bottom: var(--s8);
 }
 
+.img-ph img.v2-hero-blur {
+  filter: blur(28px) brightness(0.55);
+  transform: scale(1.15);
+}
+
 .v2-list {
   display: flex;
   flex-direction: column;
