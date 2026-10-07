@@ -1548,68 +1548,6 @@ svg { display: block; }
 
 
 /* ========================================================================
-   ITERATION / FAILURE ENTRIES  (Change 4)
-   ======================================================================== */
-
-.iter-intro {
-  font-size: 1.0625rem;
-  color: var(--muted-hi);
-  line-height: 1.78;
-  margin-bottom: var(--s6);
-  max-width: 580px;
-}
-
-.iter-list { display: flex; flex-direction: column; }
-
-.iter-entry {
-  display: flex;
-  gap: var(--s6);
-  align-items: flex-start;
-  padding: var(--s6) 0;
-  border-top: 1px solid var(--border);
-}
-
-.iter-entry__media,
-.iter-entry__text { flex: 1; }
-
-/* Flip: visually places the image on the right */
-.iter-entry--flip { flex-direction: row-reverse; }
-
-.iter-version {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 1rem;
-  color: var(--accent);
-  letter-spacing: 0.06em;
-  display: block;
-  margin-bottom: var(--s3);
-}
-
-.iter-failed-label,
-.iter-changed-label {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: 0.4rem;
-}
-
-.iter-failed-label  { color: rgba(220, 80, 80, 0.7); }
-.iter-changed-label { color: var(--accent-2); }
-
-.iter-failed,
-.iter-changed {
-  font-size: 1.0625rem;
-  color: var(--muted-hi);
-  line-height: 1.72;
-  margin-bottom: var(--s3);
-}
-
-.iter-changed { margin-bottom: 0; }
-
-
-/* ========================================================================
    CURRENT WORK SECTION  (Change 5)
    ======================================================================== */
 
@@ -1691,6 +1629,105 @@ svg { display: block; }
 @media (max-width: 640px) {
   .media-row-3 { grid-template-columns: 1fr; }
   .perf-grid   { grid-template-columns: 1fr; }
-  .iter-entry,
-  .iter-entry--flip { flex-direction: column; }
+  .v2-img-row  { grid-template-columns: 1fr; }
+  .v2-hero     { height: 240px; }
+}
+
+/* ========================================================================
+   IMAGE PLACEHOLDER — shows label until the real file exists
+   (img removes itself on error, revealing the dashed box)
+   ======================================================================== */
+
+.img-ph {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  border: 1.5px dashed var(--border-2);
+  border-radius: var(--r);
+  background: rgba(232, 146, 46, 0.025);
+  overflow: hidden;
+}
+
+.img-ph--flat { border: none; border-radius: 0; background: var(--surface-2); }
+
+.img-ph__label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--s2);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.img-ph img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.detail-note {
+  font-size: 0.9375rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.detail-note a,
+.perf-limit a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+/* ========================================================================
+   PANDAWARE V2
+   ======================================================================== */
+
+#pandaware-v2 {
+  padding: var(--s12) 0;
+  border-top: 1px solid var(--border);
+}
+
+.v2-hero {
+  height: 420px;
+  margin-bottom: var(--s8);
+}
+
+.v2-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  margin-bottom: var(--s4);
+}
+
+.v2-list li {
+  font-size: 1.0625rem;
+  color: var(--muted-hi);
+  line-height: 1.7;
+  padding-left: var(--s3);
+  position: relative;
+}
+
+.v2-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 8px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.v2-img-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s3);
 }
