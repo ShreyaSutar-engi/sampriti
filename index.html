@@ -358,7 +358,7 @@
     <div class="site-wrap">
 
       <div class="v2-hero" data-reveal>
-        <div class="img-ph" style="height:100%;"><span class="img-ph__label">PandaWare v2 render coming soon</span><img src="pandaware-v2-hero.png" alt="PandaWare v2 CAD render" onerror="this.remove()"></div>
+        <div class="img-ph" style="height:100%;"><span class="img-ph__label">PandaWare v2 render coming soon</span><img class="v2-hero-blur" src="pandaware-v2-hero.jpg" alt="" aria-hidden="true" onerror="this.remove()"><img src="pandaware-v2-hero.jpg" alt="PandaWare v2 finger assembly in CAD" style="object-fit:contain;background:transparent;" onerror="this.remove()"></div>
       </div>
 
       <div class="detail-hd" data-reveal>
@@ -411,12 +411,39 @@
 
       <div class="detail-block" data-reveal>
         <h3 class="block-label">Progress So Far</h3>
-        <!-- TODO(progress): replace this list with confirmed CAD milestones -->
-        <ul class="v2-list">
-          <li>Finger module modeled in Onshape with independent MCP, PIP, and DIP joints</li>
-          <li>Tendon routing laid out for three flexors per finger</li>
-          <li>Bearing seats integrated into the joint geometry</li>
-        </ul>
+        <!-- TODO(progress): replace steps with confirmed CAD milestones -->
+        <ol class="v2-timeline">
+          <li class="tl-step is-done">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-phase">[ 01 ] Done</span>
+            <h4 class="tl-title">Finger Module</h4>
+            <p class="tl-desc">Modeled in Onshape with independent MCP, PIP, and DIP joints.</p>
+          </li>
+          <li class="tl-step is-done">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-phase">[ 02 ] Done</span>
+            <h4 class="tl-title">Tendon Routing</h4>
+            <p class="tl-desc">Paths laid out for three flexor tendons per finger.</p>
+          </li>
+          <li class="tl-step is-done">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-phase">[ 03 ] Done</span>
+            <h4 class="tl-title">Bearing Seats</h4>
+            <p class="tl-desc">Ball-bearing seats integrated into the joint geometry.</p>
+          </li>
+          <li class="tl-step is-now">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-phase">[ 04 ] Now</span>
+            <h4 class="tl-title">First Print</h4>
+            <p class="tl-desc">Printing and assembling the first finger module.</p>
+          </li>
+          <li class="tl-step">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-phase">[ 05 ] Next</span>
+            <h4 class="tl-title">Precision Study</h4>
+            <p class="tl-desc">Joint-by-joint testing against the mudra pose set.</p>
+          </li>
+        </ol>
         <div class="v2-img-row">
           <div class="img-ph"><span class="img-ph__label">CAD view 1 coming soon</span><img src="pandaware-v2-cad-1.png" alt="PandaWare v2 CAD view 1" onerror="this.remove()"></div>
           <div class="img-ph"><span class="img-ph__label">CAD view 2 coming soon</span><img src="pandaware-v2-cad-2.png" alt="PandaWare v2 CAD view 2" onerror="this.remove()"></div>
