@@ -1,50 +1,212 @@
-// v2 scroll stage: the step in the middle of the screen picks the image on the left.
-(function () {
-  const stage = document.querySelector('[data-stage]');
-  if (!stage || !('IntersectionObserver' in window)) return;
-  const shots = stage.querySelectorAll('.shot');
-  const steps = stage.querySelectorAll('.step');
+'use strict';
 
-  const show = (i) => shots.forEach((s) => s.classList.toggle('is-active', s.dataset.shot === String(i)));
+/*
+  Animation layer — GSAP skills applied:
+  ─────────────────────────────────────────────────────
+  gsap-core:          gsap.from(), gsap.fromTo(), stagger, ease, defaults
+  gsap-timeline:      gsap.timeline() with position parameter for hero entrance
+  gsap-scrolltrigger: ScrollTrigger.create(), scroll-linked reveals, once: true
+  gsap-plugins:       gsap.registerPlugin(ScrollTrigger)
+  gsap-performance:   transform + opacity only; will-change on .char
+  gsap-utils:         gsap.utils.toArray() for batching scroll reveals
+  gsap-core:          gsap.matchMedia() for reduced-motion gate
+*/
 
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => { if (e.isIntersecting) show(e.target.dataset.step); });
-  }, { rootMargin: '-45% 0px -45% 0px' });
-  steps.forEach((s) => io.observe(s));
-})();
+gsap.registerPlugin(ScrollTrigger);
 
-// Callout balloons: hovering or focusing a callout lights up its balloon on the drawing, and the reverse.
-(function () {
-  const items = document.querySelectorAll('[data-callout]');
-  const set = (id, on) => {
-    document.querySelectorAll('[data-for="' + id + '"], [data-callout="' + id + '"]').forEach((el) => el.classList.toggle('is-on', on));
-  };
-  items.forEach((li) => {
-    const id = li.dataset.callout;
-    li.tabIndex = 0;
-    ['mouseenter', 'focus'].forEach((ev) => li.addEventListener(ev, () => set(id, true)));
-    ['mouseleave', 'blur'].forEach((ev) => li.addEventListener(ev, () => set(id, false)));
+/* ── Reduced-motion gate ─────────────────────────────── */
+const mm = gsap.matchMedia();
+
+mm.add('(prefers-reduced-motion: no-preference)', () => {
+  initHero();
+  initScrollReveals();
+});
+
+mm.add('(prefers-reduced-motion: reduce)', () => {
+  gsap.set(
+    '.hero-eyebrow, .hero-sub, .hero-actions, [data-reveal]',
+    { opacity: 1, y: 0, clearProps: 'transform' }
+  );
+});
+
+/* ═══════════════════════════════════════════════════════
+   HERO ENTRANCE — gsap.timeline()
+   ═══════════════════════════════════════════════════════ */
+function initHero() {
+  /* Set initial hidden state at runtime so elements show if GSAP CDN fails */
+  gsap.set('.hero-eyebrow, .hero-sub, .hero-actions', { opacity: 0 });
+
+  /* Split name into individual char spans */
+  document.querySelectorAll('.name-line').forEach(line => {
+    line.innerHTML = [...line.textContent]
+      .map(ch => `<span class="char">${ch === ' ' ? '&nbsp;' : ch}</span>`)
+      .join('');
   });
-  document.querySelectorAll('.balloon[data-for]').forEach((b) => {
-    b.addEventListener('mouseenter', () => set(b.dataset.for, true));
-    b.addEventListener('mouseleave', () => set(b.dataset.for, false));
-  });
-})();
 
-// Image viewer: any .zoom button opens its image large.
-(function () {
-  const dlg = document.querySelector('.viewer');
-  if (!dlg || typeof dlg.showModal !== 'function') return;
-  const img = dlg.querySelector('.viewer__img');
-  const cap = dlg.querySelector('.viewer__cap');
-  document.querySelectorAll('.zoom').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const inner = btn.querySelector('img');
-      img.src = btn.dataset.zoom || (inner && inner.src);
-      img.alt = inner ? inner.alt : '';
-      cap.textContent = btn.dataset.caption || '';
-      dlg.showModal();
+  const tl = gsap.timeline({
+    defaults: { ease: 'power3.out' },
+    delay: 0.1,
+  });
+
+  tl.fromTo('.hero-eyebrow',
+    { opacity: 0, y: 10 },
+    { opacity: 1, y: 0, duration: 0.55 }
+  )
+  .fromTo('.hero-name .char',
+    { opacity: 0, y: '100%' },
+    { opacity: 1, y: '0%', stagger: 0.026, duration: 0.7 },
+    '-=0.25'
+  )
+  .fromTo('.hero-sub',
+    { opacity: 0, y: 12 },
+    { opacity: 1, y: 0, duration: 0.5 },
+    '-=0.2'
+  )
+  .fromTo('.hero-actions',
+    { opacity: 0, y: 10 },
+    { opacity: 1, y: 0, duration: 0.45 },
+    '-=0.25'
+  );
+}
+
+/* ═══════════════════════════════════════════════════════
+   SCROLL REVEALS — ScrollTrigger
+   ═══════════════════════════════════════════════════════ */
+function initScrollReveals() {
+  /* Staggered group reveals for grids */
+  ['.overview-grid', '.stack-grid', '.skills-grid', '.awards-row'].forEach(selector => {
+    const parent = document.querySelector(selector);
+    if (!parent) return;
+    const children = [...parent.children];
+    children.forEach(child => child.removeAttribute('data-reveal'));
+
+    gsap.fromTo(children,
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.3,
+        ease: 'power2.out',
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: parent,
+          start: 'top 93%',
+          once: true,
+        },
+      }
+    );
+  });
+
+  /* Generic individual reveals */
+  gsap.utils.toArray('[data-reveal]').forEach((el, i) => {
+    gsap.fromTo(el,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.28,
+        ease: 'power2.out',
+        delay: (i % 4) * 0.03,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 94%',
+          once: true,
+        },
+      }
+    );
+  });
+}
+
+/* ═══════════════════════════════════════════════════════
+   NAV — scroll shadow + active link tracking
+   ═══════════════════════════════════════════════════════ */
+(function initNav() {
+  const nav = document.getElementById('nav');
+
+  ScrollTrigger.create({
+    start: 'top -1',
+    onEnter:     () => nav.classList.add('scrolled'),
+    onLeaveBack: () => nav.classList.remove('scrolled'),
+  });
+
+  const links = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+
+  function setActive(id) {
+    links.forEach(a =>
+      a.classList.toggle('active', a.getAttribute('href') === `#${id}`)
+    );
+  }
+
+  document.querySelectorAll('section[id]').forEach(sec => {
+    ScrollTrigger.create({
+      trigger: sec,
+      start: 'top 55%',
+      end:   'bottom 55%',
+      onEnter:     () => setActive(sec.id),
+      onEnterBack: () => setActive(sec.id),
     });
   });
-  dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
 })();
+
+/* ═══════════════════════════════════════════════════════
+   SMOOTH SCROLL — offset for fixed nav
+   ═══════════════════════════════════════════════════════ */
+(function initSmoothScroll() {
+  const navH = document.getElementById('nav').offsetHeight;
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      window.scrollTo({
+        top: target.offsetTop - navH - 8,
+        behavior: 'smooth',
+      });
+    });
+  });
+})();
+/* ═══════════════════════════════════════════════════════
+   AWARDS TABS — click button → show matching gallery panel
+   ═══════════════════════════════════════════════════════ */
+(function initAwardsTabs() {
+  const tablist = document.getElementById('awards-tabs');
+  if (!tablist) return;
+
+  tablist.addEventListener('click', e => {
+    const btn = e.target.closest('[data-panel]');
+    if (!btn) return;
+
+    const panelId = btn.dataset.panel;
+
+    tablist.querySelectorAll('.award').forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+
+    document.querySelectorAll('.award-panel').forEach(p => {
+      const isTarget = p.id === `award-panel-${panelId}`;
+      p.hidden = !isTarget;
+      if (isTarget) p.classList.add('active');
+      else p.classList.remove('active');
+    });
+  });
+})();
+
+/* ═══════════════════════════════════════════════════════
+   COPY EMAIL
+   ═══════════════════════════════════════════════════════ */
+function copyEmail() {
+  navigator.clipboard.writeText('shreya.sutar057@gmail.com').then(() => {
+    const row = document.getElementById('emailRow');
+    const toast = row.querySelector('.copy-toast');
+    row.classList.add('flash');
+    toast.classList.add('show');
+    setTimeout(() => {
+      row.classList.remove('flash');
+      toast.classList.remove('show');
+    }, 1600);
+  });
+}
