@@ -1,365 +1,786 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shreya Sutar | Mechanical design</title>
-  <meta name="description" content="Shreya Sutar designs tendon-driven prosthetic hands and wearable assistive devices: mechanism, circuit, and firmware.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shreya Sutar — Hardware Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="full_mechanical_design.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<a class="skip" href="#main">Skip to content</a>
-
-<header class="masthead">
-  <a class="masthead__name" href="#top">Shreya Sutar</a>
-  <nav class="masthead__nav" aria-label="Sections">
-    <a href="#v2">PandaWare v2</a>
-    <a href="#glove">Glove</a>
-    <a href="#v1">PandaWare v1</a>
-    <a href="#parts">Parts</a>
-    <a href="#contact">Contact</a>
+  <!-- ── Nav ────────────────────────────────────────── -->
+  <nav id="nav">
+    <div class="nav-wrap">
+      <a href="#hero" class="nav-logo">SS</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#current-work">Current Work</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
   </nav>
-  <a class="masthead__resume" href="resume.pdf">Résumé</a>
-</header>
 
-<main id="main">
+  <!-- ── Hero ─────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="pcb-grid" aria-hidden="true"></div>
+    <div class="pcb-fade" aria-hidden="true"></div>
 
-<!-- Sheet 1: overview -->
-<section class="sheet hero" id="top" aria-labelledby="hero-title">
-  <div class="hero__text">
-    <h1 id="hero-title" class="display">Shreya Sutar</h1>
-    <p class="hero__lede">I design tendon-driven hands and wearable assistive devices, from the mechanism to the circuit to the firmware.</p>
-    <p class="hero__meta">Junior at the California Academy of Mathematics and Science, Class of 2028. ISEF 2026 nominee.</p>
-    <div class="actions">
-      <a class="btn btn--solid" href="#v2">See the v2 hand</a>
-      <a class="btn" href="resume.pdf">Résumé (PDF)</a>
-      <a class="btn" href="mailto:shreya.sutar057@gmail.com">Email me</a>
-    </div>
-  </div>
-
-  <figure class="hero__figure">
-    <button class="zoom" type="button" data-zoom="assets/hand-v1-cad.webp" data-caption="PandaWare v1, full CAD assembly in Onshape.">
-      <img class="hero__cad" src="assets/hand-v1-cad.webp" width="458" height="544" alt="CAD assembly of the PandaWare v1 hand: five printed fingers on a palm housing.">
-    </button>
-    <table class="titleblock" aria-label="Drawing details">
-      <tr><th scope="row">Drawing</th><td colspan="3">PandaWare myoelectric hand, v1 assembly</td></tr>
-      <tr><th scope="row">Drawn by</th><td>Shreya Sutar</td><th scope="row">Build cost</th><td>$118.45</td></tr>
-      <tr><th scope="row">Material</th><td>PLA+, FDM printed</td><th scope="row">Sheet</th><td>1 of 5</td></tr>
-    </table>
-  </figure>
-</section>
-
-<!-- Sheet 2: PandaWare v2 -->
-<section class="sheet" id="v2" aria-labelledby="v2-title">
-  <div class="sheet__head">
-    <h2 id="v2-title" class="display">PandaWare v2</h2>
-    <table class="titleblock titleblock--strip" aria-label="Project status">
-      <tr><th scope="col">Status</th><th scope="col">Updated</th><th scope="col">Sheet</th></tr>
-      <tr><td>In CAD, first finger printing</td><td>Oct 2026</td><td>2 of 5</td></tr>
-    </table>
-  </div>
-
-  <p class="intro">v1 couples its finger joints, so each finger curls as one unit. That's enough to grab an object and not enough to reach a defined hand pose. v2 drives the MCP, PIP, and DIP joints of every finger separately, with passive spring return, so mechanical coupling stops being a source of positioning error.</p>
-
-  <div class="stage" data-stage>
-    <div class="stage__view" aria-hidden="true">
-      <figure class="shot is-active" data-shot="0">
-        <img src="assets/v2-hand-screen.webp" width="557" height="634" alt="" loading="lazy">
-        <figcaption>Full v2 hand in Onshape.</figcaption>
+    <div class="site-wrap hero-inner">
+      <figure class="hero-cad">
+        <img src="assets/hand-v1-cad.webp" width="458" height="544" alt="CAD assembly of the PandaWare v1 hand.">
+        <table class="titleblock" aria-label="Drawing details">
+          <tr><th scope="row">Drawing</th><td colspan="3">PandaWare myoelectric hand, v1 assembly</td></tr>
+          <tr><th scope="row">Drawn by</th><td>Shreya Sutar</td><th scope="row">Build cost</th><td>$118.45</td></tr>
+          <tr><th scope="row">Material</th><td>PLA+, FDM printed</td><th scope="row">Sheet</th><td>1 of 5</td></tr>
+        </table>
       </figure>
-      <figure class="shot" data-shot="1">
-        <div class="callout-img">
-          <img src="assets/v2-joint-iso.webp" width="1206" height="805" alt="" loading="lazy">
-          <span class="balloon" style="left:27.8%;top:40.4%" data-for="c1">1</span>
-          <span class="balloon" style="left:46%;top:34%" data-for="c2">2</span>
-          <span class="balloon" style="left:47%;top:67%" data-for="c3">3</span>
+      <div class="hero-text">
+        <p class="hero-eyebrow">Hardware Engineer · Prosthetics Researcher</p>
+        <h1 class="hero-name">
+          <span class="name-line">Shreya</span>
+          <span class="name-line">Sutar</span>
+        </h1>
+        <p class="hero-sub">Junior at California Academy of Mathematics and Science, hardware engineer, prosthetics researcher.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary hero-cta">View Projects</a>
+          <a href="#contact" class="btn-ghost hero-cta">Get in Touch</a>
+          <a href="resume.pdf" class="btn-ghost hero-cta" target="_blank" rel="noopener">Résumé ↗</a>
         </div>
-        <figcaption>Joint section, links shown transparent.</figcaption>
-      </figure>
-      <figure class="shot" data-shot="2">
-        <img src="assets/v2-finger-module.webp" width="628" height="440" alt="" loading="lazy">
-        <figcaption>Finger module with bearing seats.</figcaption>
-      </figure>
-      <figure class="shot" data-shot="3">
-        <img src="assets/v2-joint-close.webp" width="752" height="555" alt="" loading="lazy">
-        <figcaption>Joint close-up: shaft on the joint axis.</figcaption>
-      </figure>
+      </div>
+      <div class="hero-photo-wrap" aria-hidden="true">
+        <div class="hero-photo">
+          <img src="shreyasutar.png" alt="Shreya Sutar" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+        </div>
+      </div>
     </div>
 
-    <ol class="steps">
-      <li class="step" data-step="0">
-        <figure class="step__shot">
-          <button class="zoom" type="button" data-zoom="assets/v2-hand-screen.webp" data-caption="Full v2 hand in Onshape.">
-            <img src="assets/v2-hand-screen.webp" width="557" height="634" alt="The full v2 hand assembly in Onshape." loading="lazy">
-          </button>
-        </figure>
-        <h3>Independent joint actuation</h3>
-        <p>Each joint gets its own flexor tendon with spring return, so a commanded pose is a set of joint angles instead of one shared curl. Dropping antagonist extensors halves the tendon count and the friction that comes with it.</p>
-      </li>
-      <li class="step" data-step="1">
-        <figure class="step__shot">
-          <div class="callout-img">
-            <img src="assets/v2-joint-iso.webp" width="1206" height="805" alt="Section view of one v2 finger joint with a ball bearing, a shaft, and tendon channels." loading="lazy">
-            <span class="balloon" style="left:27.8%;top:40.4%" data-for="c1">1</span>
-            <span class="balloon" style="left:46%;top:34%" data-for="c2">2</span>
-            <span class="balloon" style="left:47%;top:67%" data-for="c3">3</span>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-n">4</span><span class="hstat-l">Competition Awards</span></div>
+      <div class="hstat-div" aria-hidden="true"></div>
+      <div class="hstat"><span class="hstat-n">ISEF</span><span class="hstat-l">2026 Nominee</span></div>
+      <div class="hstat-div" aria-hidden="true"></div>
+      <div class="hstat"><span class="hstat-n">1</span><span class="hstat-l">Research Paper</span></div>
+    </div>
+  </section>
+
+  <!-- ── About ─────────────────────────────────────────── -->
+  <section id="about">
+    <div class="site-wrap">
+      <div class="about-layout">
+        <div class="about-left">
+          <h2 class="sec-label" data-reveal>[ About ]</h2>
+          <p class="about-text" data-reveal>
+            I build hardware at the intersection of biomedical engineering and embedded systems, focused on prosthetics and assistive technology, devices that restore function to people who have lost it. Most of what I've made was built without a lab, a mentor, or a budget, which has meant learning why systems fail rather than buying past the problem. Alongside the engineering, I founded and edit ISE, a student research journal, because the writing half of research is the part students are least often taught.
+          </p>
+        </div>
+        <div class="about-right" data-reveal>
+          <div class="about-card">
+            <div class="about-card-row">
+              <span class="about-card-label">School</span>
+              <span class="about-card-val">California Academy of Mathematics and Science</span>
+            </div>
+            <div class="about-card-row">
+              <span class="about-card-label">Focus</span>
+              <span class="about-card-val">Biomedical · Embedded Systems</span>
+            </div>
+            <div class="about-card-row">
+              <span class="about-card-label">Year</span>
+              <span class="about-card-val">Junior · Class of 2028</span>
+            </div>
+            <div class="about-card-row">
+              <span class="about-card-label">Location</span>
+              <span class="about-card-val">Los Angeles, CA</span>
+            </div>
           </div>
-        </figure>
-        <h3>Ball-bearing joints</h3>
-        <p>Printed pin joints wear and loosen, so their friction changes from cycle to cycle. A bearing at each joint keeps friction low and the same every time, which is what makes motion repeatable.</p>
-        <ul class="callouts" aria-label="Callouts on the joint section">
-          <li id="c1" data-callout="c1"><span class="balloon balloon--static" aria-hidden="true">1</span> Ball bearing</li>
-          <li id="c2" data-callout="c2"><span class="balloon balloon--static" aria-hidden="true">2</span> Joint shaft, on the joint axis</li>
-          <li id="c3" data-callout="c3"><span class="balloon balloon--static" aria-hidden="true">3</span> Tendon channel</li>
-        </ul>
-      </li>
-      <li class="step" data-step="2">
-        <figure class="step__shot">
-          <button class="zoom" type="button" data-zoom="assets/v2-finger-module.webp" data-caption="Finger module with bearing seats.">
-            <img src="assets/v2-finger-module.webp" width="628" height="440" alt="The v2 finger module with bearing seats in each joint." loading="lazy">
-          </button>
-        </figure>
-        <h3>Rigid skeleton, soft contact</h3>
-        <p>The skeleton is printed in nylon or PETG to hold its geometry under tendon load, with TPU 85A on the gripping faces. Stiffness goes where precision matters and give goes where the hand touches things.</p>
-      </li>
-      <li class="step" data-step="3">
-        <figure class="step__shot">
-          <button class="zoom" type="button" data-zoom="assets/v2-joint-close.webp" data-caption="Joint close-up: shaft on the joint axis.">
-            <img src="assets/v2-joint-close.webp" width="752" height="555" alt="Close-up of a v2 joint showing the shaft on the joint axis." loading="lazy">
-          </button>
-        </figure>
-        <h3>Angle sensing on every joint</h3>
-        <p>An AS5600 magnetic encoder reads a diametric magnet on the end of each joint shaft. The hand measures the pose it actually reached instead of trusting the servo command, which turns positioning error into a number.</p>
-      </li>
-    </ol>
-  </div>
-
-  <div class="progress">
-    <h3>Where it stands</h3>
-    <ol class="progress__list">
-      <li class="is-done"><strong>Finger module</strong> Independent MCP, PIP, and DIP joints in Onshape.</li>
-      <li class="is-done"><strong>Tendon routing</strong> Paths for three flexor tendons per finger.</li>
-      <li class="is-done"><strong>Bearing seats</strong> Built into the joint geometry.</li>
-      <li class="is-now"><strong>First print</strong> Printing and assembling the first finger.</li>
-      <li><strong>Precision testing</strong> Joint-by-joint error against defined hand poses.</li>
-    </ol>
-  </div>
-
-  <figure class="wide">
-    <button class="zoom" type="button" data-zoom="assets/v2-sketches.webp" data-caption="Notebook pages where v2 started.">
-      <img src="assets/v2-sketches.webp" width="1551" height="1080" alt="Two notebook pages of hand-drawn v2 finger and tendon sketches." loading="lazy">
-    </button>
-    <figcaption>Where it started: notebook pages from the first v2 sketches. Click to enlarge.</figcaption>
-  </figure>
-</section>
-
-<!-- Sheet 3: Glove -->
-<section class="sheet" id="glove" aria-labelledby="glove-title">
-  <div class="sheet__head">
-    <h2 id="glove-title" class="display">EMG assistive glove</h2>
-    <table class="titleblock titleblock--strip" aria-label="Project status">
-      <tr><th scope="col">Status</th><th scope="col">Target</th><th scope="col">Sheet</th></tr>
-      <tr><td>Building the first finger joint</td><td>ISEF 2027</td><td>3 of 5</td></tr>
-    </table>
-  </div>
-
-  <div class="split">
-    <figure class="split__figure">
-      <button class="zoom" type="button" data-zoom="assets/glove-sketch.webp" data-caption="Concept sketch A: hinges on the knuckle axis, U-tube fingertip routing, and magnet-in-pin angle sensing.">
-        <img src="assets/glove-sketch.webp" width="1800" height="1403" alt="Notebook concept sketch of the glove: finger side view with hinges and a tendon tube, and a top view of the whole hand." loading="lazy">
-      </button>
-      <figcaption>Concept sketch A. Click to enlarge.</figcaption>
-    </figure>
-
-    <div class="split__text">
-      <p class="intro intro--tight">A glove that reads forearm muscle signals and helps people with weak grip close their hand. Most assistive gloves leave the thumb passive, which rules out most everyday grasps.</p>
-
-      <h3>What's different</h3>
-      <dl class="specs">
-        <dt>Powered thumb</dt>
-        <dd>The thumb is driven in two directions, so it can oppose the fingers instead of being dragged along.</dd>
-        <dt>Force-aware grip</dt>
-        <dd>Motor current tells the glove when it has made contact, so it stops before crushing something delicate.</dd>
-        <dt>Flat objects</dt>
-        <dd>Flexor and extensor cables pull against each other to hold flat things that usually slip out of tendon gloves.</dd>
-      </dl>
-
-      <h3>How it moves</h3>
-      <p>Small geared motors sit on the forearm and pull cables through Bowden sheaths, so the hand carries only a light skeleton. Hinges on the side of the finger line up with the real knuckle axis, and a magnet in each hinge pin lets the glove measure its own joint angles.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Sheet 4: PandaWare v1 -->
-<section class="sheet" id="v1" aria-labelledby="v1-title">
-  <div class="sheet__head">
-    <h2 id="v1-title" class="display">PandaWare v1</h2>
-    <table class="titleblock titleblock--strip" aria-label="Project status">
-      <tr><th scope="col">Status</th><th scope="col">Result</th><th scope="col">Sheet</th></tr>
-      <tr><td>Complete</td><td>CSEF 5th place, ISEF 2026 nominee</td><td>4 of 5</td></tr>
-    </table>
-  </div>
+  <!-- ── Projects ───────────────────────────────────────── -->
+  <section id="projects">
+    <div class="pcb-grid" aria-hidden="true"></div>
+    <div class="pcb-fade" aria-hidden="true"></div>
+    <div class="site-wrap">
+      <h2 class="sec-label" data-reveal>[ Projects ]</h2>
+      <div class="project-grid">
+        <article class="project-card" data-reveal>
+          <div class="project-num">[ 01 ]</div>
+          <div class="card-thumb">
+            <img src="poster.png" alt="PandaWare poster" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+          </div>
+          <div class="card-body">
+            <span class="badge">Biomedical · Embedded Systems</span>
+            <h3>PandaWare</h3>
+            <p>EMG-controlled myoelectric prosthetic hand built from scratch. Reads forearm surface EMG, classifies muscle activation in real time on an RP2040, and drives five tendon-routed fingers. Closed-loop current sensing halts grip on object contact. Total build cost: $118.45.</p>
+            <a href="#pandaware" class="arrow-link">View Project <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
 
-  <div class="split split--reverse">
-    <figure class="split__figure">
-      <button class="zoom" type="button" data-zoom="assets/pandaware-build.webp" data-caption="PandaWare v1, built and wired.">
-        <img src="assets/pandaware-build.webp" width="1400" height="1867" alt="The built PandaWare hand with servos, tendons, and wiring on a bench." loading="lazy">
+        <!-- [ 02 ] ISE Journal -->
+        <article class="project-card" data-reveal>
+          <div class="project-num">[ 02 ]</div>
+          <div class="card-thumb" role="img" aria-label="ISE journal cover">
+            <img src="ise.projects.card.png" alt="ISE journal cover" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+          </div>
+          <div class="card-body">
+            <span class="badge">Research Publishing · Editorial</span>
+            <h3>ISE — Innovation in Science and Engineering Journal</h3>
+            <p>An ISSN-registered student research journal I founded and edit, publishing high school and undergraduate research free of charge. Built the full manuscript infrastructure, recruited faculty reviewers across multiple universities, and now operate it with faculty advising from MIT.</p>
+            <a href="https://iseofficial.org/" class="arrow-link" target="_blank" rel="noopener">Visit ISE <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <!-- [ 03 ] Assistive Technology Outreach -->
+        <article class="project-card" data-reveal>
+          <div class="project-num">[ 03 ]</div>
+          <!-- replace with /media/outreach-session.jpg -->
+          <div class="card-thumb placeholder" role="img" aria-label="Outreach session photo placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <span class="badge">Community · Education</span>
+            <h3>Assistive Technology Outreach</h3>
+            <p>Led a prosthetics outreach project bringing assistive technology to a senior living community, directing the CAD, electrical, and programming work and writing the lesson plans that let other students contribute to the build rather than watch it.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PandaWare v2 ─────────────────────────────────────── -->
+  <section id="pandaware-v2">
+    <div class="site-wrap">
+
+      <div class="v2-hero" data-reveal>
+        <div class="img-ph" style="height:100%;"><span class="img-ph__label">PandaWare v2 render coming soon</span><img class="v2-hero-blur" src="pandaware-v2-hero.jpg" alt="" aria-hidden="true" onerror="this.remove()"><img src="pandaware-v2-hero.jpg" alt="PandaWare v2 finger assembly in CAD" style="object-fit:contain;background:transparent;" onerror="this.remove()"></div>
+      </div>
+
+      <div class="detail-hd" data-reveal>
+        <div class="detail-title-block">
+          <span class="status-tag">In progress</span>
+          <h2 class="detail-title" style="margin-top:var(--s2);">PandaWare v2</h2>
+          <!-- TODO(status): replace with exact CAD status once confirmed -->
+          <p class="detail-sub">PandaWare v1 couples its finger joints, so the fingers curl as a single unit. That is enough to grasp an object and not enough to reach a defined hand configuration. v2 drives each finger joint independently, with three flexor tendons per finger for the MCP, PIP, and DIP joints and passive spring return in place of antagonistic extensors, to remove mechanical coupling as a source of positioning error. It is currently in CAD.</p>
+        </div>
+        <!-- TODO(cad-link): add Onshape button here if the v2 document is public -->
+      </div>
+
+      <div class="detail-block" data-reveal>
+        <h3 class="block-label">Design Decisions</h3>
+        <div class="overview-grid">
+          <div class="overview-card" data-reveal>
+            <div class="overview-card-text">
+              <span class="overview-num">[ 01 ]</span>
+              <div class="overview-rule"></div>
+              <h4 class="overview-title">Independent Joint Actuation</h4>
+              <p class="overview-desc">Each joint gets its own flexor tendon with passive spring return, so a commanded pose is a set of independent joint angles rather than one shared curl. Dropping antagonistic extensors halves the tendon count and the friction that comes with it.</p>
+            </div>
+          </div>
+          <div class="overview-card" data-reveal>
+            <div class="overview-card-text">
+              <span class="overview-num">[ 02 ]</span>
+              <div class="overview-rule"></div>
+              <h4 class="overview-title">Ball-Bearing Joints</h4>
+              <p class="overview-desc">Printed pin joints wear and loosen, so their friction changes from cycle to cycle. Ball bearings at each joint keep friction low and consistent, which is what makes motion repeatable over many cycles.</p>
+            </div>
+          </div>
+          <div class="overview-card" data-reveal>
+            <div class="overview-card-text">
+              <span class="overview-num">[ 03 ]</span>
+              <div class="overview-rule"></div>
+              <h4 class="overview-title">Rigid Skeleton, Compliant Contact</h4>
+              <p class="overview-desc">The skeleton is printed in nylon or PETG to hold geometry under tendon load, with TPU 85A on the gripping faces. Stiffness goes where precision matters and compliance goes where the hand touches objects.</p>
+            </div>
+          </div>
+          <div class="overview-card" data-reveal>
+            <div class="overview-card-text">
+              <span class="overview-num">[ 04 ]</span>
+              <div class="overview-rule"></div>
+              <h4 class="overview-title">Per-Joint Angle Sensing</h4>
+              <p class="overview-desc">An AS5600 magnetic encoder with a diametric magnet on each joint axis measures the configuration the finger actually reached, instead of inferring it from servo commands. That turns positioning error into something measured directly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-block" data-reveal>
+        <h3 class="block-label">Progress So Far</h3>
+        <!-- TODO(progress): replace steps with confirmed CAD milestones -->
+        <ol class="v2-timeline">
+          <li class="tl-step is-done">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-phase">[ 01 ] Done</span>
+            <h4 class="tl-title">Finger Module</h4>
+            <p class="tl-desc">Modeled in Onshape with independent MCP, PIP, and DIP joints.</p>
+          </li>
+          <li class="tl-step is-done">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-phase">[ 02 ] Done</span>
+            <h4 class="tl-title">Tendon Routing</h4>
+            <p class="tl-desc">Paths laid out for three flexor tendons per finger.</p>
+          </li>
+          <li class="tl-step is-done">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-phase">[ 03 ] Done</span>
+            <h4 class="tl-title">Bearing Seats</h4>
+            <p class="tl-desc">Ball-bearing seats integrated into the joint geometry.</p>
+          </li>
+          <li class="tl-step is-now">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-phase">[ 04 ] Now</span>
+            <h4 class="tl-title">First Print</h4>
+            <p class="tl-desc">Printing and assembling the first finger module.</p>
+          </li>
+          <li class="tl-step">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-phase">[ 05 ] Next</span>
+            <h4 class="tl-title">Precision Study</h4>
+            <p class="tl-desc">Joint-by-joint testing against the mudra pose set.</p>
+          </li>
+        </ol>
+        <div class="v2-img-row">
+          <div class="img-ph"><span class="img-ph__label">CAD view 1 coming soon</span><img style="object-fit:contain;background:#fff;" src="pandaware-v2-cad-1.png" alt="PandaWare v2 CAD view 1" onerror="this.remove()"></div>
+          <div class="img-ph"><span class="img-ph__label">CAD view 2 coming soon</span><img style="object-fit:contain;background:#fff;" src="pandaware-v2-cad-2.png" alt="PandaWare v2 CAD view 2" onerror="this.remove()"></div>
+          <div class="img-ph"><span class="img-ph__label">Finger module coming soon</span><img style="object-fit:contain;background:#fff;" src="pandaware-v2-finger.png" alt="PandaWare v2 finger module" onerror="this.remove()"></div>
+        </div>
+      </div>
+
+      <div class="detail-block" data-reveal>
+        <h3 class="block-label">Roadmap</h3>
+        <!-- TODO(roadmap): confirm milestones -->
+        <ul class="v2-list">
+          <li>Print and assemble the first finger module</li>
+          <li>Validate joint friction and repeatability over repeated cycles</li>
+          <li>Begin the precision characterization study</li>
+        </ul>
+        <p class="perf-limit">v2 is the hardware for the <a href="#current-work">Precision Characterization Study</a>. Classical Odissi mudras serve as the ground-truth pose set: each one is an exactly defined joint-angle configuration that v1's coupled mechanism cannot produce, so v2 is measured against them joint by joint.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── PandaWare Detail ─────────────────────────────────── -->
+  <section id="pandaware">
+    <div class="site-wrap">
+
+      <!-- Change 1: Demo video — highest-priority evidence. Replace div with <video> when clip is ready. -->
+      <!-- replace with /media/demo-pandaware-emg.mp4 -->
+      <div class="detail-img" data-reveal>
+        <img src="prosthetic.png" alt="PandaWare prosthetic hand" style="position:absolute;top:50%;left:50%;width:100vmax;height:100vmax;max-width:none;object-fit:cover;transform:translate(-50%,-50%) rotate(-90deg);">
+      </div>
+
+      <div class="detail-hd" data-reveal>
+        <div class="detail-title-block">
+          <h2 class="detail-title">PandaWare</h2>
+          <p class="detail-sub">EMG-controlled myoelectric prosthetic hand, built from scratch. PandaWare reads forearm surface EMG, classifies muscle activation in real time on an RP2040, and drives five MG996R servos through a tendon-routed finger mechanism printed in PLA+. A current-sensing safety loop on the INA219 detects object contact and halts grip before force becomes damaging. Total build cost: $118.45, no lab, no machined parts.</p>
+        </div>
+        <div class="detail-actions">
+          <a href="Shreya_Sutar_Official_Paper.pdf" class="btn-detail" target="_blank" rel="noopener">Read the Paper ↗</a>
+          <a href="https://cad.onshape.com/documents/01846624b9cea47c0def8825/w/19642d9b3fb19bd6c92f9745/e/b12947016f13ac444aeb0029" class="btn-detail" target="_blank" rel="noopener">Onshape CAD ↗</a>
+          <a href="sutarposter.pdf" class="btn-detail btn-detail--ghost" target="_blank" rel="noopener">Read the Poster ↗</a>
+          <a href="https://drive.google.com/file/d/1aEplw--r2NXagsUH0YUOPjhpAVwstKOR/view?usp=sharing" class="btn-detail btn-detail--ghost" target="_blank" rel="noopener">Documentation Log ↗</a>
+        </div>
+        <p class="detail-note">The full iteration history, including what failed and what changed, lives in the <a href="https://drive.google.com/file/d/1aEplw--r2NXagsUH0YUOPjhpAVwstKOR/view?usp=sharing" target="_blank" rel="noopener">documentation log</a>.</p>
+      </div>
+
+      <div class="detail-block" data-reveal>
+        <h3 class="block-label">Tech Stack</h3>
+        <div class="chip-row">
+          <span class="chip">RP2040</span>
+          <span class="chip">MicroPython</span>
+          <span class="chip">MyoWare 2.0</span>
+          <span class="chip">PCA9685</span>
+          <span class="chip">INA219</span>
+          <span class="chip">MG996R servos</span>
+          <span class="chip">tendon-driven actuation</span>
+        </div>
+      </div>
+
+      <div class="detail-block" data-reveal>
+        <h3 class="block-label">Overview</h3>
+        <div class="overview-grid">
+          <div class="overview-card" data-reveal>
+            <div class="overview-card-text">
+              <span class="overview-num">[ 01 ]</span>
+              <div class="overview-rule"></div>
+              <h4 class="overview-title">Full Mechanical Design</h4>
+              <p class="overview-desc">Multiple 3D-printed iterations refining geometry for fit, range of motion, and durability across every finger joint.</p>
+            </div>
+            <div class="overview-card-img"><img src="full_mechanical_design.png" alt="Full mechanical design" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
+          </div>
+          <div class="overview-card" data-reveal>
+            <div class="overview-card-text">
+              <span class="overview-num">[ 02 ]</span>
+              <div class="overview-rule"></div>
+              <h4 class="overview-title">Custom Circuit Design</h4>
+              <p class="overview-desc">Integrated servo control, EMG acquisition, and power sensing on a single hand-assembled system.</p>
+            </div>
+            <div class="overview-card-img"><img src="electric.png" alt="Custom circuit design" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
+          </div>
+          <div class="overview-card" data-reveal>
+            <div class="overview-card-text">
+              <span class="overview-num">[ 03 ]</span>
+              <div class="overview-rule"></div>
+              <h4 class="overview-title">EMG Signal Pipeline</h4>
+              <p class="overview-desc">Adaptive normalization enabling reliable grip detection across varying muscle fatigue and electrode placement.</p>
+            </div>
+            <div class="overview-card-img"><img src="normalization.png" alt="EMG signal normalization graph" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
+          </div>
+          <div class="overview-card" data-reveal>
+            <div class="overview-card-text">
+              <span class="overview-num">[ 04 ]</span>
+              <div class="overview-rule"></div>
+              <h4 class="overview-title">Closed-Loop Safety</h4>
+              <p class="overview-desc">Real-time current sensing via INA219 limits grip force automatically, preventing damage to objects. Works reliably on rigid objects; degrades on compliant surfaces.</p>
+            </div>
+            <div class="overview-card-img"><img src="graph.png" alt="Closed-loop current sensing performance graph" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Change 2: Measured Performance stat grid -->
+      <div class="detail-block" data-reveal>
+        <h3 class="block-label">Measured Performance</h3>
+        <div class="perf-grid">
+          <div class="perf-stat">
+            <span class="perf-stat__value">$118.45</span>
+            <span class="perf-stat__label">Total Build Cost</span>
+          </div>
+          <div class="perf-stat">
+            <span class="perf-stat__value">0–12 N</span>
+            <span class="perf-stat__label">Grip Force Range</span>
+          </div>
+          <div class="perf-stat">
+            <span class="perf-stat__value">92%</span>
+            <span class="perf-stat__label">Grip Detection Success Rate</span>
+          </div>
+          <div class="perf-stat">
+            <span class="perf-stat__value">200 ms</span>
+            <span class="perf-stat__label">EMG to Finger Motion Latency</span>
+          </div>
+          <div class="perf-stat">
+            <span class="perf-stat__value"><span class="perf-inf">∞</span></span>
+            <span class="perf-stat__label">Mechanical Design Iterations</span>
+          </div>
+          <div class="perf-stat">
+            <span class="perf-stat__value">450 mA</span>
+            <span class="perf-stat__label">Contact-Detection Current Threshold</span>
+          </div>
+        </div>
+        <p class="perf-note">Commercial myoelectric prosthetic hands cost between $20,000 and $100,000. PandaWare was built for $118.45 using consumer components, a hobbyist 3D printer, and no laboratory access. The performance figures above are the honest measured envelope, including where the system underperforms.</p>
+        <p class="perf-limit">Known limitations: The current-sensing grip stop works reliably on rigid objects but degrades on compliant ones, where the current spike at contact is too gradual to detect cleanly. All finger joints are mechanically coupled, so the hand can grasp but cannot form a specific hand configuration. EMG amplitude drifts with electrode placement, sweat, and fatigue; the normalization pipeline reduces this but does not eliminate it.</p>
+      </div>
+
+      <div class="detail-block" data-reveal>
+        <h3 class="block-label">Awards</h3>
+        <div class="award-gallery">
+
+          <div class="award-col">
+            <span class="award">ISEF 2026 Nominee</span>
+            <div class="gal-slot" style="overflow:hidden;">
+              <img src="isef.nominee.png" alt="ISEF 2026 Nominee" style="width:100%;height:100%;object-fit:contain;border-radius:inherit;background:#000;">
+            </div>
+          </div>
+
+          <div class="award-col">
+            <span class="award">CSEF 5th Place</span>
+            <!-- replace with /media/csef.jpg -->
+            <div class="placeholder gal-slot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-label="CSEF photo"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+          </div>
+
+          <div class="award-col">
+            <span class="award">LACSEF 2nd Place</span>
+            <div class="gal-slot" style="overflow:hidden;"><img src="lacsef.png" alt="LACSEF Second Place" style="width:100%;height:100%;object-fit:contain;border-radius:inherit;background:#000;"></div>
+          </div>
+
+          <div class="award-col">
+            <span class="award" style="font-size:0.75rem;">Invention Conv. Hon. Mention</span>
+            <div class="gal-slot" style="overflow:hidden;"><img src="invention-convention.png" alt="California Invention Convention 2026 results" style="width:100%;height:100%;object-fit:contain;border-radius:inherit;background:#fff;"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Current Work ─────────────────────────────────────── -->
+  <!-- Change 5: New section between Projects/PandaWare and Tech Stack -->
+  <section id="current-work">
+    <div class="pcb-grid" aria-hidden="true"></div>
+    <div class="pcb-fade" aria-hidden="true"></div>
+    <div class="site-wrap">
+      <h2 class="sec-label" data-reveal>[ Current Work ]</h2>
+
+      <div class="cw-list">
+
+        <div class="cw-entry" data-reveal>
+          <div class="cw-content">
+            <span class="status-tag">In progress</span>
+            <h3 class="cw-title">PandaWare v2 — Independently Actuated Hand</h3>
+            <p class="cw-body">The first hand couples its finger joints, so it can grasp but cannot reach a defined hand configuration. v2 actuates each joint independently to remove coupling as a source of positioning error.</p>
+            <a href="#pandaware-v2" class="arrow-link">View v2 Design <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="cw-media">
+            <div class="cw-img-wrap" style="padding-bottom: var(--s4);">
+              <img src="inprogress.panda2.png" alt="PandaWare v2 in progress" style="width:100%;height:100%;object-fit:cover;border-radius:var(--r);">
+            </div>
+          </div>
+        </div>
+
+        <div class="cw-entry" data-reveal>
+          <div class="cw-content">
+            <span class="status-tag">In design</span>
+            <h3 class="cw-title">Precision Characterization Study</h3>
+            <p class="cw-body">How accurately and repeatably can a low-cost tendon-driven hand reach and hold a defined target configuration, and which subsystem limits that precision: the mechanism, the sensing, or the intent decoding? I'm using classical Odissi mudras as the ground-truth pose set, since each mudra is an exactly defined joint-angle configuration that a coupled mechanism physically cannot produce. That makes them a substantially harder benchmark than grasping tasks, and it yields continuous per-joint error data rather than pass/fail on whether an object was picked up.</p>
+          </div>
+          <div class="cw-media">
+            <div class="cw-img-wrap">
+              <img src="indesign.mudras.jpg" alt="Odissi mudra reference" style="width:100%;height:100%;object-fit:contain;border-radius:var(--r);background:#6b3318;">
+            </div>
+          </div>
+        </div>
+
+        <div class="cw-entry" data-reveal>
+          <div class="cw-content">
+            <span class="status-tag">In design</span>
+            <h3 class="cw-title">EMG Assistive Glove (ISEF 2027)</h3>
+            <p class="cw-body">A wearable glove that reads forearm muscle signals and assists people with weak grip. Most assistive gloves leave the thumb passive, which rules out most everyday grasps. This design actuates the thumb in two degrees of freedom, adds force-aware grasping through motor current sensing so delicate objects aren't crushed, and uses flexor-extensor co-contraction to hold flat objects that typically slip out of tendon-driven gloves.</p>
+          </div>
+          <div class="cw-media">
+            <div class="cw-img-wrap">
+              <div class="img-ph" style="height:100%;"><span class="img-ph__label">Glove concept image coming soon</span><img src="glove-concept.jpg" alt="EMG assistive glove concept" onerror="this.remove()"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Tech Stack ───────────────────────────────────────── -->
+  <section id="stack">
+    <div class="pcb-grid" aria-hidden="true"></div>
+    <div class="pcb-fade" aria-hidden="true"></div>
+    <div class="site-wrap">
+      <h2 class="sec-label" data-reveal>[ Tech Stack ]</h2>
+      <p class="stack-intro" data-reveal>Every component chosen for a reason. Here's what powers PandaWare.</p>
+
+      <div class="stack-grid">
+
+        <div class="stack-item" data-reveal>
+          <div class="stack-content">
+            <div class="stack-item-top">
+              <span class="stack-num">[ 01 ]</span>
+              <span class="stack-cat">Microcontroller</span>
+            </div>
+            <div class="stack-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="7" y="7" width="10" height="10" rx="1"/>
+                <path d="M7 9H5M7 12H4M7 15H5M17 9h2M17 12h3M17 15h2M9 7V5M12 7V4M15 7V5M9 17v2M12 17v3M15 17v2"/>
+              </svg>
+            </div>
+            <h3 class="stack-name">RP2040</h3>
+            <p class="stack-desc">Chosen over an Arduino Uno because the EMG acquisition loop and the servo control loop need to run without blocking each other, and the RP2040's dual cores made that possible at a $4 price point. The tradeoff is no hardware floating-point unit, which constrains how much signal processing can happen on-device.</p>
+          </div>
+          <div class="stack-img" aria-hidden="true"><img src="rp2040.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+        </div>
+
+        <div class="stack-item" data-reveal>
+          <div class="stack-content">
+            <div class="stack-item-top">
+              <span class="stack-num">[ 02 ]</span>
+              <span class="stack-cat">Firmware</span>
+            </div>
+            <div class="stack-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <h3 class="stack-name">MicroPython</h3>
+            <p class="stack-desc">Chosen for iteration speed. Being able to change a filter constant and re-run immediately mattered more than raw execution speed during development, since the bottleneck was mechanical settling time rather than compute.</p>
+          </div>
+          <div class="stack-img" aria-hidden="true"><img src="micropython.png" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+        </div>
+
+        <div class="stack-item" data-reveal>
+          <div class="stack-content">
+            <div class="stack-item-top">
+              <span class="stack-num">[ 03 ]</span>
+              <span class="stack-cat">EMG Sensor</span>
+            </div>
+            <div class="stack-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="2 12 5 12 7 4 9 20 11 10 13 14 15 12 22 12"/>
+              </svg>
+            </div>
+            <h3 class="stack-name">MyoWare 2.0</h3>
+            <p class="stack-desc">Surface EMG was the only viable intent signal available without implanted hardware or a lab budget. The core problem it creates is that its output drifts with electrode placement, skin impedance, sweat, and muscle fatigue, which is what drove the custom normalization pipeline below.</p>
+          </div>
+          <div class="stack-img" aria-hidden="true"><img src="myoware2.0.webp" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+        </div>
+
+        <div class="stack-item" data-reveal>
+          <div class="stack-content">
+            <div class="stack-item-top">
+              <span class="stack-num">[ 04 ]</span>
+              <span class="stack-cat">PWM Driver</span>
+            </div>
+            <div class="stack-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+                <path d="M6 8h2v4H6zM11 7h2v5h-2zM16 9h2v3h-2z"/>
+              </svg>
+            </div>
+            <h3 class="stack-name">PCA9685</h3>
+            <p class="stack-desc">Offloads servo timing to dedicated hardware over I²C, freeing the microcontroller to sample EMG continuously rather than interleaving PWM generation with acquisition. Drives all finger servos from two pins.</p>
+          </div>
+          <div class="stack-img" aria-hidden="true"><img src="pca9685.webp" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+        </div>
+
+        <div class="stack-item" data-reveal>
+          <div class="stack-content">
+            <div class="stack-item-top">
+              <span class="stack-num">[ 05 ]</span>
+              <span class="stack-cat">Current Sensor</span>
+            </div>
+            <div class="stack-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 20V10M12 20V4M6 20v-6"/>
+              </svg>
+            </div>
+            <h3 class="stack-name">INA219</h3>
+            <p class="stack-desc">This is the component the whole grip-safety system depends on, and it was chosen because fingertip force sensors were outside budget. Instead of measuring force directly, the system infers object contact from the spike in servo current draw when a finger stalls against something. It works well on rigid objects and degrades on compliant ones, which is the exact relationship I'm now characterizing formally in a follow-up study.</p>
+          </div>
+          <div class="stack-img" aria-hidden="true"><img src="ina219.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+        </div>
+
+        <div class="stack-item" data-reveal>
+          <div class="stack-content">
+            <div class="stack-item-top">
+              <span class="stack-num">[ 06 ]</span>
+              <span class="stack-cat">Actuators</span>
+            </div>
+            <div class="stack-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+              </svg>
+            </div>
+            <h3 class="stack-name">MG996R Servos</h3>
+            <p class="stack-desc">High-torque metal-gear servos chosen for holding position under load rather than for speed. One servo per finger, driving tendon cables through the printed finger channels.</p>
+          </div>
+          <div class="stack-img" aria-hidden="true"><img src="mg996r.webp" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+        </div>
+
+        <div class="stack-item" data-reveal>
+          <div class="stack-content">
+            <div class="stack-item-top">
+              <span class="stack-num">[ 07 ]</span>
+              <span class="stack-cat">Fabrication</span>
+            </div>
+            <div class="stack-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                <polyline points="2 17 12 22 22 17"/>
+                <polyline points="2 12 12 17 22 12"/>
+              </svg>
+            </div>
+            <h3 class="stack-name">FDM 3D Printing</h3>
+            <p class="stack-desc">Printed in PLA+ on a partially broken consumer printer, which meant designing around inconsistent tolerances rather than assuming them. Wall thickness and pin-joint reinforcement were sized for print reliability, not just for strength.</p>
+          </div>
+          <div class="stack-img" aria-hidden="true"><img src="elegoo.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+        </div>
+
+        <div class="stack-item" data-reveal>
+          <div class="stack-content">
+            <div class="stack-item-top">
+              <span class="stack-num">[ 08 ]</span>
+              <span class="stack-cat">Mechanism</span>
+            </div>
+            <div class="stack-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3 class="stack-name">Tendon Actuation</h3>
+            <p class="stack-desc">Tendon routing was chosen because it moves the actuators off the fingers and into the palm, which is the only way to keep finger geometry close to human scale. The cost is friction and slack accumulating along the tendon path, which sets a hard ceiling on positioning precision, which is the limitation that motivates the second-generation design.</p>
+          </div>
+          <div class="stack-img" aria-hidden="true"><img src="tendon.jpg" alt="" style="width:100%;height:100%;object-fit:cover;"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Skills ─────────────────────────────────────────── -->
+  <section id="skills">
+    <div class="site-wrap">
+      <h2 class="sec-label" data-reveal>[ Skills ]</h2>
+      <div class="skills-grid">
+
+        <div class="skill-card" data-reveal>
+          <div class="skill-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+              <polyline points="2 17 12 22 22 17"/>
+              <polyline points="2 12 12 17 22 12"/>
+            </svg>
+          </div>
+          <h3>Mechanical</h3>
+          <ul>
+            <li>CAD in Onshape</li>
+            <li>3D printing and fabrication</li>
+            <li>Tendon-driven mechanism design</li>
+          </ul>
+        </div>
+
+        <div class="skill-card" data-reveal>
+          <div class="skill-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3>Electrical</h3>
+          <ul>
+            <li>Circuit design and assembly</li>
+            <li>Soldering</li>
+            <li>Servo and actuator control</li>
+          </ul>
+        </div>
+
+        <div class="skill-card" data-reveal>
+          <div class="skill-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <h3>Software</h3>
+          <ul>
+            <li>Embedded systems — RP2040, MicroPython</li>
+            <li>EMG signal processing</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact CTA ───────────────────────────────────── -->
+  <section id="contact">
+    <div class="pcb-grid" aria-hidden="true"></div>
+    <div class="pcb-fade" aria-hidden="true"></div>
+    <div class="contact-bg" aria-hidden="true"></div>
+    <div class="site-wrap contact-inner">
+      <p class="contact-eyebrow" data-reveal>[ Let's Connect ]</p>
+      <h2 class="contact-heading" data-reveal>Building something<br>that matters.</h2>
+      <p class="contact-sub" data-reveal>Whether you're a researcher, engineer, or just curious, I'd love to talk about hardware, prosthetics, and building things that change lives.</p>
+      <div class="contact-btns" data-reveal>
+        <button class="btn-primary contact-btn" onclick="document.getElementById('contactPopup').classList.add('open')">Contact Me</button>
+        <a href="https://github.com/ShreyaSutar-engi" class="btn-ghost contact-btn" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="resume.pdf" class="btn-ghost contact-btn" target="_blank" rel="noopener">Résumé ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact popup -->
+  <div class="contact-popup-overlay" id="contactPopup" role="dialog" aria-modal="true" aria-label="Contact options" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="contact-popup">
+      <p class="contact-popup-title">Get in touch</p>
+      <button class="contact-popup-close" aria-label="Close" onclick="document.getElementById('contactPopup').classList.remove('open')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
-    </figure>
-    <div class="split__text">
-      <p class="intro intro--tight">An EMG-controlled prosthetic hand I built from scratch. It reads forearm muscle signals, decides in real time on an RP2040 whether you're trying to grip, and drives five tendon-routed fingers with MG996R servos. A current sensor stops the grip when a finger hits an object.</p>
-
-      <table class="perf" aria-label="Measured performance">
-        <tr><td class="perf__val">$118.45</td><td>total build cost</td></tr>
-        <tr><td class="perf__val">0 to 12 N</td><td>grip force range</td></tr>
-        <tr><td class="perf__val">92%</td><td>grip detection success rate</td></tr>
-        <tr><td class="perf__val">200 ms</td><td>EMG signal to finger motion</td></tr>
-        <tr><td class="perf__val">450 mA</td><td>contact detection threshold</td></tr>
-      </table>
-
-      <aside class="markup" aria-label="Known limitations">
-        <h3>Known limitations</h3>
-        <p>The current-based grip stop works on rigid objects but not soft ones, where the current rises too slowly to catch cleanly. The finger joints are coupled, so the hand can grasp but can't form a specific pose. EMG drifts with electrode placement, sweat, and fatigue; calibration reduces that but doesn't remove it.</p>
-      </aside>
-
-      <div class="actions">
-        <a class="btn btn--solid" href="Shreya_Sutar_Official_Paper.pdf">Read the paper</a>
-        <a class="btn" href="sutarposter.pdf">Poster</a>
-        <a class="btn" href="https://cad.onshape.com/documents/01846624b9cea47c0def8825/w/19642d9b3fb19bd6c92f9745/e/b12947016f13ac444aeb0029">Onshape CAD</a>
-        <a class="btn" href="https://drive.google.com/file/d/1aEplw--r2NXagsUH0YUOPjhpAVwstKOR/view?usp=sharing">Build log</a>
+      <div class="contact-popup-row" id="emailRow">
+        <a href="mailto:shreya.sutar057@gmail.com" class="contact-popup-row-link">
+          <span class="contact-popup-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          </span>
+          <span class="contact-popup-handle">shreya.sutar057@gmail.com</span>
+        </a>
+        <button class="copy-btn" aria-label="Copy email address" onclick="copyEmail()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2"/>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+          </svg>
+          <span class="copy-toast">Copied!</span>
+        </button>
       </div>
     </div>
   </div>
 
-  <div class="views">
-    <figure>
-      <button class="zoom" type="button" data-zoom="assets/hand-v1-cad.webp" data-caption="Mechanical design: printed iterations refined for fit, range of motion, and durability.">
-        <img class="cad-clear" src="assets/hand-v1-cad.webp" width="458" height="544" alt="v1 hand CAD assembly." loading="lazy">
-      </button>
-      <figcaption><strong>Mechanical design</strong> Printed iterations refined for fit, range of motion, and durability at every joint.</figcaption>
-    </figure>
-    <figure>
-      <button class="zoom" type="button" data-zoom="assets/pandaware-circuit.webp" data-caption="Circuit: servo control, EMG input, and current sensing on one hand-wired board.">
-        <img src="assets/pandaware-circuit.webp" width="652" height="622" alt="Hand-wired breadboard circuit with a servo driver board." loading="lazy">
-      </button>
-      <figcaption><strong>Circuit</strong> Servo control, EMG input, and current sensing on one hand-wired system.</figcaption>
-    </figure>
-    <figure>
-      <button class="zoom" type="button" data-zoom="assets/emg-calibration-code.webp" data-caption="Calibration routine: records rest and flex levels so the grip threshold fits each user.">
-        <img src="assets/emg-calibration-code.webp" width="793" height="398" alt="MicroPython calibration routine code." loading="lazy">
-      </button>
-      <figcaption><strong>EMG calibration</strong> Records rest and flex levels so detection holds up across fatigue and electrode placement.</figcaption>
-    </figure>
-    <figure>
-      <button class="zoom" type="button" data-zoom="assets/stall-detection-graph.webp" data-caption="Motor current and stall detection over time, fixed vs adaptive mode.">
-        <img src="assets/stall-detection-graph.webp" width="782" height="722" alt="Graph of motor current and stall detection over time in two modes." loading="lazy">
-      </button>
-      <figcaption><strong>Grip safety</strong> Motor current over time, with stall detection cutting the grip at contact.</figcaption>
-    </figure>
-  </div>
+  <!-- ── Footer ──────────────────────────────────────────── -->
+  <footer id="footer">
+    <div class="site-wrap footer-inner">
+      <div class="footer-brand-col">
+        <span class="footer-brand">Shreya Sutar</span>
+        <p class="footer-tagline">Hardware Engineer<br>Prosthetics Researcher</p>
+        <p class="footer-school">California Academy of Mathematics and Science</p>
+      </div>
 
-  <ul class="awards" aria-label="Awards">
-    <li>ISEF 2026 nominee</li>
-    <li>CSEF, 5th place, Electronics and Electromagnetics</li>
-    <li>LACSEF, 2nd place, Electronics and Robotics</li>
-    <li>Invention Convention, honorable mention</li>
-  </ul>
-</section>
+      <div class="footer-nav-col">
+        <span class="footer-col-label">Navigate</span>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#pandaware-v2">PandaWare v2</a></li>
+          <li><a href="#current-work">Current Work</a></li>
+          <li><a href="#stack">Tech Stack</a></li>
+          <li><a href="#skills">Skills</a></li>
+        </ul>
+      </div>
 
-<!-- Sheet 5: Parts -->
-<section class="sheet" id="parts" aria-labelledby="parts-title">
-  <div class="sheet__head">
-    <h2 id="parts-title" class="display">Parts and why</h2>
-    <table class="titleblock titleblock--strip" aria-label="Table details">
-      <tr><th scope="col">Assembly</th><th scope="col">Sheet</th></tr>
-      <tr><td>PandaWare v1</td><td>5 of 5</td></tr>
-    </table>
-  </div>
-  <p class="intro">Every part was picked for a reason. Open a row to see it.</p>
+      <div class="footer-nav-col">
+        <span class="footer-col-label">Project</span>
+        <ul>
+          <li><a href="Shreya_Sutar_Official_Paper.pdf" target="_blank" rel="noopener">Research Paper ↗</a></li>
+          <li><a href="sutarposter.pdf" target="_blank" rel="noopener">Poster ↗</a></li>
+          <li><a href="https://drive.google.com/file/d/1aEplw--r2NXagsUH0YUOPjhpAVwstKOR/view?usp=sharing" target="_blank" rel="noopener">Documentation Log ↗</a></li>
+        </ul>
+      </div>
 
-  <div class="bom" role="list">
-    <div class="bom__head" aria-hidden="true"><span>Item</span><span>Part</span><span>Role</span></div>
-    <details class="bom__row" role="listitem">
-      <summary><span class="bom__no">1</span><span class="bom__part">RP2040</span><span class="bom__role">Microcontroller</span></summary>
-      <p>Picked over an Arduino Uno because EMG sampling and servo control have to run without blocking each other, and the RP2040's two cores made that possible for $4. The tradeoff is no floating-point hardware, which limits how much signal processing can happen on the chip.</p>
-    </details>
-    <details class="bom__row" role="listitem">
-      <summary><span class="bom__no">2</span><span class="bom__part">MicroPython</span><span class="bom__role">Firmware</span></summary>
-      <p>Picked for iteration speed. Changing a filter constant and rerunning right away mattered more than raw speed, because the bottleneck was the mechanism settling, not compute.</p>
-    </details>
-    <details class="bom__row" role="listitem">
-      <summary><span class="bom__no">3</span><span class="bom__part">MyoWare 2.0</span><span class="bom__role">EMG sensor</span></summary>
-      <p>Surface EMG was the only intent signal available without implants or a lab budget. Its output drifts with electrode placement, skin, sweat, and fatigue, which is what drove the custom calibration pipeline.</p>
-    </details>
-    <details class="bom__row" role="listitem">
-      <summary><span class="bom__no">4</span><span class="bom__part">PCA9685</span><span class="bom__role">Servo driver</span></summary>
-      <p>Moves servo timing onto dedicated hardware over I²C, so the microcontroller can sample EMG continuously instead of juggling PWM. Drives every finger servo from two pins.</p>
-    </details>
-    <details class="bom__row" role="listitem">
-      <summary><span class="bom__no">5</span><span class="bom__part">INA219</span><span class="bom__role">Current sensor</span></summary>
-      <p>The grip-safety system depends on this one. Fingertip force sensors were out of budget, so the hand infers contact from the jump in servo current when a finger stalls against something. It works on rigid objects and struggles on soft ones.</p>
-    </details>
-    <details class="bom__row" role="listitem">
-      <summary><span class="bom__no">6</span><span class="bom__part">MG996R servo, ×5</span><span class="bom__role">Actuators</span></summary>
-      <p>Metal-gear servos picked for holding position under load rather than speed. One per finger, each pulling a tendon through the printed finger channels.</p>
-    </details>
-    <details class="bom__row" role="listitem">
-      <summary><span class="bom__no">7</span><span class="bom__part">PLA+, FDM printed</span><span class="bom__role">Structure</span></summary>
-      <p>Printed on a partly broken consumer printer, so I designed around inconsistent tolerances instead of assuming them. Wall thickness and pin reinforcement were sized for print reliability, not just strength.</p>
-    </details>
-    <details class="bom__row" role="listitem">
-      <summary><span class="bom__no">8</span><span class="bom__part">Tendon cables</span><span class="bom__role">Transmission</span></summary>
-      <p>Tendons move the actuators off the fingers, which is the only way to keep the fingers close to human size. The cost is friction and slack along the path, which caps positioning precision and is exactly what v2 is built to fix.</p>
-    </details>
-  </div>
-</section>
+      <div class="footer-nav-col">
+        <span class="footer-col-label">Contact</span>
+        <ul>
+          <li>
+            <a href="mailto:shreya.sutar057@gmail.com" class="footer-contact-row">
+              <span class="footer-contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+              </span>
+              shreya.sutar057@gmail.com
+            </a>
+          </li>
+          <li><a href="https://github.com/ShreyaSutar-engi" target="_blank" rel="noopener">GitHub ↗</a></li>
+          <li><a href="resume.pdf" target="_blank" rel="noopener">Résumé ↗</a></li>
+        </ul>
+      </div>
+    </div>
 
-<section class="also" aria-labelledby="also-title">
-  <h2 id="also-title" class="display display--small">Also</h2>
-  <div class="also__grid">
-    <article>
-      <a class="also__img" href="https://iseofficial.org/"><img src="assets/ise-card.webp" width="1400" height="756" alt="ISE journal project page." loading="lazy"></a>
-      <h3>ISE, Innovation in Science and Engineering</h3>
-      <p>An ISSN-registered student engineering journal I founded and edit, advised by Dr. Ellen Roche at MIT. I built the manuscript templates and review process and recruited faculty reviewers from several universities.</p>
-      <a class="textlink" href="https://iseofficial.org/">Visit ISE</a>
-    </article>
-    <article>
-      <h3>Assistive tech outreach</h3>
-      <p>I lead a project bringing assistive technology to a senior living community, directing the CAD, electrical, and programming work and writing the build guides that let other students contribute instead of watch.</p>
-      <h3>Tools</h3>
-      <p class="tools">Onshape, Fusion 360, Inventor, ASME Y14.5 drawings and GD&amp;T, FDM printing, soldering, RP2040, Teensy, MicroPython, Python.</p>
-    </article>
-  </div>
-</section>
+    <div class="site-wrap footer-bottom">
+      <p>© 2026 Shreya Sutar</p>
+      <p class="footer-award">ISEF 2026 Nominee</p>
+    </div>
+  </footer>
 
-<section class="contact" id="contact" aria-labelledby="contact-title">
-  <h2 id="contact-title" class="display">Let's talk hardware.</h2>
-  <p>I'm looking for lab work in prosthetics, exoskeletons, and assistive devices. Researchers, engineers, and curious people are all welcome.</p>
-  <div class="actions">
-    <a class="btn btn--solid" href="mailto:shreya.sutar057@gmail.com">shreya.sutar057@gmail.com</a>
-    <a class="btn" href="https://github.com/ShreyaSutar-engi">GitHub</a>
-    <a class="btn" href="resume.pdf">Résumé (PDF)</a>
-  </div>
-</section>
-
-</main>
-
-<footer class="foot">
-  <span>© 2026 Shreya Sutar</span>
-  <span>Los Angeles, California</span>
-</footer>
-
-<dialog class="viewer" aria-label="Enlarged image">
-  <form method="dialog"><button class="viewer__close" aria-label="Close">Close</button></form>
-  <img class="viewer__img" src="" alt="">
-  <p class="viewer__cap"></p>
-</dialog>
-
-<script src="script.js"></script>
+  <!-- GSAP 3.12 — timeline, ScrollTrigger, utils -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
